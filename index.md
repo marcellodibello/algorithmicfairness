@@ -22,6 +22,10 @@
 
 ## Predictive parity
 
+## Subgroup fairness
+
+- M Kearns, S Neel, A Roth, and ZS Wu, [An  Empirical  Study  of  Rich  SubgroupFairness for Machine Learning](https://arxiv.org/pdf/1808.08166.pdf) 
+
 # Impossibility results
 - A Chouldechova (2017), [Fair Prediction with Disparate Impact: A Study of Bias in Recidivism Prediction Instruments](https://arxiv.org/pdf/1703.00056.pdf), Big Data, 5(2): 153–63
 - J Kleinberg, S Mullainathan, and M Raghavan (201), [Inherent Trade-Offs in the Fair Determination of Risk Scores](https://arxiv.org/abs/1609.05807) Proceedings of the 8th Conference on Innovation
