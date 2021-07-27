@@ -925,82 +925,85 @@ pre { /* Code block - determines code spacing between lines */
 </div>
 <div id="schedule-readings" class="section level1">
 <h1>Schedule &amp; Readings</h1>
-<div id="week-1-propublica-v.-northpointe" class="section level2">
-<h2>Week 1: ProPublica v. Northpointe</h2>
-<p>Data-based predictive and scoring algorithms are now everywhere. They are used by private and public sector entities: banks, social workers, police, judges, etc. While algorithms are efficient and usable in large scale, are they going to treat people fairly?</p>
-<p>ProPublica argued that <a href="https://en.wikipedia.org/wiki/COMPAS_(software)">COMPAS</a> – a predictive algorithm used in criminal justice to help judges make decisions about bail, preventative detention and sentencing – is biased against black defendants.</p>
+<div id="week-1---august-19---introduction" class="section level2">
+<h2>Week 1 - August 19 - Introduction</h2>
+<p>The question of algorithmic fairness is technical (how do algorithms work?), theoretical (what does “fairness” mean?) and practical (how do algorithms impact people’s lives?). On the technical side, we will survey key concepts, such as algorithm, machine learning, supervised v. unsupervised learning, regression, classification v. clustering. This survey will be informal. Those who wish to go deeper may consult the additional materials. On the theoretical side, we will brainstorm ideas about what we mean by “fairness” and how an algorithm could fail to be fair. We will explore several definitions of fairness later in the course. Finally, on the practical side, we will read stories about people whose lives were affected, often adversely, by algorithms.</p>
+<p><em>Key readings and materials</em></p>
 <ul>
-<li>ProPublica, <a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">Machine Bias: There’s software used across the country to predict future criminals. And it’s biased against blacks.</a></li>
+<li><p>Kearns and Roth, <em>The Ethical Algorithm</em>, Chp. 1 and Chp. 3 (only pp. 57-64)</p></li>
+<li><p>Eubanks, <em>Automating Inequality</em>, Chp. 4</p></li>
 </ul>
-<p>Northpointe, the company that designed COMPAS, rejected the accusation.</p>
+<p><em>Additional readings and materials</em></p>
 <ul>
-<li>William Dieterich, Christina Mendoza, and Tim Brennan. <a href="https://go.volarisgroup.com/rs/430-MBX-989/images/ProPublica_Commentary_Final_070616.pdf">COMPAS risk scales: Demonstrating accuracy equity and predictive parity performance of the COMPAS risk scales in Broward county</a></li>
+<li>Rogers and Mark Girolami, A First Course in Machine Learning, Chapter 1</li>
 </ul>
-<p>ProPublica responded.</p>
+</div>
+<div id="week-2---august-26---propublica-v.-northpointe" class="section level2">
+<h2>Week 2 - August 26 - ProPublica v. Northpointe</h2>
+<p>To understand the intricacies of the debate about algorithmic fairness, especially the connections between theoretical and technical questions, we will look at a well-known case study, the algorithm COMPAS which ProPublica claimed to be racially biased. <a href="https://en.wikipedia.org/wiki/COMPAS_(software)">COMPAS</a> is a predictive algorithm used in criminal justice to help judges make decisions about bail, preventative detention and sentencing. ProPublica argued that COMPAS is biased against black people. Northpointe, the company that designed COMPAS, rejected the accusation. You will see that at the core here is a disagreement about what we mean by “fairness”.</p>
+<p>In order to understand this debate, you should be familiar with a bif of probability theory. You should also be familiar with notiosn such as false positive and false negatives. We will therefore discuss a few elementary notions, in particular, the distinction between the probability of an event A given another event B, in symbols, P(A | B), and the probability of event B given event A, in symbols, P(B | A).</p>
+<p><em>Key readings and materials</em></p>
 <ul>
-<li>ProPublica, <a href="https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm">How We Analyzed the COMPAS Recidivism Algorithm</a></li>
+<li><p>ProPublica, <a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">Machine Bias: There’s software used across the country to predict future criminals. And it’s biased against blacks.</a></p></li>
+<li><p>William Dieterich, Christina Mendoza, and Tim Brennan. <a href="https://go.volarisgroup.com/rs/430-MBX-989/images/ProPublica_Commentary_Final_070616.pdf">COMPAS risk scales: Demonstrating accuracy equity and predictive parity performance of the COMPAS risk scales in Broward county</a></p></li>
 </ul>
-<p>Others joined the debate.</p>
+<p><em>Additional readings and materials</em></p>
 <ul>
+<li><p>ProPublica, <a href="https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm">How We Analyzed the COMPAS Recidivism Algorithm</a></p></li>
 <li><p>Anthony W. Flores, Kristin Bechtel, and Christopher T. Lowenkamp. <a href="https://www.uscourts.gov/federal-probation-journal/2016/09/false-positives-false-negatives-and-false-analyses-rejoinder">False positives, false negatives, and false analyses: A rejoinder to “Machine bias”</a></p></li>
 <li><p><a href="https://cyber.harvard.edu/story/2019-07/technical-flaws-pretrial-risk-assessments-raise-grave-concerns">Technical Flaws of Pretrial Risk Assessments Raise Grave Concerns</a></p></li>
 </ul>
 </div>
-<div id="week-2-guided-by-data" class="section level2">
-<h2>Week 2: Guided by data</h2>
-<p>Let’s take a step back and examine the basis of algorithmic decision-making. Data are abundant today. Though incomplete and never truly conclusive, data can guide our decisions, often saving lives. For example, data are playing a key role in the response to the COVID-19 pandemic.</p>
+<div id="week-3---september-2---guided-or-misguided-by-data" class="section level2">
+<h2>Week 3 - September 2 - Guided or Misguided by Data?</h2>
+<p>Let’s take a step back and examine the basis of algorithmic decision-making. Data are abundant today. Though incomplete and never truly conclusive, data can guide our decisions, often saving lives. For example, data have been playing a key role in the response to the COVID-19 pandemic (see, for example, Max Roser, Hannah Ritchie and Esteban Ortiz-Ospina, <a href="https://ourworldindata.org/coronavirus">Coronavirus Disease (COVID-19) - Statistics and Research</a>). Another example is the data-driven Public Safety Assessment (<a href="https://www.psapretrial.org/">PSA</a>) algorithm, now widely used in several jurisdictions in the United States to help judges make pre-trial decisions. According to a <a href="https://njcourts.gov/courts/criminal/reform.html">report</a> from New Jersey, pre-trial jail population descrease significantly after PSA was adopted. The ACLU of New Jersey <a href="https://www.aclu-nj.org/theissues/criminaljustice/pretrial-justice-reform">endorsed</a> the use of the PSA algorithm because it has the potential to end the pre-trial system of money and bail that disproportionately harms the poor.</p>
+<p>But although data can be helpful to make decisions, they can also be biased, partial or incomplete. Biases in the data often disdavatange minorities. Another problem is that, via feedback loops, decisions based on biased data magnify errors on a large scale especially when they are automated. Garbage in, garbage <em>everywhere</em>.</p>
+<p><em>Key readings and materials</em></p>
 <ul>
-<li><p>Max Roser, Hannah Ritchie and Esteban Ortiz-Ospina, <a href="https://ourworldindata.org/coronavirus">Coronavirus Disease (COVID-19) - Statistics and Research</a></p></li>
-<li><p>Tomas Pueyo, <a href="https://medium.com/@tomaspueyo/coronavirus-act-today-or-people-will-die-f4d3d9cd99ca">Coronavirus: Why You Must Act Now</a></p></li>
-<li><p>Left, <a href="https://left.it/2020/03/13/covid_19-open-letter-from-italy-to-the-international-scientific-community/?fbclid=IwAR0YbnRWpw0rzCFIb289bB74u6NkLs6tQeZN7JP4wAjv3wgWdOvB-chk7g4">Covid_19: Open letter from Italy to the international scientific community</a></p></li>
+<li><p>Moritz Hardt, <a href="https://medium.com/@mrtz/how-big-data-is-unfair-9aa544d739de">How Big Data Is Unfair</a></p></li>
+<li><p>Caroline C. Perez, <a href="https://www.amazon.com/Invisible-Women-Data-World-Designed/dp/1419729071">Invisible Women: Data Bias in a World Designed for Men</a>, Chapter 8</p></li>
+<li><p>Cathy O’Neil, <a href>Weapons of Math Destruction</a>, Chapter ??</p></li>
 </ul>
-<p>Another example is the data-driven Public Safety Assessment (<a href="https://www.psapretrial.org/">PSA</a>) algorithm, now widely used in several jurisdictions in the United States to help judges make pre-trial decisions. According to a <a href="https://njcourts.gov/courts/criminal/reform.html">report</a> from New Jersey, pre-trial jail population descrease significantly after PSA was adopted. The ACLU of New Jersey <a href="https://www.aclu-nj.org/theissues/criminaljustice/pretrial-justice-reform">endorsed</a> the use of the PSA algorithm because it has the potential to end the pre-trial system of money and bail that disproportionately harms the poor.</p>
-</div>
-<div id="week-3-misguided-by-data" class="section level2">
-<h2>Week 3: Misguided by data</h2>
-<p>Although data can be helpful to make decisions, they can also be biased, partial or incomplete. Biases in the data often disdavatange racial minorities.</p>
+<p><em>Additional readings and materials</em></p>
 <ul>
-<li><p>*Joy Buolamwini, <a href="https://hackernoon.com/algorithms-arent-racist-your-skin-is-just-too-dark-4ed31a7304b8">Algorithms Aren’t Racist. Your Skin Is just too Dark</a></p></li>
-<li><p>*Moritz Hardt, <a href="https://medium.com/@mrtz/how-big-data-is-unfair-9aa544d739de">How Big Data Is Unfair</a></p></li>
-</ul>
-<p>Biases and gaps in the data are also often detrimental to women.</p>
-<ul>
-<li>Caroline C. Perez, <a href="https://www.amazon.com/Invisible-Women-Data-World-Designed/dp/1419729071">Invisible Women: Data Bias in a World Designed for Men</a> – read two chaptersyou find interesting</li>
-</ul>
-<p>Another problem is that, via feedback loops, decisions based on biased data magnify errors on a large scale especially when they are automated. Garbage in, garbage <em>everywhere</em>.</p>
-<ul>
-<li>Danielle Ensign, Sorelle A. Friedler, Scott Neville, Carlos Scheidegger, and Suresh Venkata. <a href="https://arxiv.org/abs/1706.09847">Runaway feedback loops in predictive policing</a> – <a href="https://www.youtube.com/watch?v=Qj_t8DL5TeQ">video</a></li>
+<li><p>Joy Buolamwini, <a href="https://hackernoon.com/algorithms-arent-racist-your-skin-is-just-too-dark-4ed31a7304b8">Algorithms Aren’t Racist. Your Skin Is just too Dark</a></p></li>
+<li><p>Danielle Ensign, Sorelle A. Friedler, Scott Neville, Carlos Scheidegger, and Suresh Venkata. <a href="https://arxiv.org/abs/1706.09847">Runaway feedback loops in predictive policing</a> – <a href="https://www.youtube.com/watch?v=Qj_t8DL5TeQ">video</a></p></li>
 </ul>
 </div>
-<div id="week-4-the-meanings-of-fairness" class="section level2">
-<h2>Week 4: The meanings of fairness</h2>
-<p>What does it mean for algorithmic decisions to be fair in the first place? Computer scientists have formulated several different metrics of algorithmic fairness. By one count, there are as many as 21 definitions.</p>
+<div id="week-4---septembere-9---feedback-loops" class="section level2">
+<h2>Week 4 - Septembere 9 - Feedback Loops</h2>
+</div>
+<div id="week-5---september-16---the-meanings-of-fairness" class="section level2">
+<h2>Week 5 - September 16 - The Meanings of Fairness</h2>
+<p>What does it mean for algorithmic decisions to be fair in the first place? Computer scientists have formulated several different metrics of algorithmic fairness. By one count, there are as many as 21 definitions. Many of the definitions of algorithmic fairness describe the extent to which <em>actual</em> rates of error are unevenly (and thus unfairly) allocated across different socially relevant groups. Scholars have also used causal modeling to formulate a <em>counterfactual</em> definition of algorithmic fairness.</p>
+<p><em>Key readings and materials</em></p>
+<ul>
+<li><p>Kearns and Roth, <em>The Ethical Algorithm</em>, Chp. 3</p></li>
+<li><p>Sam Corbett-Davies and Sharad Goel. <a href="https://arxiv.org/abs/1808.00023">The measure and mismeasure of fairness: A critical review of fair machine learning</a></p></li>
+</ul>
+<p><em>Additional readings and materials</em></p>
 <ul>
 <li><p>Arvind Narayanan, <a href="https://www.youtube.com/watch?v=jIXIuYdnyyk">21 fairness definitions and their politics</a></p></li>
-<li><p>Richard Berk, Hoda Heidari, Shahin Jabbari, Michael Kearns, and Aaron Roth. <a href="https://doi.org/10.1177/0049124118782533">Fairness in criminal justice risk assessments: The state of the art</a></p></li>
-</ul>
-<p>Many of the definitions of algorithmic fairness describe the extent to which <em>actual</em> rates of error are unevenly (and thus unfairly) allocated across different socially relevant groups. Scholars have also used causal modeling to formulate a <em>counterfactual</em> definition of algorithmic fairness.</p>
-<ul>
 <li><p>Solon Barocas, Moritz Hardt, Arvind Narayanan, <a href="https://fairmlbook.org/">Fairness in Machine Learning</a> – chapter 2 and 4</p></li>
 <li><p>Matt J. Kusner, Joshua R. Loftus, Chris Russell, Ricardo Silva, <a href="https://arxiv.org/abs/1703.06856">Counterfactual Fairness</a></p></li>
 </ul>
 </div>
-<div id="week-5-impossibility-results" class="section level2">
-<h2>Week 5: Impossibility results</h2>
-<p>It turns out that it is mathematically impossible, under realistic conditions, for algorithms to satisfy different conceptions of fairness at the same time.</p>
+<div id="week-6---september-23--impossibility-theorems" class="section level2">
+<h2>Week 6 - September 23- Impossibility Theorems</h2>
+<p>It turns out that it is mathematically impossible, under realistic conditions, for algorithms to satisfy different conceptions of fairness at the same time. These impossibility results have led scholars to consider trade-offs between different conceptions of fairness or be skeptical toward existing definitions.</p>
 <ul>
 <li><p>Alexandra Chouldechova, <a href="https://arxiv.org/pdf/1703.00056.pdf">Fair Prediction with Disparate Impact</a></p></li>
-<li><p>Jon Kleinberg, Sendhil Mullainathan, Manish Raghavan, <a href="https://arxiv.org/abs/1609.05807">Inherent Trade-Offs in the Fair Determination of Risk Scores</a> – <a href="https://www.youtube.com/watch?v=K7i_tnflZ64">video</a></p></li>
-</ul>
-<p>These impossibility results have led scholars to consider trade-offs between different conceptions of fairness or be skeptical toward existing definitions.</p>
-<ul>
 <li><p>Deborah Hellman, <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3418528">Measuring Algorithmic Fairness</a></p></li>
-<li><p>Sam Corbett-Davies and Sharad Goel. <a href="https://arxiv.org/abs/1808.00023">The measure and mismeasure of fairness: A critical review of fair machine learning</a></p></li>
+</ul>
+<p><em>Additional readings and materials</em></p>
+<ul>
+<li><p>Richard Berk, Hoda Heidari, Shahin Jabbari, Michael Kearns, and Aaron Roth. <a href="https://doi.org/10.1177/0049124118782533">Fairness in criminal justice risk assessments: The state of the art</a></p></li>
+<li><p>Jon Kleinberg, Sendhil Mullainathan, Manish Raghavan, <a href="https://arxiv.org/abs/1609.05807">Inherent Trade-Offs in the Fair Determination of Risk Scores</a> – <a href="https://www.youtube.com/watch?v=K7i_tnflZ64">video</a></p></li>
 </ul>
 <p><strong>First paper due</strong></p>
 </div>
-<div id="week-6-testing-for-discrimination" class="section level2">
-<h2>Week 6: Testing for discrimination</h2>
+<div id="week-7-testing-for-discrimination" class="section level2">
+<h2>Week 7: Testing for discrimination</h2>
 <p>The academic debate about algorithmic fairness mirrors, in some important ways, the debate among economists about different tests for what counts as discriminatory behaviour.</p>
 <ul>
 <li><p>Gary Becker, <a href="https://www.nobelprize.org/uploads/2018/06/becker-lecture.pdf">The Economic way of Looking at Life</a></p></li>
@@ -1012,8 +1015,8 @@ pre { /* Code block - determines code spacing between lines */
 <li>Camelia Simoiu, Sam Corbett-Davies and Sharad Goel, <a href="https://5harad.com/papers/threshold-test.pdf">The Problem of Infra-Marginality</a></li>
 </ul>
 </div>
-<div id="week-7-equal-protection-jurisprudence" class="section level2">
-<h2>Week 7: Equal protection jurisprudence</h2>
+<div id="week-8-equal-protection-jurisprudence" class="section level2">
+<h2>Week 8: Equal protection jurisprudence</h2>
 <p>Algorithimic fairneess is closely conected with antidiscrimination and equal protection jurisprudence, specifically the notions of “disparate treatment” and “disparate impact”.</p>
 <p>Any differential treatment that is due to racial animus or discriminatory intent is clearly illegal. The use of race as a factor is not automatically prohibited, but must be justified with a clear rationale, an inquiry known as “strict scrutiny”. The Supreme Court has allowed the use of race in specified contexts, for example, in college admissions for the purpose of fostering diversity.</p>
 <ul>
@@ -1030,8 +1033,8 @@ pre { /* Code block - determines code spacing between lines */
 </ul>
 <p>It is worth thinking about whether the legal notions of disparate treatment and disparate impact can help to understand what algorithmic fairness consists in.</p>
 </div>
-<div id="week-8-fairness-v.-welfare" class="section level2">
-<h2>Week 8: Fairness v. welfare</h2>
+<div id="week-9-fairness-v.-welfare" class="section level2">
+<h2>Week 9: Fairness v. welfare</h2>
 <p>Utilitarianism, roughly, says that the right action is one that maximizes social welfare overall.</p>
 <ul>
 <li>Jeremy Bentham, “Introduction to the Principles of Morals and Legislation”, <a href="https://www.econlib.org/library/Bentham/bnthPML.html">Ch. I–II</a></li>
@@ -1042,8 +1045,8 @@ pre { /* Code block - determines code spacing between lines */
 <li><p>Aziz Z. Huq, <a href="https://scholarship.law.duke.edu/cgi/viewcontent.cgi?article=3972&amp;context=dlj">Racial Equity in Algorithmic Criminal Justice</a></p></li>
 </ul>
 </div>
-<div id="week-9-equality" class="section level2">
-<h2>Week 9: Equality</h2>
+<div id="week-10-equality" class="section level2">
+<h2>Week 10: Equality</h2>
 <p>Against utilitarianism, <a href="https://plato.stanford.edu/entries/rawls/">John Rawls</a>, an influential political philosopher of the 20th century, argued that society must give everyone equal opportunities to develop their talents and that inequalities in the distribution of goods can be tolerated only if they work to the advantage of the worst-off in society. What would algorithmic fairness look like in light of Rawls’s view about equal opportunities and distributive justice?</p>
 <ul>
 <li>John Rawls, A Theory of Justice, 3, 11–12</li>
@@ -1060,8 +1063,8 @@ pre { /* Code block - determines code spacing between lines */
 <li><p>Reuben Binns, <a href="http://proceedings.mlr.press/v81/binns18a/binns18a.pdf">Fairness in Machine Learning: Lessons from Political Philosophy</a></p></li>
 </ul>
 </div>
-<div id="week-10-individualized-decisions" class="section level2">
-<h2>Week 10: Individualized decisions</h2>
+<div id="week-11-individualized-decisions" class="section level2">
+<h2>Week 11: Individualized decisions</h2>
 <p>Since algorithms often rely on statistical generalizations and correlations, some worry that algorithms disregard the individual circumstances of each person. Do people have a right to be treated as individuals? What would that mean?</p>
 <ul>
 <li><p>Kasper Lippert-Rasmussen, <a href="https://link.springer.com/article/10.1007%2Fs10892-010-9095-6">We Are All Different</a></p></li>
@@ -1111,16 +1114,17 @@ pre { /* Code block - determines code spacing between lines */
         <li><a href="#objectives">Objectives</a></li>
         <li><a href="#similar-courses">Similar courses</a></li>
         <li><a href="#schedule-readings">Schedule &amp; Readings</a><ul>
-        <li><a href="#week-1-propublica-v.-northpointe">Week 1: ProPublica v. Northpointe</a></li>
-        <li><a href="#week-2-guided-by-data">Week 2: Guided by data</a></li>
-        <li><a href="#week-3-misguided-by-data">Week 3: Misguided by data</a></li>
-        <li><a href="#week-4-the-meanings-of-fairness">Week 4: The meanings of fairness</a></li>
-        <li><a href="#week-5-impossibility-results">Week 5: Impossibility results</a></li>
-        <li><a href="#week-6-testing-for-discrimination">Week 6: Testing for discrimination</a></li>
-        <li><a href="#week-7-equal-protection-jurisprudence">Week 7: Equal protection jurisprudence</a></li>
-        <li><a href="#week-8-fairness-v.-welfare">Week 8: Fairness v. welfare</a></li>
-        <li><a href="#week-9-equality">Week 9: Equality</a></li>
-        <li><a href="#week-10-individualized-decisions">Week 10: Individualized decisions</a></li>
+        <li><a href="#week-1---august-19---introduction">Week 1 - August 19 - Introduction</a></li>
+        <li><a href="#week-2---august-26---propublica-v.-northpointe">Week 2 - August 26 - ProPublica v. Northpointe</a></li>
+        <li><a href="#week-3---september-2---guided-or-misguided-by-data">Week 3 - September 2 - Guided or Misguided by Data?</a></li>
+        <li><a href="#week-4---septembere-9---feedback-loops">Week 4 - Septembere 9 - Feedback Loops</a></li>
+        <li><a href="#week-5---september-16---the-meanings-of-fairness">Week 5 - September 16 - The Meanings of Fairness</a></li>
+        <li><a href="#week-6---september-23--impossibility-theorems">Week 6 - September 23- Impossibility Theorems</a></li>
+        <li><a href="#week-7-testing-for-discrimination">Week 7: Testing for discrimination</a></li>
+        <li><a href="#week-8-equal-protection-jurisprudence">Week 8: Equal protection jurisprudence</a></li>
+        <li><a href="#week-9-fairness-v.-welfare">Week 9: Fairness v. welfare</a></li>
+        <li><a href="#week-10-equality">Week 10: Equality</a></li>
+        <li><a href="#week-11-individualized-decisions">Week 11: Individualized decisions</a></li>
         <li><a href="#week-11-invited-talk-tba">Week 11: Invited Talk TBA</a></li>
         <li><a href="#week-12-invited-talk-tba">Week 12: Invited Talk TBA</a></li>
         <li><a href="#week-13-invited-talk-tba">Week 13: Invited Talk TBA</a></li>
