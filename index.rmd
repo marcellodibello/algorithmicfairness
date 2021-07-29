@@ -1,6 +1,8 @@
+
+
 ---
-title: "Algorithmic Fairness"
-subtitle: "PHIxyz - Fall 2021"
+title: "Algorithmic Fairness "
+subtitle: "PHI420/PHI591 - Fall 21"
 author: "Marcello Di Bello  - mdibello@asu.edu"
 output:
   rmdformats::html_clean:
@@ -10,9 +12,10 @@ output:
     thumbnails: true
     lightbox: true
     gallery: true
-    toc_depth: 1
+    toc_depth: 2
     toc: TRUE
 ---    
+
 
 
 
@@ -58,7 +61,7 @@ output:
 
 
 
-<!-- 
+<!---
 ---
 title: "Algorithmic Fairness"
 author: "Marcello Di Bello"
@@ -80,7 +83,7 @@ output:
 <script>
    $(document).ready(function() {
      $head = $('#header');
-     $head.prepend('<img src=\"algo-fair-logo.png\" style=\"float: right;width: 350px;height: 220px;\"/>')
+     $head.prepend('<img src=\"algo-fair-logo.png\" style=\"float: right;width: 300px;height: 220px;\"/>')
    });
 </script>
 
@@ -160,140 +163,189 @@ pre { /* Code block - determines code spacing between lines */
 -->
 
 
+Th	3:00 - 5:50 PM	in Tempe, [COOR](https://www.asu.edu/map/interactive/?psCode=COOR) 3301
 
-# Course description
+# Topic
 
 Public and private sector entities rely on algorithms to streamline decisions about 
-healthcare, child abuse, public housing, bail and sentencing. 
+healthcare, loans, social services, sentencing and more. 
 This course examines the ongoing debate among computer scientists, economists, 
-legal scholars and moral philosophers 
-about the fairness of algorithmic decision-making.  What does it mean for algorithmic decisions to be fair? 
-How does algorithmic fairness relate to other notions such as equal treatment, anti-discrimination and fair equality 
-of opportunity? What are the formal tools for measuring fairness? What other values and goals 
-should inform the design of ethical algorithms, such as minimizing the harm toward disavatanged minorities or respecting 
-each person's individual circumstances?
-
+legal scholars, historians and philosophers about the fairness of algorithmic decision-making.  What does it mean for algorithmic decisions to be fair? How does algorithmic fairness relate to other ideas such as anti-discrimination and fair equality of opportunity? What are the formal tools for measuring fairness? What other values and goals should inform the design of ethical algorithms, such as minimizing the harm toward disavatanged minorities or respecting each person's individuality?
 
 
 # Objectives
 
-This course is meant for advanced undergraduates or graduates students. 
-Students will become familiar with different conceptions of algorithmic fairness,
+This course is meant for advanced undergraduates and graduates students. 
+You will become familiar with different conceptions of algorithmic fairness,
 such as predictive parity, classification parity and counterfactual fairness, as well as 
 explore connections between algorithmic
 fairness, anti-discrimination law and philosophical concepts such as fair equality of opportunity. 
-Students will also develop critical thinking skills, in reading  and  writing, 
-for the analysis of new technologies and the ethical issues they pose. Students will 
-read academic papers in different disciplines---computer science, economics, law 
+You will also develop critical thinking skills, in reading  and  writing, 
+for the analysis of new technologies and the ethical issues they pose. You will 
+read academic papers in different disciplines---computer science, economics, law, sociology 
 and philosohy---and will develop an appreciation for differences in scholarship 
-across disciplines. 
+across disciplines.
 
-# Similar courses
+# Course Materials
 
-- Aaron Fraenkel's [Fairness and Algorithmic Decision Making](https://afraenkel.github.io/portfolio/curric-3-fairness/) - UC, San Diego
-
-- Solon Barocas, Moritz Hardt, Arvind Narayanan, [Fairness in Machine Learning](https://fairmlbook.org/) -- book
-
-- Moritz Hardt's [Fairness in Machine Learning](https://fairmlclass.github.io/) - UC, Berkeley
-
-- Arvind Narayanan's [Fairness in Machine Learning](https://docs.google.com/document/d/1XnbJXELA0L3CX41MxySdPsZ-HNECxPtAw4-kZRc7OPI/edit) - Princeton
-
-
-
-# Schedule & Readings
+Readings and other course materials are available 
+at no cost on this website. For readings covered 
+by copyright, please check the Canvas page for this course.  
+Course materials are divided into "essential" and "additional". 
+You are only expected to study the essential ones, but I 
+reccomend that at least for one or two weeks you dvelve into 
+the additional course materials. 
 
 
-## Wk 1 - 8/19:  Introduction
 
-The question of algorithmic fairness is technical (how do algorithms work?), theoretical (what does "fairness" mean?) and practical (how do algorithms impact people's lives?). On the technical side, we will survey key concepts, such as algorithm, machine learning, supervised v. unsupervised learning, regression, classification v. clustering. This survey will be informal. Those who wish to go deeper may consult the additional materials.  On the theoretical side, we will brainstorm ideas about what we mean by "fairness" and how an algorithm could fail to be fair. We will explore several definitions of fairness more deeply later in the course. Finally, on the practical side, we will read stories about people whose lives were affected, often adversely, by algorithms. 
 
+# Requirements
+
+
+Please attend class regularly and participate 
+(**10% of our grade**). This is a "seminar style" course. You are 
+expected to take an active role in the discussions. Please study the assigned 
+materials **before class** and be ready to discuss them. 
+
+You also expected to complete a number 
+of written assignments (**90% of your grade**).
+
+## Pass/fail 
+
+Every week please write a **one-page précis** of one of the papers assigned for that week. 
+The précis should describe: (a) topic of the paper; 
+(b) main thesis (or main theses, if there are more than one); 
+(c) supporting arguments; (d) objections to these arguments, complications or 
+difficulties that the author considers (if any).
+
+## Essays 
+
+There will be three main graded assignments 
+for this course, **5 pages each**. 
+
+**1**. After doing some independent research, collect 
+and summarize *two stories*. One should describe how an algorithm has positively 
+impacted people's lives and another story how an algorithm has negatively impacted people's lives. The two stories need not be---and often will not be---about the same algorithm.  Please convey to the reader why you found the two stories meaningful. 
+
+**2**. Write *an expository essay* that describes very carefully (a) ProPublica's accusation that COMPAS is racially biased and Northpointe's response; (b) assess what further technical, practical and theoretical questions about algorithmic fairness must be addressed in order to settle the debate. Please be precise.
+
+**3**. Write a *philosophical argumentative essay* that attempts to answer the question "What is Algorithmic Fainess?" In answering this question, I reccomend that you compare and contrast the formal notions of algorithmic fairness (such as predictive parity, classification parity, causal fairness, etc.) with either (i) the economic literature on discrimination, (ii) equal protection jurprisprudence, (iii) the philosophical literature on fairness and equality. Please always defend the claims you make with careful and reasoned arguments. Check out these [guidelines](http://www.jimpryor.net/teaching/guidelines/writing.html) on how to write a philosophical argumentative essay.
+
+## Research project 
+
+If you are a grad student or advanced undegrad with research experience, 
+you may combine the three 5 page essays into one 
+**15-20 page** research paper. The research paper should engage closely 
+with a subset of the course materials including the additional ones. 
+It is neither necessary nor reccomended to use materials outside those already 
+included in the course materials. 
+
+*Please come talk to me beforehand if you plan to write a research paper.* 
+
+# Schedule 
+
+
+## Wk 1 - 8/19
+
+**Introduction**
+
+The question of algorithmic fairness is technical (how do algorithms work?), practical (how do algorithms impact people's lives?) and theoretical (what does "fairness" mean?). On the technical side, we will survey key concepts, such as algorithm, machine learning, supervised v. unsupervised learning, regression, classification v. clustering. This survey will be informal. Those who wish to go deeper may consult the additional materials. 
+On the practical side, we will read stories about people whose lives were affected, often adversely, by algorithms. On the theoretical side, we will brainstorm ideas about what we mean by "fairness" and how an algorithm can be unfair. We will explore several definitions of fairness more deeply later in the course. 
 
 *Key readings and materials*
 
-- O'Neil, [Weapons of Math Destruction](https://www.amazon.com/Weapons-Math-Destruction-Increases-Inequality/dp/0553418831/), Introduction
+- O'Neil, [Weapons of Math Destruction](https://www.amazon.com/Weapons-Math-Destruction-Increases-Inequality/dp/0553418831/) - Introduction
 
-- Kearns and Roth, [The Ethical Algorithm](https://www.amazon.com/Ethical-Algorithm-Science-Socially-Design/dp/0190948205), Chp. 1 
+- Kearns and Roth, [The Ethical Algorithm](https://www.amazon.com/Ethical-Algorithm-Science-Socially-Design/dp/0190948205) - Chp. 1 
 
 - [A Gentle Introduction to Machine Learning](https://www.youtube.com/watch?v=Gv9_4yMHFhI&list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF)
 
-- Eubanks, [Automating Inequality](https://www.amazon.com/Automating-Inequality-High-Tech-Profile-Police/dp/1250215781/), Chp. 4
+- Eubanks, [Automating Inequality](https://www.amazon.com/Automating-Inequality-High-Tech-Profile-Police/dp/1250215781/) - Chp. 4
 
 
 *Additional readings and materials*
 
-- Rogers and Mark Girolami, [A First Course in Machine Learning](https://www.amazon.com/Course-Machine-Learning-Pattern-Recognition-ebook/dp/B01N7ZEBK8), Chapter 1
+- Rogers and Girolami, [A First Course in Machine Learning](https://www.amazon.com/Course-Machine-Learning-Pattern-Recognition-ebook/dp/B01N7ZEBK8), Chp. 1
 
-- Michael Nielsen, Neural Networks and Deep Learning, [Chp 1](http://neuralnetworksanddeeplearning.com/chap1.html)
+- Nielsen, [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/) - [Chp. 1](http://neuralnetworksanddeeplearning.com/chap1.html)
 
 - [What is backpropagation really doing?](https://www.youtube.com/watch?v=Ilg3gGewQ5U)
 
 
-## Wk 2 - 08/26: ProPublica v. Northpointe
+## Wk 2 - 08/26
+
+**ProPublica v. Northpointe**
 
 To examine more closely the interplay between technical, theoretical and practical 
 questions, we will look at a case study, the algorithm
 [COMPAS](https://en.wikipedia.org/wiki/COMPAS_(software)) 
 used in criminal justice to help judges make decisions about bail, preventative detention and sentencing. The website of investigative journalism [ProPublica](https://www.propublica.org/) argued that COMPAS is biased against black people. Northpointe (now [Equivant](https://www.equivant.com/)), the company that designed COMPAS, 
-rejected the accusation claiming that COMPAS is racially fair. They both provided numbers to back up their claims. You will see that the crux here is a disagreement 
-about the meaning of "fairness". So is COMPAS racially biased or not?
+rejected the accusation claiming that COMPAS is racially fair. They both provided numbers to back up their claims.  So is COMPAS racially biased or not? You will see that the crux here is a disagreement 
+about the meaning of "fairness".
 
 In order to understand this debate, you should be familiar with a bif of probability theory and machine learning, in particular, notions such as false positive, false negative, sensitivity, specificity, Area Under the Curve (AUC) and confusion matrix.  We will review these notions as needed.
 
 *Key readings and materials*
 
-- [Machine Learning Fundamentals: Sensitivity and Specificity](https://www.youtube.com/watch?v=vP06aMoz4v8)
+- Machine Learning Fundamentals: 
+    - [Sensitivity and Specificity](https://www.youtube.com/watch?v=vP06aMoz4v8)
+    - [ROC and AUC](https://www.youtube.com/watch?v=4jRBRDbJemM)
+    - [Confusion Matrix](https://www.youtube.com/watch?v=Kdsp6soqA7o)
 
 - ProPublica, [Machine Bias: There's software used across the country to predict future criminals. And it’s biased against blacks.](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing)
 
-- William Dieterich, Christina Mendoza, and Tim Brennan. [COMPAS risk scales: Demonstrating accuracy equity and predictive parity performance of the COMPAS risk scales in Broward county](https://go.volarisgroup.com/rs/430-MBX-989/images/ProPublica_Commentary_Final_070616.pdf) 
+-  Dieterich,  Mendoza and  Brennan. [COMPAS risk scales: Demonstrating accuracy equity and predictive parity performance of the COMPAS risk scales in Broward county](https://go.volarisgroup.com/rs/430-MBX-989/images/ProPublica_Commentary_Final_070616.pdf) 
 
 *Additional readings and materials*
 
 - ProPublica, [How We Analyzed the COMPAS Recidivism Algorithm](https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm)
 
-- Anthony W. Flores, Kristin Bechtel, and Christopher T. Lowenkamp. [False positives, false negatives, and false analyses: A rejoinder to “Machine bias”](https://www.uscourts.gov/federal-probation-journal/2016/09/false-positives-false-negatives-and-false-analyses-rejoinder)
-
-- [Technical Flaws of Pretrial Risk Assessments Raise Grave Concerns](https://cyber.harvard.edu/story/2019-07/technical-flaws-pretrial-risk-assessments-raise-grave-concerns)
+- Flores, Bechtel and  Lowenkamp. [False positives, false negatives, and false analyses: A rejoinder to “Machine bias”](https://www.uscourts.gov/federal-probation-journal/2016/09/false-positives-false-negatives-and-false-analyses-rejoinder)
 
 - [Parole Denied: One Man's Fight Against a COMPAS Risk Assessment](https://www.youtube.com/watch?v=UySPgihj70E)
 
 
-## Wk 3  - 9/2: (Mis)guided by Data
+## Wk 3  - 9/2
+
+**(Mis)guided by Data**
 
 Let's take a step back and examine the basis of algorithmic decision-making. 
 Data are abundant today. Though incomplete and never truly conclusive, data 
-can guide our decisions, often saving lives. For example, data have been playing a key role in the response to the COVID-19 pandemic (see, for example, Max Roser, Hannah Ritchie and Esteban Ortiz-Ospina, [Coronavirus Disease (COVID-19) - Statistics and Research](https://ourworldindata.org/coronavirus)). 
+can guide our decisions, often benefitting people. For example, data have been playing a key role in the response to the COVID-19 pandemic (see, for example, Max Roser, Hannah Ritchie and Esteban Ortiz-Ospina, [Coronavirus Disease (COVID-19) - Statistics and Research](https://ourworldindata.org/coronavirus)). 
 
 Another example, in the context of criminal justice, is the data-driven Public Safety Assessment ([PSA](https://www.psapretrial.org/)) algorithm, now widely used in several jurisdictions in the United States to help judges make pre-trial decisions. According to a [report](https://njcourts.gov/courts/criminal/reform.html) from New Jersey, pre-trial jail population descrease significantly after PSA was adopted. The ACLU of New Jersey [endorsed](https://www.aclu-nj.org/theissues/criminaljustice/pretrial-justice-reform) 
 the use of the PSA algorithm because it has the potential to end the pre-trial system of money and bail that disproportionately harms the poor. 
 
-Although data can be helpful to make decisions, they can also be biased, partial or incomplete. Biases in the data often disdavatange minorities. 
+Although data can be helpful to make decisions, they can also be biased, partial or incomplete. Inadequate data can be harmful especially for already disadvantaged minorities. An important problem is the use of "proxies" in the historical data. That is, the algorithm is not trained on the actual outcomes (which sometimes cannot be known), but on proxies of the actual outcome. We will see a few examples of biased, partial and incomplete data and their harmful effects on people. 
 
 *Key readings and materials*
 
-Kearns and Roth, [The Ethical Algorithm](https://www.amazon.com/Ethical-Algorithm-Science-Socially-Design/dp/0190948205), Chp. 3 (only pp. 57-64)
+- Kearns and Roth, [The Ethical Algorithm](https://www.amazon.com/Ethical-Algorithm-Science-Socially-Design/dp/0190948205) - Chp. 3 (only pp. 57-64)
 
-- Moritz Hardt, [How Big Data Is Unfair](https://medium.com/@mrtz/how-big-data-is-unfair-9aa544d739de)
+- Hardt, [How Big Data Is Unfair](https://medium.com/@mrtz/how-big-data-is-unfair-9aa544d739de)
 
-- Caroline C. Perez, [Invisible Women: Data Bias in a World Designed for Men](https://www.amazon.com/Invisible-Women-Data-World-Designed/dp/1419729071), Chp. 8
+- Perez, [Invisible Women: Data Bias in a World Designed for Men](https://www.amazon.com/Invisible-Women-Data-World-Designed/dp/1419729071) - Chp. 8
 
+- [Technical Flaws of Pretrial Risk Assessments Raise Grave Concerns](https://cyber.harvard.edu/story/2019-07/technical-flaws-pretrial-risk-assessments-raise-grave-concerns)
 
 
 *Additional readings and materials*
 
 - Lazer, Kennedy, King, and Vespignani, [The parable of Google flu: traps in big data analysis](https://gking.harvard.edu/files/gking/files/0314policyforumff.pdf)
 
-- Joy Buolamwini, [Algorithms Aren’t Racist. Your Skin Is just too Dark](https://hackernoon.com/algorithms-arent-racist-your-skin-is-just-too-dark-4ed31a7304b8)
+-  Buolamwini, [Algorithms Aren’t Racist. Your Skin Is just too Dark](https://hackernoon.com/algorithms-arent-racist-your-skin-is-just-too-dark-4ed31a7304b8)
 
 
-## Wk 4 - 9/9: Feedback Loops
+## Wk 4 - 9/9
 
-Another problem with data is that, via feedback loops, decisions based on biased data magnify errors on a large scale especially when they are automated. Even unbiased data can produce pernicious feedback loops. We will exmaine examples of feedback loops in alorithms used in education and predictive policing. 
+**Feedback Loops**
+
+Another problem with data is that decisions based on inadequate data magnify errors on a large scale especially when they are automated. Even unbiased data can produce pernicious feedback loops. We will exmaine examples of feedback loops in algorithms used in education and policing. 
 
 
 *Key readings and materials*
 
-- Cathy O'Neil, [Weapons of Math Destruction](https://www.amazon.com/Weapons-Math-Destruction-Increases-Inequality/dp/0553418831/), Chp. 3 
+- O'Neil, [Weapons of Math Destruction](https://www.amazon.com/Weapons-Math-Destruction-Increases-Inequality/dp/0553418831/) - Chps. 3, 4 and 5 
 
 -  Lum and Isaac, [To predict and serve?](https://rss.onlinelibrary.wiley.com/doi/10.1111/j.1740-9713.2016.00960.x)
 
@@ -301,36 +353,44 @@ Another problem with data is that, via feedback loops, decisions based on biased
 *Additional readings and materials*
 
 
-- Danielle Ensign, Sorelle A. Friedler, Scott Neville, Carlos Scheidegger, and Suresh Venkata. [Runaway feedback loops in predictive policing](https://arxiv.org/abs/1706.09847) -- [video](https://www.youtube.com/watch?v=9C6epG-Wyuw)
+-  Ensign, Friedler, Neville, Scheidegger and Venkata. [Runaway feedback loops in predictive policing](https://arxiv.org/abs/1706.09847) - [video](https://www.youtube.com/watch?v=9C6epG-Wyuw)
+
+- Harcourt, [Against Prediction](https://www.amazon.com/Against-Prediction-Profiling-Punishing-Actuarial/dp/0226316149) - [Chp. 5](https://www.tau.ac.il/law/events/15-12-06/C-Chapter5.pdf)
 
 
-## Wk 5 - 9/16:  The Meanings of Fairness 
+**First essay due**
 
-What does it mean for algorithmic decisions to be 
-fair in the first place? Do fairness and acciracy cinflict with one another? 
-Computer scientists have formulated several different metrics of algorithmic fairness. 
+## Wk 5 - 9/16
+
+**Meanings of Fairness** 
+
+We have not yet asked the fundamental questions. 
+What does it mean for algorithmic decisions to be fair? How is fairness different 
+from accuracy? Computer scientists have formulated several 
+different metrics of algorithmic fairness. 
 By one count, there are as many as 21 definitions. 
-Two of the most important definitions are called: *demographic parity*,  
-*classification parity* and *predictive parity*. 
-We will examine these definitions and the relantionhip between algorithmic 
-fairness and accuracy. 
+Three of the most important definitions out there 
+are called: *demographic parity*,  *classification parity* and *predictive parity*. 
+We will examine these definitions and their relationship to accuracy. 
 
 
 *Key readings and materials*
 
 - Kearns and Roth, *The Ethical Algorithm*, Chp. 3 
 
-- Sam Corbett-Davies and Sharad Goel. [The measure and mismeasure of fairness: A critical review of fair machine learning](https://arxiv.org/abs/1808.00023)
+-  Corbett-Davies and  Goel. [The measure and mismeasure of fairness: A critical review of fair machine learning](https://arxiv.org/abs/1808.00023) - [video](https://www.youtube.com/watch?v=Qc6fYWPkDtU)
 
 *Additional readings and materials*
 
-- Arvind Narayanan, [21 fairness definitions and their politics](https://www.youtube.com/watch?v=jIXIuYdnyyk)
+-  Narayanan, [21 fairness definitions and their politics](https://www.youtube.com/watch?v=jIXIuYdnyyk)
 
-- Solon Barocas, Moritz Hardt, Arvind Narayanan, [Fairness in Machine Learning](https://fairmlbook.org/) -- chapter 2 and 4
+-  Barocas,  Hardt and Narayanan, [Fairness in Machine Learning](https://fairmlbook.org/) - [Chp. 2](https://fairmlbook.org/classification.html) 
 
-- Matt J. Kusner, Joshua R. Loftus, Chris Russell, Ricardo Silva, [Counterfactual Fairness](https://arxiv.org/abs/1703.06856)
+- Kusner, Loftus, Russell and Silva, [Counterfactual fairness](https://arxiv.org/abs/1703.06856)
 
-## Wk 6 - 09/23:  Impossibility Theorems 
+## Wk 6 - 09/23
+
+**Impossibility Theorems** 
 
 
 It turns out that it is mathematically impossible, under realistic conditions,  for algorithms
@@ -339,54 +399,61 @@ be skeptical toward existing definitions.
 
 *Key readings and materials*
 
-- Alexandra Chouldechova, [Fair Prediction with Disparate Impact](https://arxiv.org/pdf/1703.00056.pdf)
+- Chouldechova, [Fair prediction with disparate impact](https://arxiv.org/pdf/1703.00056.pdf)
 
-- Deborah Hellman, [Measuring Algorithmic Fairness](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3418528)
+- Hellman, [Measuring algorithmic fairness](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3418528)
 
 
 *Additional readings and materials*
 
-- Grant, [Is It Impossible To Be Fair?](https://jainfamilyinstitute.github.io/algorithmic-fairness/)
+- Grant, [Is it impossible to be fair?](https://jainfamilyinstitute.github.io/algorithmic-fairness/)
+
+- Hedden, [On statistical criteria of algorithmic fairness](https://philpapers.org/rec/HEDOSC) - [video](https://www.youtube.com/watch?v=QEFK0l4wgaw)
+
+-  Berk,  Heidari,  Jabbari,  Kearns and  Roth, [Fairness in criminal justice risk assessments: The state of the art](https://doi.org/10.1177/0049124118782533) 
+
+-  Kleinberg,  Mullainathan and Raghavan, [Inherent trade-offs in the fair determination of risk scores](https://arxiv.org/abs/1609.05807) - [video](https://www.youtube.com/watch?v=K7i_tnflZ64) 
 
 
-- Richard Berk, Hoda Heidari, Shahin Jabbari, Michael Kearns, and Aaron Roth. [Fairness in criminal justice risk assessments: The state of the art](https://doi.org/10.1177/0049124118782533) 
 
-- Jon Kleinberg, Sendhil Mullainathan, Manish Raghavan, [Inherent Trade-Offs in the Fair Determination of Risk Scores](https://arxiv.org/abs/1609.05807) -- [video](https://www.youtube.com/watch?v=K7i_tnflZ64) 
+## Wk 7 - 09/30 
 
+**Fair Risk Assessment** 
 
-
-## Wk 7 - 09/30:  Fair risk assessment 
-
-The debate about algorithmic fairness is nothing new. Since the development of statistical methods in insurance and banking, claims of racial and gender discrimination have been advanced against risk assessment tools used by banks and insurance companies to price loans and insurance policies. We will review this history to understand analogies and differences between the fair risk assessment in the 20th century and algorithmic fairness in the 21st century. 
+The debate about algorithmic fairness is nothing new. Since the development of statistical methods in insurance and banking, claims of racial and gender discrimination have been advanced against risk assessment tools used to price loans and insurance policies. We will review this history to understand analogies and differences between  fair risk assessment in the 20th century and algorithmic fairness in the 21st century. 
 
 *Key readings and materials*
 
-- Rodrigo Ochigame, [The Long History of Algorithmic Fairness](https://phenomenalworld.org/analysis/long-history-algorithmic-fairness)  
-
-*Additional readings and materials*
+- Rodrigo Ochigame, [The long history of algorithmic fairness](https://phenomenalworld.org/analysis/long-history-algorithmic-fairness)  
 
 
-**First paper due**
+
+**Second essay due**
 
 
-## Wk 8 - 10/7: Structural unfairness 
+## Wk 8 - 10/7
 
-The definitions  of algorithmic fairness we have seen so far describe the extent to which *actual* rates of error are unevenly (and thus unfairly) allocated across different socially relevant groups. Scholars on computer science have also used more sophisticated definitions to formulate a *counterfactual* or *causal* definition of algorithmic fairness. These definitions attempt to capture the structural dimension of racial discrimination (as in the expression "structural racism"). Other scholars in law, sociology and philosophy have argued these attempt are still unsatisfactory. 
+**Structural Unfairness** 
+
+The definitions  of algorithmic fairness we have seen so far describe the extent to which *actual* rates of error are unevenly (and thus unfairly) allocated across different socially relevant groups. Scholars in computer science have also used more sophisticated definitions to formulate a *counterfactual* or *causal* definition of algorithmic fairness. These definitions attempt to capture the structural dimension of racial discrimination (as in the expression "structural racism"). Other scholars in law, sociology and philosophy have argued that these attempt are unsatisfactory. 
 
 *Key readings and materials*
 
-- Lilly Hu, Disparate Causes, [Part I](https://phenomenalworld.org/analysis/disparate-causes-i) and [Part II](https://phenomenalworld.org/analysis/disparate-causes-pt-ii)
+- Lily Hu, Disparate causes, [Part I](https://phenomenalworld.org/analysis/disparate-causes-i) and [Part II](https://phenomenalworld.org/analysis/disparate-causes-pt-ii)
+
+-  Kohler-Hausmann, [Eddie Murphy and the dangers of counterfactual causal thinking about detecting racial discrimination](https://scholarlycommons.law.northwestern.edu/cgi/viewcontent.cgi?article=1374&context=nulr)
 
 
 *Additional readings and materials*
 
--  Barocas, Hardt and Narayanan, Fairness and Machine Learning, [Chp 5 - Causality](https://fairmlbook.org/causal.html)
+-  Barocas, Hardt and Narayanan, [Fairness and Machine Learning](https://fairmlbook.org/) - [Chp 5: Causality](https://fairmlbook.org/causal.html)
 
--  Chiappa and Gillam,  [Path-Specific Counterfactual Fairness](https://arxiv.org/pdf/1802.08139.pdf)
+-  Chiappa and Gillam,  [Path-specific counterfactual fairness](https://arxiv.org/pdf/1802.08139.pdf)
 
--  Kohler-Hausmann, [Eddie Murphy and the Dangers of Counterfactual Causal Thinking About Detecting Racial Discrimination](https://scholarlycommons.law.northwestern.edu/cgi/viewcontent.cgi?article=1374&context=nulr)
 
-## Wk 9 - 10/14: Algorithmic Equal Protection?
+## Wk 9 - 10/14
+
+**Algorithmic Equal Protection**
 
 Algorithimic fairneess is closely conected with antidiscrimination 
 and equal protection jurisprudence, specifically the notions 
@@ -398,38 +465,41 @@ can help to understand what algorithmic fairness consists in.
 
 *Key readings and materials*
 
-- Barocas and Selbst, [Big Data's Disparate Impact](http://www.californialawreview.org/wp-content/uploads/2016/06/2Barocas-Selbst.pdf)
+- Barocas and Selbst, [Big data's disparate impact](http://www.californialawreview.org/wp-content/uploads/2016/06/2Barocas-Selbst.pdf)
 
 *Additional readings and materials*
 
 - Any the court opinions linked above
 
-## Wk 10: TBA
+## Wk 10 - 10/21
 
-## Wk 11 - 10/28: Testing for discrimination 
+**TBA**
+
+## Wk 11 - 10/28
+
+**Discrimination Economics**
 
 The academic debate about algorithmic fairness mirrors, in some important ways, 
 the debate among economists about different tests for what counts as 
-discriminatory behaviour. 
+discriminatory behaviour. We will learn the basic of the economic 
+approach to discrimination guided by Nobel prize winner [Gary Becker](https://en.wikipedia.org/wiki/Gary_Becker).
 
 *Key readings and materials*
 
-
-- Gary Becker, [The Economic way of Looking at Life](https://www.nobelprize.org/uploads/2018/06/becker-lecture.pdf)
-
+-  Becker, [The economic way of looking at life](https://www.nobelprize.org/uploads/2018/06/becker-lecture.pdf)
 
 *Additional readings and materials*
 
+-  Knowles,  Persico,  Todd, [Racial Bias in Motor Vehicle Searches: Theory and Evidence](https://www.nber.org/papers/w7449)
 
-- John Knowles, Nicola Persico, Petra Todd, [Racial Bias in Motor Vehicle Searches: Theory and Evidence](https://www.nber.org/papers/w7449)
-
-
-- Camelia Simoiu, Sam Corbett-Davies and Sharad Goel, [The Problem of Infra-Marginality](https://5harad.com/papers/threshold-test.pdf)
+-  Simoiu,  Corbett-Davies and  Goel, [The Problem of Infra-Marginality](https://5harad.com/papers/threshold-test.pdf)
 
 
-## Wk 12 - 11/4: Fairness v. Welfare
+## Wk 12 - 11/4
 
-Let's try to analize the question of algorithmic 
+**Fairness v. Welfare**
+
+Let's now try to analize the question of algorithmic 
 fairness from the perspective of utilitarianism. 
 Utilitarianism, roughly, says that the right action 
 is one that maximizes social welfare overall. 
@@ -441,18 +511,19 @@ require to treat people unfairly.
 *Key readings and materials*
 
 
-- Louis Kaplow and Steven Shavell, [Fairness Versus Welfare](https://www.nber.org/papers/w9622)
+- Kaplow and  Shavell, [Fairness versus welfare](https://www.nber.org/papers/w9622)
 
-- Aziz Z. Huq, [Racial Equity in Algorithmic Criminal Justice](https://scholarship.law.duke.edu/cgi/viewcontent.cgi?article=3972&context=dlj)
+- Huq, [Racial equity in algorithmic criminal justice](https://scholarship.law.duke.edu/cgi/viewcontent.cgi?article=3972&context=dlj)
 
 *Additional readings and materials*
 
-
-- Jeremy Bentham, "Introduction to the Principles of Morals and Legislation", 
+-  Bentham, Introduction to the Principles of Morals and Legislation, 
 [Ch. I–II](https://www.econlib.org/library/Bentham/bnthPML.html)
 
 
-## Wk 13 - 11/11: Equality 
+## Wk 13 - 11/11
+
+**Equality** 
 
 Against utilitarianism, [John Rawls](https://plato.stanford.edu/entries/rawls/), 
 an influential political philosopher of the 20th century, argued that 
@@ -466,9 +537,11 @@ look like in light of these egaliatarian views?
 
 *Key readings and materials*
 
-- John Rawls, A Theory of Justice, 3, 11–12
+- Rawls, A Theory of Justice, 3, 11–12
 
-- Elizabeth S. Anderson, [What is the Point of Equality?](https://www.philosophy.rutgers.edu/joomlatools-files/docman-files/4ElizabethAnderson.pdf)
+- Anderson, [What is the Point of Equality?](https://www.philosophy.rutgers.edu/joomlatools-files/docman-files/4ElizabethAnderson.pdf)
+
+- Reuben Binns, [Fairness in Machine Learning: Lessons from Political Philosophy](http://proceedings.mlr.press/v81/binns18a/binns18a.pdf)
 
 
 *Additional readings and materials*
@@ -478,58 +551,49 @@ look like in light of these egaliatarian views?
 
 - Niko Kolodny, [Why equality of treatment and opportunity might matter](https://philpapers.org/rec/KOLWEO)
 
-
 - Hoda Heidari, Michele Loi, Krishna P. Gummadi, and Andreas Krause. [A moral framework for understanding fair ML through economic models of equality of opportunity](https://www.cs.cornell.edu/~hh732/heidari2019moral.pdf)
 
-- Reuben Binns, [Fairness in Machine Learning: Lessons from Political Philosophy](http://proceedings.mlr.press/v81/binns18a/binns18a.pdf)
 
 
-## Wk 14 - 11/18: Individualized decisions 
+## Wk 14 - 11/18
+
+**Individualized Decisions** 
 
 Since algorithms often rely on statistical generalizations and correlations, 
 some worry that algorithms disregard  the individual circumstances 
 of each person. Do people have a right to be treated as individuals? 
 What would that mean?
 
+*Key readings and materials*
+
 - Kasper Lippert-Rasmussen, [We Are All Different](https://link.springer.com/article/10.1007%2Fs10892-010-9095-6)
+
+*Additional readings and materials*
 
 - Benjamin Eidelson, [Treating People as Individuals](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2298429)
 
 - Erin Beeghly, [Failing to Treat Persons as Individuals](https://quod.lib.umich.edu/e/ergo/12405314.0005.026/--failing-to-treat-persons-as-individuals?rgn=main;view=fulltext)
 
-## Wk 15 - 11/25: Thanksgiving, No Class 
+## Wk 15 - 11/25
 
-## Wk 16 - 12/1: TBA
+**Thanksgiving, No Class** 
 
+## Wk 16 - 12/1
 
-
-**Second paper due**
-
-
-# Assignments
-
-## Pass/fail assignments (*low stake*)
-
-Every week please write a **one-page précis** of one of the papers assigned for that week. 
-The précis should describe: (a) topic of the paper; 
-(b) main thesis (or main theses, if there are more than one); 
-(c) supporting arguments; (d) objections to these arguments, complications or 
-difficulties that the author considers (if any).
+**TBA**
 
 
-## Papers (*high stake*)
 
-There will be two main graded assignments 
-for this course, roughly **15 pages** each. 
-The **first** will cover Week 1 through 5, the 
-**second**  Week 6 through 10.
+**Third essay or research paper due**
 
-**1**. Write an imaginary *philosophical dialogue* between two characters impersonating 
-ProPublica and Northpointe. Describe very carefully (a) 
-ProPublica's accusation that COMPASS is racially biased and Northpointe's response; (b) assess what further technical and philosophical questions about the nature of fairness must be addressed in order to settle the debate. 
-Please always defend the claims made in the dialogue 
-with careful and reasoned arguments. 
+# Similar courses
 
-**2**. Write a *philosophical argumentative paper* that compares and contrasts the formal notions of algorithmic fairness (see Week 4 and 5) with either (i) the economic literature on metrics of discrimination (see Week 6), (ii) equal protection jurprisprudence (see Week 7), (iii) the philosophical literature on fairness and equality (See Week 8, 9 and 10). Please always defend the claims you make with careful and reasoned arguments. Check out these [guidelines](http://www.jimpryor.net/teaching/guidelines/writing.html) on how to write a philosophical argumentative essay.
+- Aaron Fraenkel's [Fairness and Algorithmic Decision Making](https://afraenkel.github.io/portfolio/curric-3-fairness/) - UC, San Diego
+
+- Solon Barocas, Moritz Hardt, Arvind Narayanan, [Fairness in Machine Learning](https://fairmlbook.org/) -- book
+
+- Moritz Hardt's [Fairness in Machine Learning](https://fairmlclass.github.io/) - UC, Berkeley
+
+- Arvind Narayanan's [Fairness in Machine Learning](https://docs.google.com/document/d/1XnbJXELA0L3CX41MxySdPsZ-HNECxPtAw4-kZRc7OPI/edit) - Princeton
 
 
