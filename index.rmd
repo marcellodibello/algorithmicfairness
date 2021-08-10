@@ -414,6 +414,10 @@ We will examine these definitions and their relationship to accuracy.
 
 -  Barocas, Hardt and Narayanan, [Fairness in Machine Learning](https://fairmlbook.org/) - [Chp. 2](https://fairmlbook.org/classification.html) 
 
+<<<<<<< HEAD
+=======
+- Kusner, Loftus, Russell and Silva, [Counterfactual Fairness](https://arxiv.org/abs/1703.06856)
+>>>>>>> 747922a3497a9a88b0c0e630e672e4824842ebcd
 
 ## Wk 6 - 09/23
 
@@ -435,12 +439,23 @@ be skeptical toward existing definitions.
 *Additional readings and materials*
 
 - Grant, [Is It Impossible to Be Fair?](https://jainfamilyinstitute.github.io/algorithmic-fairness/)
+<<<<<<< HEAD
 
 - Hedden, [On Statistical Criteria of Algorithmic Fairness](https://philpapers.org/rec/HEDOSC) - [video](https://www.youtube.com/watch?v=QEFK0l4wgaw)
 
 -  Berk,  Heidari,  Jabbari,  Kearns and  Roth, [Fairness in Criminal Justice Risk Assessments: The State of the Art](https://doi.org/10.1177/0049124118782533) 
 
 -  Kleinberg,  Mullainathan and Raghavan, [Inherent Trade-offs in the Fair Determination of Risk Scores](https://arxiv.org/abs/1609.05807) - [video](https://www.youtube.com/watch?v=K7i_tnflZ64) 
+=======
+
+- Hedden, [On Statistical Criteria of Algorithmic Fairness](https://philpapers.org/rec/HEDOSC) - [video](https://www.youtube.com/watch?v=QEFK0l4wgaw)
+
+-  Berk,  Heidari,  Jabbari,  Kearns and  Roth, [Fairness in Criminal Justice Risk Assessments: The State of the Art](https://doi.org/10.1177/0049124118782533) 
+
+-  Kleinberg,  Mullainathan and Raghavan, [Inherent Trade-offs in the Fair Determination of Risk Scores](https://arxiv.org/abs/1609.05807) - [video](https://www.youtube.com/watch?v=K7i_tnflZ64) 
+
+- Ben Green, [The False Promise of Risk Assessments: Epistemic Reform and the Limits of Fairness](https://www.benzevgreen.com/wp-content/uploads/2020/01/20-fat-risk.pdf)
+>>>>>>> 747922a3497a9a88b0c0e630e672e4824842ebcd
 
 
 ## Wk 7 - 09/30 
@@ -475,12 +490,16 @@ The definitions  of algorithmic fairness we have seen so far describe the extent
 
 -  Barocas, Hardt and Narayanan, [Fairness and Machine Learning](https://fairmlbook.org/) - [Chp 5: Causality](https://fairmlbook.org/causal.html)
 
+<<<<<<< HEAD
 -  Green, [The False Promise of Risk Assessments: Epistemic Reform and the Limits of Fairness](https://www.benzevgreen.com/wp-content/uploads/2020/01/20-fat-risk.pdf)
 
 - Kusner, Loftus, Russell and Silva, [Counterfactual Fairness](https://arxiv.org/abs/1703.06856)
 
 -  Chiappa and Gillam,  [Path-specific Counterfactual Fairness](https://arxiv.org/pdf/1802.08139.pdf)
 
+=======
+-  Chiappa and Gillam,  [Path-specific Counterfactual Fairness](https://arxiv.org/pdf/1802.08139.pdf)
+>>>>>>> 747922a3497a9a88b0c0e630e672e4824842ebcd
 
 
 ## Wk 9 - 10/14
@@ -519,7 +538,11 @@ approach to discrimination guided by Nobel prize winners [Gary Becker](https://e
 
 *Key readings and materials*
 
+<<<<<<< HEAD
 -  Becker, [The Economic Way of Looking at Life](https://www.nobelprize.org/uploads/2018/06/becker-lecture.pdf) (mostly focus on the sections about discrimination and crime)
+=======
+-  Becker, [The Economic Way of Looking at Life](https://www.nobelprize.org/uploads/2018/06/becker-lecture.pdf) (focuson the sections about discrimination and crime)
+>>>>>>> 747922a3497a9a88b0c0e630e672e4824842ebcd
 
 - Arrow, [What Has Economics to Say About Racial Discrimination?](http://www.sas.rochester.edu/psc/clarke/214/Arrow98.pdf)
 
@@ -529,7 +552,11 @@ approach to discrimination guided by Nobel prize winners [Gary Becker](https://e
 
 - Pierson et al, [A large-scale Analysis of Racial Disparities in Police Stops Across the United States](https://5harad.com/papers/100M-stops.pdf)
 
+<<<<<<< HEAD
 -  Knowles,  Persico and  Todd, [Racial Bias in Motor Vehicle Searches: Theory and Evidence](https://www.nber.org/papers/w7449)
+=======
+-  Knowles,  Persico,  Todd, [Racial Bias in Motor Vehicle Searches: Theory and Evidence](https://www.nber.org/papers/w7449)
+>>>>>>> 747922a3497a9a88b0c0e630e672e4824842ebcd
 
 -  Simoiu,  Corbett-Davies and  Goel, [The Problem of Infra-Marginality](https://5harad.com/papers/threshold-test.pdf)
 
@@ -588,7 +615,11 @@ What would algorithmic fairness look like in light of these egaliatarian views?
 
 -  Scanlon, [Why Does Inequality Matter?](https://law.yale.edu/sites/default/files/documents/pdf/Intellectual_Life/ltw-Scanlon.pdf) 
 
+<<<<<<< HEAD
 -  Kolodny, [Why Equality of Treatment and Opportunity Might Matter](https://philpapers.org/rec/KOLWEO)
+=======
+- Niko Kolodny, [Why Equality of Treatment and Opportunity Might Matter](https://philpapers.org/rec/KOLWEO)
+>>>>>>> 747922a3497a9a88b0c0e630e672e4824842ebcd
 
 -  Heidari,  Loi, Gummadi and Krause, [A Moral Framework for Understanding fair ML Through Economic Models of Equality of Opportunity](https://www.cs.cornell.edu/~hh732/heidari2019moral.pdf)
 
