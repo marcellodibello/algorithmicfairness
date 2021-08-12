@@ -625,6 +625,7 @@ What would that mean?
 
 **Third essay or research paper due**
 
+
 # Similar courses
 
 - Aaron Fraenkel's [Fairness and Algorithmic Decision Making](https://afraenkel.github.io/portfolio/curric-3-fairness/) - UC, San Diego
@@ -634,5 +635,17 @@ What would that mean?
 - Moritz Hardt's [Fairness in Machine Learning](https://fairmlclass.github.io/) - UC, Berkeley
 
 - Arvind Narayanan's [Fairness in Machine Learning](https://docs.google.com/document/d/1XnbJXELA0L3CX41MxySdPsZ-HNECxPtAw4-kZRc7OPI/edit) - Princeton
+
+
+# Title IX 
+
+Title IX is a federal law that provides that no person be excluded on the basis of sex from participation in, be denied benefits of, or be subjected to discrimination under any education program or activity.  Both Title IX and university policy make clear that sexual violence and harassment based on sex is prohibited.  An individual who believes they have been subjected to sexual violence or harassed on the basis of sex can seek support, including counseling and academic support, from the university.  If you or someone you know has been harassed on the basis of sex or sexually assaulted, you can find information and resources at https://sexualviolenceprevention.asu.edu/faqs. 
+
+ 
+
+As a mandated reporter, I am obligated to report any information I become aware of regarding alleged acts of sexual discrimination, including sexual violence and dating violence.  ASU Counseling Services, https://eoss.asu.edu/counseling is available if you wish to discuss any concerns confidentially and privately. ASU online students may access 360 Life Services, https://goto.asuonline.asu.edu/success/online-resources.html.
+
+
+
 
 
