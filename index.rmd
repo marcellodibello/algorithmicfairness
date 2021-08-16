@@ -3,7 +3,7 @@
 ---
 title: "Algorithmic Fairness "
 subtitle: "PHI420/PHI591 - Fall 21"
-author: "Marcello Di Bello  - mdibello@asu.edu"
+author: "[Marcello Di Bello](https://www.marcellodibello.com/)  - mdibello@asu.edu"
 output:
   rmdformats::html_clean:
     fig_width: 6
