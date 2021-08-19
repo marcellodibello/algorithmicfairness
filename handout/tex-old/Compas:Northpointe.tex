@@ -1,0 +1,167 @@
+\documentclass{tufte-handout}
+
+\title{ \sc The COMPAS Northpointe Debate}
+
+
+\vspace{5mm}
+\author[Marcello Di Bello]{Marcello Di Bello}
+
+\date{} % without \date command, current date is supplied
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{graphics/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{lipsum}   % filler text
+\usepackage{fancyvrb} % extended verbatim environments
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+% Standardize command font styles and environments
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+
+\begin{document}
+
+\maketitle
+
+\subsection{Predictive algorithms}
+
+\begin{itemize}
+
+ \item[] They assign risk scores to individuals in order to predict a behavior or condition, such as recidivism or being a crime victim 
+ 
+\item[] They rely on machine learning methods to identify correlations between risk factors, such as prior convictions, and crime 
+
+\item[] Examples: Chicago SSL,  COMPAS, PSA\footnote{\textit{www.psapretrial.org}}
+
+ \item[] \textit{The good}: They can end the bail system that disproportionally targets the poor  (see Criminal Justice Reform in New Jersey)
+
+\item[] \textit{The bad}:  They may exacerbate existing racial inequities in society\footnote{Data about US criminal justice system: \textit{www.prisonpolicy.org/reports/pie2019.html}}
+
+\end{itemize}
+
+ 
+
+
+\subsection{Northpointe/ProPublica Debate}
+
+\begin{itemize}
+
+\item[] ProPublica's 2016 analysis\footnote{\textit{www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing}} of COMPAS showed that
+
+\begin{itemize}
+
+\item[] \textit{False positives (FP):} 23.5\% of whites who didn't reoffend were misclassified as `high risk' (score $\geq 5$) versus 44.9\% of blacks.
+
+\textit{False negatives (FN)}: 47.7\% of whites who reoffended were misclassified as `low risk' (score 
+$<5$ ) versus 28\% of blacks.\footnote{Rearrest was used as a proxy for actual recidivism}
+\end{itemize}
+
+\item[] ProPublica singled out the group of non-reoffenders and compared the percentage of whites in that group misclassified 
+as high risk (FP) to the percentage of blacks in the same group also misclassified as high risk (also FP). It also singled out 
+the group of reoffenders and compared the percentage of whites in that group misclassified as low risk (FN) to the 
+percentage of blacks in the same group also misclassified as low risk (also FN).
+  \marginnote{Equality along this dimension is called \textsc{classification fairness}} 
+
+\item[] Northpointe, the company that designed COMPAS, responded
+
+\begin{itemize}
+
+\item[] \textit{Wrong positive prediction}: Among those labeled  `high risk,' 41\% of whites and 37\% of blacks did not reoffend
+
+\item[] \textit{Wrong negative prediction}: Among those labeled `low risk,' 29\% of whites and 35\% of blacks reoffended
+\end{itemize}
+
+\item[]% \marginnote{Equality along this dimension is called  \textsc{prediction fairness}}
+Northpointe singled out the group of those labeled `high risk' by COMPAS and compared the percentage of whites 
+in this group who 
+are non-reoffenders to the percentage of blacks in the same group who are non-reoffenders.
+It also singled out the group of those labeled `low risk' by COMPAS and compared the percentage of whites in this groups who   \marginnote{Equality along this dimension is called  \textsc{prediction fairness}}
+are reoffenders to the percentage of blacks in the same group who are reoffenders. 
+\end{itemize}
+
+\subsection{ Is COMPAS fair or not towards blacks v. whites?}
+
+\begin{itemize}
+
+\item[] $\triangleright$ Racial disparities in \textit{classification errors} (FPs and FNs) are huge, but racial disparities in \textit{prediction errors} are not significant  
+
+%\item[] \textit{Classification fairness:}  Equal classification error rates across  groups
+%\item[] \textit{Prediction fairness:} Equal prediction error rates across  groups
+
+\item[] $\spadesuit$ COMPAS satisfies prediction fairness, not classification fairness
+
+\item[] $\clubsuit$ No algorithms can satisfies both conception of fairness under realistic conditions (see Chouldechova's \textit{impossibility theorem}) \marginnote{\textsc{Question:} Which of the two conceptions 
+of fairness should we pick?}
+
+\end{itemize}
+
+
+
+\subsection{Mayson v Hellman v Huq} % Against classification fairness / for predictive fairness}
+
+
+Mayson and Hellman believe that fairness requires to treat \textit{similarly situated} individuals the same, but they disagree 
+on what this means
+
+\begin{itemize}
+
+\item[] \textsc{Mayson:} Against classification fairness\footnote{Sandra Mayson, `Bias In, Bias Out,' \textit{Yale Law Journal}, 2019, 128: 2218-2300,}
+
+
+\begin{quote}
+
+The question of what makes two people (or groups) relevantly ``alike" for purposes of a particular action is really a question about the permissible grounds for that action. To judge that two people with equivalent skill and experience are relevantly ``alike'' for purposes of a hiring decision is to judge that skill and experience are good grounds on which to make such a decision (p.\ 2273).
+
+%To hold that ultimate outcomes are what render two people (or groups) alike for purposes of risk assessment is to hold that outcomes are a good basis for risk assessment (p.\ 2275).
+
+[Ultimate outcomes] cannot be the basis for risk assessment because at the time of assessment they are unknown. This is why we resort to risk assessment in the first place (p.\ 2275).
+
+The demand for equal algorithmic treatment for same-outcome groups amounts to a judgment that outcomes are the appropriate basis for prediction. And that judgment is nonsensical (p.\ 2275).
+
+\end{quote}
+
+\item[] \textsc{Hellman:} In favor of classification fairness\footnote{Deborah Hellman, `Measuring Algorithmic Fairness,' \textit{Virginia Law Review}, forthcoming}
+
+\begin{quote}
+\textit{Fair testing analogy}: Two students are similarly situated when they are equally prepared. A fair test should treat equally prepared students 
+the same. %The preparation level 
+%of the students is analogous to the actual outcomes (i.e. reoffenders or non-reoffender) 
+%for defendants in the criminal justice system.
+Likewise, a fair algorithm should treat 
+reoffenders the same and should treat non-reoffenders the same. 
+%This is classification fairness.
+\end{quote}
+
+
+
+
+\item[] \textsc{Huq:} Neither prediction fairness nor classification fairness\footnote{Aziz Huq, `Racial Equity in Algorithmic Criminal Justice,' \textit{Duke Law Journal}, 2019, 68: 1043-1134.}
+
+\begin{quote}
+The key question for racial equity is whether the costs that an algorithmically driven policy imposes upon a minority group outweigh the benefits accruing to that group (p.\ 1111).
+\marginnote{Huq is thinking about maximizing expected utility}
+
+The spillover costs of coercion of minority individuals for the minority group will be greater on a per capita basis than the costs of coercing majority group members (p.\ 1113).
+
+There is no particular reason to believe that any of these spillover costs are less if the person subject to the coercion is in fact a true rather than false positive (pp.\ 1127) 
+%? what should matter is the absolute cost of using a coercive tactic against a member of a minority group, net of benefit, for all members of that racial group. (pp.\ 1127-28)
+
+Accounting for both the immediate and spillover costs of crime control %when its immediate benefits are small 
+\dots conduces to a bifurcated risk threshold---one rule for the majority, and one for minority (p.\ 1131).
+\end{quote}
+
+\end{itemize}
+
+\end{document}
