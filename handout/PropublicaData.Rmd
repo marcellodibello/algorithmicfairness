@@ -1,0 +1,200 @@
+---
+title: "Exploring the ProPublica COMPAS data"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+# Loading and filtering data
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(grid)
+library(gridExtra)
+raw_data <- read.csv("~/My Drive/tex-documents/working-papers/algo-fairness/algo-fairness-m/rutgers-pres-algo/compas-scores-two-years.csv")
+nrow(raw_data)
+```
+
+Filtering the data a bit:
+
+```{r}
+df <- dplyr::select(raw_data, age, c_charge_degree, race, age_cat, score_text, sex, priors_count, 
+                    days_b_screening_arrest, decile_score, is_recid, two_year_recid, c_jail_in, c_jail_out) %>% 
+        filter(days_b_screening_arrest <= 30) %>%
+        filter(days_b_screening_arrest >= -30) %>%
+        filter(is_recid != -1) %>%
+        filter(c_charge_degree != "O") %>%
+        filter(score_text != 'N/A')
+nrow(df)
+```
+
+
+# Recidivism and risk scores
+
+```{r}
+pblack <- ggplot(data=filter(df, race =="African-American"), aes(x=two_year_recid)) + 
+          geom_histogram(aes(y=..count../sum(..count..)), binwidth = 1,  colour="black", fill="grey45")  +                  xlab("recidivism") + 
+          ylab("frequency") + 
+          ylim(0, 1) +
+          scale_x_continuous(breaks = seq(0, 1, by = 1)) +
+          theme(plot.title = element_text(hjust = 0.5)) + 
+          theme(text=element_text(size = 20))
+pwhite <- ggplot(data=filter(df, race =="Caucasian"), aes(x=two_year_recid)) + 
+          geom_histogram(aes(y=..count../sum(..count..)), binwidth = 1,  colour="black", fill="grey100")  +                xlab("recidivism") + 
+          ylab("frequency") + 
+          ylim(0, 1) +
+          scale_x_continuous(breaks = seq(0, 1, by = 1)) +
+          theme(plot.title = element_text(hjust = 0.5)) + 
+          theme(text=element_text(size = 20))
+
+grid.arrange(pblack, pwhite, ncol = 2, top=textGrob("Recidivism in Black and White", vjust= 0.4, gp=gpar(fontsize=25,font=4)))
+```
+
+
+
+
+
+```{r}
+pblack_s <- ggplot(data=filter(df, race =="African-American"), aes(x=decile_score)) + 
+          geom_histogram(aes(y=..count../sum(..count..)), binwidth = 1,  colour="black", fill="grey45")  +                xlab("risk scores") + 
+          ylab("frequency") + 
+          ylim(0, 0.3) +
+          scale_x_continuous(breaks = seq(0, 10, by = 1)) +
+          theme(plot.title = element_text(hjust = 0.5)) + 
+          theme(text=element_text(size = 20))
+
+pwhite_s <- ggplot(data=filter(df, race =="Caucasian"), aes(x=decile_score)) + 
+          geom_histogram(aes(y=..count../sum(..count..)), binwidth = 1,  colour="black", fill="grey100")  +                xlab("risk scores") + 
+          ylab("frequency") + 
+          ylim(0, 0.3) +
+          scale_x_continuous(breaks = seq(0, 10, by = 1)) +
+          theme(plot.title = element_text(hjust = 0.5)) + 
+          theme(text=element_text(size = 20))
+
+grid.arrange(pblack_s, pwhite_s, ncol = 2, top=textGrob("Scores in Black and White", vjust= 0.4, gp=gpar(fontsize=25,font=4)))
+```
+
+```{r, echo=FALSE, cache=TRUE}
+
+black_nrec <- subset(df, is_recid==0 & race =="African-American")
+
+black_p_I <- ggplot(black_nrec) + aes(x=decile_score) +
+          geom_histogram(aes(y=..count../sum(..count..)), binwidth = 1,  colour= "blue", fill="grey45") + 
+          xlab("") + 
+          ylab("frequency") + 
+          ylim(0, 0.4) + 
+          ggtitle("Blacks") +
+          scale_x_continuous(breaks = seq(1, 10, by = 1)) +
+          theme(plot.title = element_text(hjust = 0.5)) + 
+          theme(text=element_text(size = 22))  +
+          geom_vline(xintercept = 4.5, linetype="dashed", color = "black", size=0.5)
+
+white_nrec <- subset(df, is_recid==0 & race =="Caucasian")
+
+white_p_I <- ggplot(white_nrec) + aes(x=decile_score) +
+          geom_histogram(aes(y=..count../sum(..count..)), binwidth = 1,  colour="blue", fill="grey100") + 
+          xlab("") + 
+          ylab("frequency") + 
+          ylim(0, 0.4) + 
+          ggtitle("Whites") +
+          scale_x_continuous(breaks = seq(1, 10, by = 1)) +
+          theme(plot.title = element_text(hjust = 0.5)) + 
+          theme(text=element_text(size = 22)) +
+          geom_vline(xintercept = 4.5, linetype="dashed", color = "black", size=0.5)
+
+grid.arrange(black_p_I, white_p_I, ncol = 2, top=textGrob("Scores for reoffenders", vjust= 0.4, gp=gpar(fontsize=25,font=4)))
+
+```
+
+```{r, echo=FALSE, cache=TRUE}
+
+black_rec <- subset(df, is_recid==1 & race =="African-American")
+
+black_p_G <- ggplot(black_rec) + aes(x=decile_score) +
+          geom_histogram(aes(y=..count../sum(..count..)), binwidth = 1,  colour="red", fill="grey45") + 
+          xlab("") + 
+          ylab("") + 
+          ylim(0, 0.4) + 
+          ggtitle("Blacks") +
+          scale_x_continuous(breaks = seq(1, 10, by = 1)) +
+          theme(plot.title = element_text(hjust = 0.5)) + 
+          theme(text=element_text(size = 22)) +
+          geom_vline(xintercept = 4.5, linetype="dashed", color = "black", size=0.5)
+
+white_rec <- subset(df, is_recid==1 & race =="Caucasian")
+
+white_p_G <- ggplot(white_rec) + aes(x=decile_score) +
+          geom_histogram(aes(y=..count../sum(..count..)), binwidth = 1,  colour="red", fill="grey100") + 
+          xlab("") + 
+          ylab("") + 
+          ylim(0, 0.4) + 
+          ggtitle("Whites") +
+          scale_x_continuous(breaks = seq(1, 10, by = 1)) +
+          theme(plot.title = element_text(hjust = 0.5)) + 
+          theme(text=element_text(size = 22)) +
+          geom_vline(xintercept = 4.5, linetype="dashed", color = "black", size=0.5)
+
+grid.arrange(black_p_G, white_p_G, ncol = 2, top=textGrob("Scores for reoffenders", vjust= 0.4, gp=gpar(fontsize=25,font=4))) 
+
+
+```
+```{r}
+black_age <- ggplot(data=filter(df, race =="African-American"), aes(x=age_cat)) + 
+          # geom_histogram(aes(y=..count../sum(..count..)), colour="black", fill="grey45")  +                
+          geom_bar(aes(y=..count../sum(..count..)), colour="black", fill="grey45") +
+          xlab("age") + 
+          ylab("frequency") + 
+          ylim(0, 1) +
+          theme(plot.title = element_text(hjust = 0.5)) + 
+          theme(text=element_text(size = 20)) +
+          theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+          scale_x_discrete(limits = c("Less than 25", "25 - 45", "Greater than 45"))
+
+white_age <- ggplot(data=filter(df, race =="Caucasian"), aes(x=age_cat)) + 
+          # geom_histogram(aes(y=..count../sum(..count..)), colour="black", fill="grey100")  +                
+          geom_bar(aes(y=..count../sum(..count..)), colour="black", fill="grey100") +
+          xlab("age") + 
+          ylab("frequency") + 
+          ylim(0, 1) + 
+          theme(plot.title = element_text(hjust = 0.5)) + 
+          theme(text=element_text(size = 20)) +
+          theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+          scale_x_discrete(limits = c("Less than 25", "25 - 45", "Greater than 45"))
+
+
+
+grid.arrange(black_age, white_age, ncol = 2, top=textGrob("Age in Black and White", vjust= 0.4, gp=gpar(fontsize=25,font=4))) 
+```
+```{r, echo=FALSE, cache=TRUE}
+
+young_nrec <- subset(df, is_recid==0 & race =="Less than 25")
+
+young_p_I <- ggplot(black_nrec) + aes(x=decile_score) +
+          geom_histogram(aes(y=..count../sum(..count..)), binwidth = 1,  colour= "blue", fill="grey45") + 
+          xlab("") + 
+          ylab("frequency") + 
+          ylim(0, 0.4) + 
+          ggtitle("Less than 25") +
+          scale_x_continuous(breaks = seq(1, 10, by = 1)) +
+          theme(plot.title = element_text(hjust = 0.5)) + 
+          theme(text=element_text(size = 22))  +
+          geom_vline(xintercept = 4.5, linetype="dashed", color = "black", size=0.5)
+
+old_nrec <- subset(df, is_recid==0 & race =="Greater than 45")
+
+old_p_I <- ggplot(white_nrec) + aes(x=decile_score) +
+          geom_histogram(aes(y=..count../sum(..count..)), binwidth = 1,  colour="blue", fill="grey100") + 
+          xlab("") + 
+          ylab("frequency") + 
+          ylim(0, 0.4) + 
+          ggtitle("More than 45") +
+          scale_x_continuous(breaks = seq(1, 10, by = 1)) +
+          theme(plot.title = element_text(hjust = 0.5)) + 
+          theme(text=element_text(size = 22)) +
+          geom_vline(xintercept = 4.5, linetype="dashed", color = "black", size=0.5)
+
+grid.arrange(young_p_I, old_p_I, ncol = 2, top=textGrob("Scores by Age", vjust= 0.4, gp=gpar(fontsize=25,font=4)))
+
+```
