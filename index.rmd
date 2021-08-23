@@ -346,7 +346,7 @@ Although data can be helpful to make decisions, they can also be biased, partial
 
 *Key readings and materials*
 
-- Kearns and Roth, [The Ethical Algorithm](https://www.amazon.com/Ethical-Algorithm-Science-Socially-Design/dp/0190948205) - Chp. 3 (only pp. 57-64)
+- Kearns and Roth, [The Ethical Algorithm](https://www.amazon.com/Ethical-Algorithm-Science-Socially-Design/dp/0190948205) - Chp. 2 (only pp. 57-64)
 
 - Hardt, [How Big Data Is Unfair](https://medium.com/@mrtz/how-big-data-is-unfair-9aa544d739de)
 
@@ -404,7 +404,7 @@ We will examine these definitions and their relationship to accuracy.
 
 *Key readings and materials*
 
-- Kearns and Roth, *The Ethical Algorithm*, Chp. 3 
+- Kearns and Roth, *The Ethical Algorithm*, Chp. 2 
 
 -  Corbett-Davies and  Goel. [The Measure and Mismeasure of Fairness: A Critical Review of Fair Machine Learning](https://arxiv.org/abs/1808.00023) - [video](https://www.youtube.com/watch?v=Qc6fYWPkDtU)
 
@@ -470,6 +470,14 @@ The debate about algorithmic fairness is nothing new. Since the development of s
 **Structural Unfairness** 
 
 The definitions  of algorithmic fairness we have seen so far describe the extent to which *actual* rates of error are unevenly (and thus unfairly) allocated across different socially relevant groups. Scholars in computer science have also used more sophisticated definitions to formulate a *counterfactual* or *causal* definition of algorithmic fairness. These definitions attempt to capture the structural dimension of racial discrimination (as in the expression "structural racism"). Other scholars in law, sociology and philosophy have argued that these attempt are unsatisfactory. 
+
+
+**Q&A with Lily Hu**
+
+The first part of the class will consist in 
+a Q&A session with [Lily Hu](https://scholar.harvard.edu/lilyhu), a philosopher at Harvard interested 
+in algorithmic bias and how the social sciences measure the causal effect of race. She is the author of some of the readings assigned for today. 
+*Please come prepared to ask questions*. 
 
 *Key readings and materials*
 
