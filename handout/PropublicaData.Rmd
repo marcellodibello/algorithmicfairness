@@ -13,6 +13,7 @@ library(dplyr)
 library(ggplot2)
 library(grid)
 library(gridExtra)
+library(tidyverse)
 raw_data <- read.csv("~/My Drive/tex-documents/working-papers/algo-fairness/algo-fairness-m/rutgers-pres-algo/compas-scores-two-years.csv")
 nrow(raw_data)
 ```

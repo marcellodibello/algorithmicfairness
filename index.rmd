@@ -422,11 +422,19 @@ to satisfy different conceptions of fairness at the same time. These impossibili
 led scholars to consider trade-offs between different conceptions of fairness or 
 be skeptical toward existing definitions.
 
+**Q&A with Deborah Hellman**
+
+The first part of the class will consist in 
+a Q&A session with [Deborah Hellman](https://www.law.virginia.edu/faculty/profile/dh9ev/2299809), Professor of Law at 
+the University of Virginia School of Law and the author of one of the readings assigned for today. 
+*Please come prepared to ask questions*. 
+
+
 *Key readings and materials*
 
-- Chouldechova, [Fair Prediction with Disparate Impact](https://arxiv.org/pdf/1703.00056.pdf)
-
 - Hellman, [Measuring Algorithmic Fairness](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3418528)
+
+- Chouldechova, [Fair Prediction with Disparate Impact](https://arxiv.org/pdf/1703.00056.pdf)
 
 
 *Additional readings and materials*
@@ -472,8 +480,6 @@ The definitions  of algorithmic fairness we have seen so far describe the extent
 
 -  Barocas, Hardt and Narayanan, [Fairness and Machine Learning](https://fairmlbook.org/) - [Chp 5: Causality](https://fairmlbook.org/causal.html)
 
--  Green, [The False Promise of Risk Assessments: Epistemic Reform and the Limits of Fairness](https://www.benzevgreen.com/wp-content/uploads/2020/01/20-fat-risk.pdf)
-
 - Kusner, Loftus, Russell and Silva, [Counterfactual Fairness](https://arxiv.org/abs/1703.06856)
 
 - Chiappa and Gillam,  [Path-specific Counterfactual Fairness](https://arxiv.org/pdf/1802.08139.pdf)
@@ -481,6 +487,32 @@ The definitions  of algorithmic fairness we have seen so far describe the extent
 
 
 ## Wk 9 - 10/14
+
+
+**Structural Unfairness (cont'ed)** 
+
+We will continue our discussion of the structural approach to algorithmic fairness.
+
+**Q&A with Annette Zimmermann**
+
+The first part of the class will consist in 
+a Q&A session with [Annette Zimmermann](https://www.annette-zimmermann.com/), a 
+political philosopher at the University of York working on the ethics of artificial 
+intelligence and machine learning and the author of one of the readings assigned 
+for today. *Please come prepared to ask questions*. 
+
+
+*Key readings and materials*
+
+- Zimmerman & Lee-Stronach, [Proceed with Caution](https://static1.squarespace.com/static/5edf7fd2ee3e960a7bd85641/t/60c4e825c714e269022fa850/1623517225765/Proceed+with+Caution+-+Annette+Zimmermann+and+Chad+Lee-Stronach+-+accepted+version+-+Canadian+Journal+of+Philosophy+2021.pdf)
+
+*Additional readings and materials*
+
+-  Green, [The False Promise of Risk Assessments: Epistemic Reform and the Limits of Fairness](https://www.benzevgreen.com/wp-content/uploads/2020/01/20-fat-risk.pdf)
+
+
+
+## Wk 10 - 10/21
 
 **Algorithmic Equal Protection**
 
@@ -499,10 +531,6 @@ can help to understand what algorithmic fairness consists in.
 *Additional readings and materials*
 
 - Any court opinion linked above
-
-## Wk 10 - 10/21
-
-**TBA**
 
 ## Wk 11 - 10/28
 
