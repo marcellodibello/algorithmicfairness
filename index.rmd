@@ -452,13 +452,13 @@ the University of Virginia School of Law and the author of one of the readings a
 
 **Fair Risk Assessment** 
 
-The debate about algorithmic fairness is nothing new. Since the development of statistical methods in insurance and banking, claims of racial and gender discrimination have been advanced against risk assessment tools used to price loans and insurance policies. We will review this history to understand analogies and differences between  fair risk assessment in the 20th century and algorithmic fairness in the 21st century. 
+The debate about algorithmic fairness is nothing new. Since the development of statistical methods in insurance and banking, claims of racial and gender discrimination have been advanced against risk assessment tools used to price loans and insurance policies. We will review this history to understand analogies and differences between fair risk assessment in the 20th century and algorithmic fairness in the 21st century. We will also look at how ordinary people make distinctions between fair and unfair data-based risk predictions. 
 
 *Key readings and materials*
 
 - Rodrigo Ochigame, [The Long History of Algorithmic Fairness](https://phenomenalworld.org/analysis/long-history-algorithmic-fairness)  
 
-
+- Barbara Kiviat, [Which Data Fairly Differentiate?](https://sociologicalscience.com/articles-v8-2-26/)
 
 **Second essay due**
 
