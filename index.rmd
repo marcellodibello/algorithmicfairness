@@ -163,7 +163,7 @@ pre { /* Code block - determines code spacing between lines */
 -->
 
 
-Th	3-5:50 PM in Tempe, [COOR](https://www.asu.edu/map/interactive/?psCode=COOR) 3301  
+Th	3-5:50 PM in Tempe, [COOR](https://www.asu.edu/map/interactive/?psCode=COOR) 4401  
 
 Office hours: Thursday after class or by appointment
 
