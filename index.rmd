@@ -284,6 +284,8 @@ On the practical side, we will read stories about people whose lives were affect
 
 - [What Is Backpropagation Really Doing?](https://www.youtube.com/watch?v=Ilg3gGewQ5U)
 
+- [Impact Evaluation of a Predictive Risk Modeling Tool for Allegheny County’s Child Welfare Office](https://www.alleghenycountyanalytics.us/wp-content/uploads/2019/05/Impact-Evaluation-from-16-ACDHS-26_PredictiveRisk_Package_050119_FINAL-6.pdf)
+
 
 ## Wk 2 - 08/26
 
