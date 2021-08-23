@@ -471,7 +471,9 @@ The definitions  of algorithmic fairness we have seen so far describe the extent
 
 *Key readings and materials*
 
-- Lily Hu, Disparate Causes, [Part I](https://phenomenalworld.org/analysis/disparate-causes-i) and [Part II](https://phenomenalworld.org/analysis/disparate-causes-pt-ii)
+- Hu, [What is 'Race in Algorithmic Discrimination on the Basis of Race?](https://www.youtube.com/watch?v=m5GdAgZnpzA&list=PLdn0giYPTOk1bBDFhz047rrZ5t5I_Sju6&index=15)
+
+- Hu, Disparate Causes, [Part I](https://phenomenalworld.org/analysis/disparate-causes-i) and [Part II](https://phenomenalworld.org/analysis/disparate-causes-pt-ii)
 
 -  Kohler-Hausmann, [Eddie Murphy and the Dangers of Counterfactual Causal Thinking About Detecting Racial Discrimination](https://scholarlycommons.law.northwestern.edu/cgi/viewcontent.cgi?article=1374&context=nulr)
 
