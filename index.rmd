@@ -315,6 +315,10 @@ To better understand this debate, you should be familiar with a bif of probabili
 
 - ProPublica, [How We Analyzed the COMPAS Recidivism Algorithm](https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm)
 
+- Northpointe, [Practitioner’s Guide to COMPAS Core](https://s3.documentcloud.org/documents/2840784/Practitioner-s-Guide-to-COMPAS-Core.pdf)
+
+    - [Sample Risk Assessment COMPAS](https://s3.documentcloud.org/documents/2702103/Sample-Risk-Assessment-COMPAS-CORE.pdf)
+    
 - Flores, Bechtel and  Lowenkamp. [False Positives, False Negatives, and False Analyses: A rejoinder to "Machine Bias"](https://www.uscourts.gov/federal-probation-journal/2016/09/false-positives-false-negatives-and-false-analyses-rejoinder)
 
 - [Parole Denied: One Man's Fight Against a COMPAS Risk Assessment](https://www.youtube.com/watch?v=UySPgihj70E)

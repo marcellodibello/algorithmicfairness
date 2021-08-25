@@ -2,23 +2,29 @@
 title: "Exploring the ProPublica COMPAS data"
 output:
   html_document:
-    df_print: paged
+      code_folding: hide
+      df_print: paged
   pdf_document: default
 ---
 
 # Loading and filtering data
 
-```{r}
+```{r, warning=FALSE, error=FALSE, message=FALSE}
 library(dplyr)
 library(ggplot2)
 library(grid)
 library(gridExtra)
 library(tidyverse)
+```
+
+After loading the raw data, we see the following number of rows:
+
+```{r}
 raw_data <- read.csv("~/My Drive/tex-documents/working-papers/algo-fairness/algo-fairness-m/rutgers-pres-algo/compas-scores-two-years.csv")
 nrow(raw_data)
 ```
 
-Filtering the data a bit:
+By filtering the data a bit, the number of rows becomes:
 
 ```{r}
 df <- dplyr::select(raw_data, age, c_charge_degree, race, age_cat, score_text, sex, priors_count, 
@@ -52,9 +58,11 @@ race
 
 The recidivism rate is different across races. It is higher 
 among blacks (almost 50\%), while it is comparably lower among whites and Hispanics (about 40\%) 
-and even lower among Asians (about 35\%). Recidivism is defined as a rearrest for a criminal offense that occurred 
+and even lower among Asians (about 25\%). 
+
+Recidivism is defined as a rearrest for a criminal offense that occurred 
 within two years after the COMPAS risk assessment took place. Arrest 
-is therefore used as as proxy for criminal activity. 
+is therefore used as a proxy for criminal activity. 
 
 
 ```{r}
@@ -107,7 +115,8 @@ This trend is even more apparent for whites.
 pblack_s <- ggplot(data=filter(df, race =="African-American"), aes(x=decile_score)) + 
           geom_histogram(aes(y=..count../sum(..count..)), binwidth = 1,  colour="black", fill="grey45")  +                xlab("risk scores") + 
           ylab("frequency") + 
-          ylim(0, 0.3) +
+          ylim(0, 0.35) +
+          ggtitle("Blacks") +
           scale_x_continuous(breaks = seq(0, 10, by = 1)) +
           theme(plot.title = element_text(hjust = 0.5)) + 
           theme(text=element_text(size = 15))
@@ -115,7 +124,8 @@ pblack_s <- ggplot(data=filter(df, race =="African-American"), aes(x=decile_scor
 pwhite_s <- ggplot(data=filter(df, race =="Caucasian"), aes(x=decile_score)) + 
           geom_histogram(aes(y=..count../sum(..count..)), binwidth = 1,  colour="black", fill="grey100")  +                xlab("risk scores") + 
           ylab("frequency") + 
-          ylim(0, 0.3) +
+          ylim(0, 0.35) +
+          ggtitle("Whites") +
           scale_x_continuous(breaks = seq(0, 10, by = 1)) +
           theme(plot.title = element_text(hjust = 0.5)) + 
           theme(text=element_text(size = 15))
@@ -123,12 +133,13 @@ pwhite_s <- ggplot(data=filter(df, race =="Caucasian"), aes(x=decile_score)) +
 phispanic_s <- ggplot(data=filter(df, race =="Hispanic"), aes(x=decile_score)) + 
           geom_histogram(aes(y=..count../sum(..count..)), binwidth = 1,  colour="black", fill="grey80")  +                           xlab("risk scores") + 
           ylab("frequency") + 
-          ylim(0, 0.3) +
+          ylim(0, 0.35) +
+          ggtitle("Hispanics") +
           scale_x_continuous(breaks = seq(0, 10, by = 1)) +
           theme(plot.title = element_text(hjust = 0.5)) + 
           theme(text=element_text(size = 15))
 
-grid.arrange(pblack_s, pwhite_s, phispanic_s, ncol = 3, top=textGrob("Scores: Black, White, Hispanic", vjust= 0.4, gp=gpar(fontsize=25,font=4)))
+grid.arrange(pblack_s, pwhite_s, phispanic_s, ncol = 3, top=textGrob("Scores overall", vjust= 0.4, gp=gpar(fontsize=25,font=4)))
 ```
 
 
@@ -180,7 +191,7 @@ hispanic_p_I <- ggplot(hispanic_nrec) + aes(x=decile_score) +
           theme(text=element_text(size = 15)) +
           geom_vline(xintercept = 4.5, linetype="dashed", color = "black", size=0.5)
 
-grid.arrange(black_p_I, white_p_I, hispanic_p_I, ncol = 3, top=textGrob("Scores for reoffenders", vjust= 0.4, gp=gpar(fontsize=25,font=4)))
+grid.arrange(black_p_I, white_p_I, hispanic_p_I, ncol = 3, top=textGrob("Scores for non re-offenders", vjust= 0.4, gp=gpar(fontsize=25,font=4)))
 
 ```
 
@@ -231,7 +242,7 @@ hispanic_p_G <- ggplot(hispanic_rec) + aes(x=decile_score) +
           theme(text=element_text(size = 15)) +
           geom_vline(xintercept = 4.5, linetype="dashed", color = "black", size=0.5)
 
-grid.arrange(black_p_G, white_p_G, hispanic_p_G, ncol = 3, top=textGrob("Scores for reoffenders", vjust= 0.4, gp=gpar(fontsize=25,font=4))) 
+grid.arrange(black_p_G, white_p_G, hispanic_p_G, ncol = 3, top=textGrob("Scores for re-offenders", vjust= 0.4, gp=gpar(fontsize=25,font=4))) 
 
 
 ```
