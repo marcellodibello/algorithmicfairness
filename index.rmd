@@ -317,7 +317,7 @@ To better understand this debate, you should be familiar with a bif of probabili
 
 - ProPublica, [How We Analyzed the COMPAS Recidivism Algorithm](https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm)
 
-- [Exploring the ProPublica COMPAS data](https://www.marcellodibello.com/algorithmicfairness/PropublicaData.html)
+    - [Exploring the ProPublica COMPAS data](https://www.marcellodibello.com/algorithmicfairness/PropublicaData.html)
 
 - Northpointe, [Practitioner’s Guide to COMPAS Core](https://s3.documentcloud.org/documents/2840784/Practitioner-s-Guide-to-COMPAS-Core.pdf)
 
