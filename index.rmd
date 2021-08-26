@@ -302,6 +302,8 @@ To better understand this debate, you should be familiar with a bif of probabili
 
 *Key readings and materials*
 
+- [Class notes Wk 2](https://www.marcellodibello.com/algorithmicfairness/handout/ProPublica-Northpointe.html)
+
 - Machine Learning Fundamentals: 
     - [Sensitivity and Specificity](https://www.youtube.com/watch?v=vP06aMoz4v8)
     - [ROC and AUC](https://www.youtube.com/watch?v=4jRBRDbJemM)
@@ -314,6 +316,8 @@ To better understand this debate, you should be familiar with a bif of probabili
 *Additional readings and materials*
 
 - ProPublica, [How We Analyzed the COMPAS Recidivism Algorithm](https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm)
+
+- [Exploring the ProPublica COMPAS data](https://www.marcellodibello.com/algorithmicfairness/PropublicaData.html)
 
 - Northpointe, [Practitioner’s Guide to COMPAS Core](https://s3.documentcloud.org/documents/2840784/Practitioner-s-Guide-to-COMPAS-Core.pdf)
 
