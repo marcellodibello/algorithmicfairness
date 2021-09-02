@@ -2,8 +2,8 @@
 title: "[Algorithmic Fairness](https://www.marcellodibello.com/algorithmicfairness/) -- Biased data"
 author: "Marcello Di Bello - ASU - Fall 2021"
 output:
-  tufte::tufte_html: default
   tufte::tufte_handout: default
+  tufte::tufte_html: default
 ---
 
 
@@ -158,9 +158,9 @@ on the general population does not transfer to the minority faithfully.^[Hardt (
 and minorities. See Polack et al (2020), [Safety and Efficacy of the BNT162b2 mRNA Covid-19 Vaccine](https://www.nejm.org/doi/full/10.1056/NEJMoa2034577), N Engl J Med, 383:2603-2615.]
 
 - The correlations between attributes (predictors) and the 
-outcome of interest is not uniform across groups. Here is an example:
+outcome of interest is not uniform across groups. Here is an [example](https://www.marcellodibello.com/algorithmicfairness/SVM-PropublicaData.html):
 
-```{r, echo=FALSE, fig.margin = FALSE, fig.fullwidth = TRUE, fig.cap="Fitting a Support Vector Machine (SVM) liner model to the ProPublica COMPAS data.", out.width = '80%'}
+```{r, echo=FALSE, fig.margin = FALSE, fig.fullwidth = TRUE, fig.cap="Fitting race-based SVM linear models to the ProPublica COMPAS Data", out.width = '80%'}
 knitr::include_graphics("/Users/mdibello/My Drive/Teaching/algorithmicfairness/SVM-PropublicaData_files/figure-html/plot SVM models by race-1.png") 
 ```
 
