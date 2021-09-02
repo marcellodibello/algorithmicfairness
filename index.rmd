@@ -370,7 +370,7 @@ Although data can be helpful to make decisions, they can also be biased, partial
 
 - Caliskan, Bryson, and Narayanan, [Semantics Derived Automatically from Language Corpora Contain Human-Like Biases](https://arxiv.org/abs/1608.07187)
 
-- Hart and Cooke (2013), [Another Look at the (Im-)precision of Individual Risk Estimates Made Using Actuarial Risk Assessment Instruments](https://pubmed.ncbi.nlm.nih.gov/23322617/)
+- Hart and Cooke (2013), [Another Look at the (Im-)precision of Individual Risk Estimates Made Using Actuarial Risk Assessment Instruments](https://doi.org/10.1002/bsl.2049)
 
     - Imrey and Dawid (2015), [A Commentary on Statistical Assessmentof Violence Recidivism Risk](https://www.tandfonline.com/doi/full/10.1080/2330443X.2015.1029338)
     
