@@ -354,6 +354,9 @@ Although data can be helpful to make decisions, they can also be biased, partial
 
 *Key readings and materials*
 
+- [Class notes Wk 3](https://www.marcellodibello.com/algorithmicfairness/handout/Biased-Data.html)
+
+
 - Kearns and Roth, [The Ethical Algorithm](https://www.amazon.com/Ethical-Algorithm-Science-Socially-Design/dp/0190948205) - Chp. 2 (only pp. 57-64)
 
 - Hardt, [How Big Data Is Unfair](https://medium.com/@mrtz/how-big-data-is-unfair-9aa544d739de)
@@ -369,7 +372,7 @@ Although data can be helpful to make decisions, they can also be biased, partial
 
 - Hart and Cooke (2013), [Another Look at the (Im-)precision of Individual Risk Estimates Made Using Actuarial Risk Assessment Instruments](https://pubmed.ncbi.nlm.nih.gov/23322617/)
 
-    - Imrey and Dawid (2014), [A Commentary on Statistical Assessmentof Violence Recidivism Risk](https://arxiv.org/pdf/1503.03666.pdf)
+    - Imrey and Dawid (2015), [A Commentary on Statistical Assessmentof Violence Recidivism Risk](https://www.tandfonline.com/doi/full/10.1080/2330443X.2015.1029338)
     
 - Obermeyer et al (2019), [Dissecting Racial Bias in an Algorithm Used to Manage the Health of Populations](https://www.science.org/lookup/doi/10.1126/science.aax2342)
 

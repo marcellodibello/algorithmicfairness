@@ -63,7 +63,8 @@ describing algorithmic bias.
 Here are two other forms of bias.
 First, bias as prior information:
 
-> In AI and machine learning, *bias* refers to prior information ... Yet bias can be problematic when prior information is derived from precedents known to be harmful ... we will call harmful biases 'prejudice'....prejudice is a special case of bias identifiable only by its negative consequences (p. 2/14)^[Caliskan et al (2017), Semantics Derived Automatically from Language Corpora Contain Human-like Biases]
+> In AI and machine learning, *bias* refers to prior information ... Yet bias can be problematic when prior information is derived from precedents known to be harmful ... we will call harmful biases 'prejudice'....prejudice is a special case of bias identifiable only by its negative consequences (p. 2/14)^[Caliskan et al (2017), [Semantics Derived Automatically from Language Corpora Contain Human-like Biases](https://www.science.org/doi/abs/10.1126/science.aal4230), Science, 356(6334): 
+183-186.]
 
 Second, bias as a reasoning, decision or action 
 pattern that instantiates 
@@ -75,7 +76,7 @@ states as outputs in a way that instantiates social-kind inductions....
 >
 > (i) Jan is elderly.
 (ii) Elderly people are bad with computers.
-(iii) Jan is bad with computers. ^[Johnson (2020), The Structure of Bias, Mind, 129(516): 1193–1236. This definition is also connected to the notion of stereotypes or group generalizations.]
+(iii) Jan is bad with computers. ^[Johnson (2020), [The Structure of Bias](https://www.gmjohnson.com/uploads/5/2/5/1/52514005/sob.pdf), Mind, 129(516): 1193–1236. This definition is also connected to the notion of stereotypes or group generalizations.]
 
 These two quotations introduce 
 other forms of bias, which we could call 
@@ -92,7 +93,7 @@ as in "cognitive bias" or "social bias". `r tufte::margin_note("Is algorithmic b
 given to them and apply them uniformly. Arguably, they cannot be cognitively 
 or socially biased. Or can they?
 
-Algorithms can be biased if they inherit---and then reproduce and even amplify---biases embedded in the historical data used to train them or biases embedded in society and reflected in the data.`r tufte::margin_note("What do these expressions mean? What standards would data deviate from?")` We often talk about biased data, for example, racially biased, gender biased or age biased data.
+Still, algorithms can be biased if they inherit---and then reproduce and even amplify---biases embedded in the historical data or biases embedded in society and reflected in the data.`r tufte::margin_note("What do these expressions mean? What standards would data deviate from?")` We often talk about racially biased, gender biased or age biased data.
 
 # Examples
 
@@ -103,7 +104,7 @@ algorithms:
 
 a. Disparities in the severity of charges against black defendants 
 compared to white defendants after controlling for several factors.^[See Starr and Rehavi (2014), 
-[Racial Disparity in Federal Criminal Sentences, J of Pol Ec](https://www.journals.uchicago.edu/doi/abs/10.1086/677255?mobileUi=0&), 122(6):1320-1354.] 
+[Racial Disparity in Federal Criminal Sentences](https://www.journals.uchicago.edu/doi/abs/10.1086/677255?mobileUi=0&), J of Pol Ec, 122(6):1320-1354.] 
 
 b. A SAT question that asks students to complete the verbal analogy
 *Runner:Marathon=x:Regatta*. 
@@ -119,51 +120,18 @@ word2vec. It reproduces gender stereotypes.
 d. Amazon algorithm for screening job applicants. It penalized applicants for engineering positions whose resumes contain the word "woman".  
 
 e. COMPAS algorithm for guiding decisions about bail, preventative detention or sentencing. 
-Its false positive classification error rate for black people is twice as high as 
+The false positive classification error rate for black people is twice as high as 
 that for white people.^[ProPublica (2016), [Machine Bias: There's Software Used Across the Country to Predict Future Criminals. And it's Biased Against Blacks.](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing)] 
 
-f. For the same risk score assigned by a health algorithm, black patients are sicker than white patients. Risk scores are based on health costs per patient as a proxy for level of sickness.^[Obermeyer et al (2019), [Dissecting Racial Bias in an Algorithm Used to Manage the Health of Populations](https://www.science.org/lookup/doi/10.1126/science.aax2342), Science, 366(6464): 447-453.] 
+f. For the same health risk score, black patients are sicker than white patients. Risk scores are based on health costs per patient as a proxy for level of sickness.^[Obermeyer et al (2019), [Dissecting Racial Bias in an Algorithm Used to Manage the Health of Populations](https://www.science.org/lookup/doi/10.1126/science.aax2342), Science, 366(6464): 447-453.] 
 
 g. Other example?
-
-# **Some distinctions**
-
-## data // algorithm
-
-`r tufte::margin_note("Consider a perfectly accurate classification algorithm. Could this 
-algorithm still be regarded as biased?")`
-Under what circumstances is the algorithm biased and under what 
-circumstances are the data biased? Or is this distinction misleading?
-
-## supervised // unsupervised learning
-
-
-`r tufte::margin_note("Does the notion of bias differs in the context of 
-supervised and supervised learning?
-")` Machine learning algorithms can be distinguished between 
-supervised learning algorithms (e.g. regression, SVM, random forest, Bayes 
-classifier) and unsupervised ones (e.g. clustering such as Google algorithm word2vec). 
-
-
-## related words
-
-We use the word bias along with: 
-disparity; discrimination; prejudice; stereotype; 
-injustice; unfairness; etc. `r tufte::margin_note("What else?
-")` Obviously, we should 
-not confuse them, even though there seems 
-to be points of overlap.
 
 
 # **Biased data**
 
-Let's focus on the data on which algorithms are trained. Data can be biased for several difference reasons. 
-In the most general sense, data are biased if they 
-unequally portray different socially relevant groups (say racial or gender groups). 
-This definition is general 
-(which is a good thing), but also over-inclusive
-(which is a bad thing). 
-
+Let's focus on the data on which algorithms are trained. 
+Data can be biased for  difference reasons. 
 Here are some examples:  
 `r tufte::margin_note("Which are instances of bias 
 in the data and why?")`
@@ -173,8 +141,7 @@ a proxy in the historical data. This proxy tracks the actual outcome unevenly de
 on the social group (see, for example, item f. above)
 
 - Data reflect biases in society (see, for example, items c. and d.) 
-`r tufte::margin_note("What are other examples of biases in society reflected in the data? 
-Are biases in society different from social bias as defined earlier?")`
+`r tufte::margin_note("Are biases in society different from social bias as defined earlier?")`
 
 - Uneven representation in the training data of people belonging to 
 different racial, gender or other socially relevant groups.^[For an example about the medical data, see Perez (2019), Invisible Women, p. 167.]
@@ -190,22 +157,49 @@ those about the general population ... this is assuming the classifier learned
 on the general population does not transfer to the minority faithfully.^[Hardt (2014), How Big Data is Unfair. For example, compare confidence intervals for the effectiveness of COVID-19 vaccine for white people 
 and minorities. See Polack et al (2020), [Safety and Efficacy of the BNT162b2 mRNA Covid-19 Vaccine](https://www.nejm.org/doi/full/10.1056/NEJMoa2034577), N Engl J Med, 383:2603-2615.]
 
-
-
 - The correlations between attributes (predictors) and the 
-outcome of interest is not uniform across groups. The same set of predictors 
-could perform differently for different social groups thus requiring group-specific 
-predictive models. Here is an example:
+outcome of interest is not uniform across groups. Here is an example:
 
 ```{r, echo=FALSE, fig.margin = FALSE, fig.fullwidth = TRUE, fig.cap="Fitting a Support Vector Machine (SVM) liner model to the ProPublica COMPAS data.", out.width = '80%'}
 knitr::include_graphics("/Users/mdibello/My Drive/Teaching/algorithmicfairness/SVM-PropublicaData_files/figure-html/plot SVM models by race-1.png") 
 ```
 
 
+
+
+# **Some distinctions**
+
+## data // algorithm
+
+`r tufte::margin_note("Consider a perfectly accurate classification algorithm. Could this 
+algorithm still be regarded as biased?")`
+Under what circumstances is the algorithm biased and under what 
+circumstances are the data biased? Or is this distinction misleading?
+
+## supervised // unsupervised learning
+
+
+`r tufte::margin_note("Does the notion of bias differ for
+supervised and supervised learning?
+")` Machine learning algorithms can be distinguished between 
+supervised learning algorithms (e.g. regression, SVM, random forest, Bayes 
+classifier) and unsupervised ones (e.g. clustering such as Google algorithm word2vec). 
+
+
+## related words
+
+We use the word bias along with: 
+disparity; discrimination; prejudice; stereotype; 
+injustice; unfairness; etc. `r tufte::margin_note("What else?
+")` We should 
+not confuse them, even though there seem 
+to be points of overlap.
+
+
+
 # **Risks in predictive algorithm**
 
-Predictive algorithms output a risk score, an assessment of how probable it is that an individual would, say, commit a crime or default on a loan.  What is the meaning of this risk? Does it make sense to assign risk to an individual?
-
+Predictive algorithms output a risk score -- an assessment of how probable it is that an individual would, say, commit a crime or default on a loan.  What is the meaning of this risk score? *Does it make sense to assign it to an individual?*
 
 >  ... current risk assessment instruments are unable to distinguish one person's risk of violence
 from another's ... a predictive algorithm might confidently estimate a person's risk of arrest
@@ -213,16 +207,12 @@ as somewhere between a range of five and fifteen percent. Studies have demonstra
 models can only make reliable predictions about a person's risk of violence within very large ranges
 of likelihood, such as twenty to sixty percent. As a result, virtually everyone's range of likelihood
 overlaps. When everyone is similar, it becomes impossible to differentiate people with low and high
-risks of violence.^[Barabas et al, [Technical Flaws of Pretrial Risk Assessments Raise Grave Concerns](https://cyber.harvard.edu/story/2019-07/technical-flaws-pretrial-risk-assessments-raise-grave-concerns). See Hart and Cooke (2013), [Another Look at the (Im-)precision of Individual Risk Estimates Made Using Actuarial Risk Assessment Instruments](https://pubmed.ncbi.nlm.nih.gov/23322617/), Behavioral Science and Law, 31(1):81-102.]
+risks of violence.^[Barabas et al, [Technical Flaws of Pretrial Risk Assessments Raise Grave Concerns](https://cyber.harvard.edu/story/2019-07/technical-flaws-pretrial-risk-assessments-raise-grave-concerns). See Hart and Cooke (2013), [Another Look at the (Im-)precision of Individual Risk Estimates Made Using Actuarial Risk Assessment Instruments](https://doi.org/10.1002/bsl.2049), Behavioral Science and Law, 31(1):81-102.]
  
+On the other hand,
 
-
-
-
-
-
-
-
+> Any ... regression-based confidence interval ... can for any chosen confidence coefficient be narrowed by enlarging the sample from which it is inferred ... Thus, intervals based on
+enough data will eventually fail to overlap unless they narrow to the same overall risk.^[Imrey and Dawid (2015), [A Commentary on Statistical Assessment of Violence Recidivism Risk](https://www.tandfonline.com/doi/full/10.1080/2330443X.2015.1029338), Statistics and Public Policy 2(1): 1-18]
 
 
 
