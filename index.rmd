@@ -367,6 +367,12 @@ Although data can be helpful to make decisions, they can also be biased, partial
 
 - Caliskan, Bryson, and Narayanan, [Semantics Derived Automatically from Language Corpora Contain Human-Like Biases](https://arxiv.org/abs/1608.07187)
 
+- Hart and Cooke (2013), [Another Look at the (Im-)precision of Individual Risk Estimates Made Using Actuarial Risk Assessment Instruments](https://pubmed.ncbi.nlm.nih.gov/23322617/)
+
+    - Imrey and Dawid (2014), [A Commentary on Statistical Assessmentof Violence Recidivism Risk](https://arxiv.org/pdf/1503.03666.pdf)
+    
+- Obermeyer et al (2019), [Dissecting Racial Bias in an Algorithm Used to Manage the Health of Populations](https://www.science.org/lookup/doi/10.1126/science.aax2342)
+
 - Lazer, Kennedy, King, and Vespignani, [The Parable of Google flu: Traps in Big Data Analysis](https://gking.harvard.edu/files/gking/files/0314policyforumff.pdf)
 
 -  Buolamwini, [Algorithms Aren’t Racist. Your Skin Is just too Dark](https://hackernoon.com/algorithms-arent-racist-your-skin-is-just-too-dark-4ed31a7304b8)
