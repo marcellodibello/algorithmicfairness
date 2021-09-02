@@ -354,7 +354,7 @@ Although data can be helpful to make decisions, they can also be biased, partial
 
 *Key readings and materials*
 
-- [Class notes Wk 3](https://www.marcellodibello.com/algorithmicfairness/handout/Biased-Data.html)
+- [Class notes Wk 3](https://www.marcellodibello.com/algorithmicfairness/handout/Biased-Data.html) (if interested, check out [SVM with ProPublica COMPAS Data](https://www.marcellodibello.com/algorithmicfairness/SVM-PropublicaData.html))
 
 
 - Kearns and Roth, [The Ethical Algorithm](https://www.amazon.com/Ethical-Algorithm-Science-Socially-Design/dp/0190948205) - Chp. 2 (only pp. 57-64)
