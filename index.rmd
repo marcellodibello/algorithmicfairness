@@ -399,6 +399,7 @@ Another problem with data is that decisions based on inadequate data magnify err
 
 
 -  Ensign, Friedler, Neville, Scheidegger and Venkata, [Runaway Feedback Loops in Predictive policing](https://arxiv.org/abs/1706.09847) - [video](https://www.youtube.com/watch?v=9C6epG-Wyuw)
+      - [Simulating Feedback Loops in Predictive Policing](https://www.marcellodibello.com/algorithmicfairness/feedback-loop-last.html)
 
 - Harcourt, [Against Prediction](https://www.amazon.com/Against-Prediction-Profiling-Punishing-Actuarial/dp/0226316149) - [Chp. 5](https://www.tau.ac.il/law/events/15-12-06/C-Chapter5.pdf)
 

@@ -1,0 +1,720 @@
+---
+title: "Simulating Feedback Loops in Predictive Policing"
+author: "Marcello Di Bello"
+output:
+  html_document:
+    toc: true
+    theme: united
+    code_folding: hide
+    df_print: paged
+---
+
+
+This note describes an elementary model to represent feedback loops in predictive policing. We are trying to model the following scenario. Different areas of a city contribute different shares of the overall crime. The police will make decisions about which areas to patrol depending on where they believe crime is happening, focusing on areas that contribute more crime. As police detect crime during patrolling, they will update their beliefs about the locations of crime and use the updated beliefs to guide further decisions about where to patrol. And so on. The hope is that, after sufficient iterations, the police will acquire an accurate picture about where crime is happening and be able to deploy its resources effectively. But is that the case? Empirical research and simulations 
+of predictive policing show that police will often form a distorted picture about where crime is happening. As the police acquires more information, it appears as though they do not always learn about the true locations of crime. The police prior beliefs about crime persist sometimes unchanged even after several iterations, creating a "feedback loop". This note examines under what conditions 
+this feedback loop occurs and when it does not. 
+
+Some of the R code is hidden by default. You can inspect the code by clicking "code" on the right and follow along if you'd like.
+
+A more mathematically precise treatment of this topic is contained 
+in the article [Runaway Feedback Loops in Predictive Policing](https://arxiv.org/pdf/1706.09847.pdf). 
+
+# The building blocks of the model
+
+Let's start with the basic 
+building blocks of our model 
+of predictive policing. First, we should distinguish  **true shares of crime** v. **believed shares of crime**.
+Consider a concrete example. Suppose crime is split 
+between two areas in a city, A and B, 
+in equal proportions, 50 units of crime in each area.
+However, the police believe crime is more prevalent in B rather 
+than A, say initially they believe there are 80 units of 
+crime in B versus 20 units in A. 
+
+
+Next, consider **patrolling**. The police use their initial 
+belief about shares of crime between locations 
+to decide whether to patrol A or B. True shares of crime do not---and 
+cannot---inform this decision. One way to decide where to patrol would be to go 
+to the area where there is more crime. This would mean that the police will go to area B 
+and keep returning there as they discover more crime. So, under this decision procedure, the police will 
+hardly ever go to A. This would be a feedback loop. To remedy this, we should introduce 
+more variability in the decision process.
+
+Here is another way. The police 
+flip a two-sided weighted coin. The two sides A and B have weights corresponding 
+to the police belief about crime location. Side A has a 20% probability 
+and B an 80% probability. If the coin lands A, the police will go to A, 
+and if it lands B, they will go to B. It is therefore 80% probable the police will go to B and 20% probable 
+they will go to A. This is an idealization for the purpose 
+of modeling.
+
+We are assuming that the police will go -- as a whole -- 
+to a particular area, say because they only have one patrol 
+car and just a few officers.  So, for now, police resources cannot be split between different 
+areas in proportion to the crime in each area.
+We will change this assumption later.  
+
+Consider now **crime detection**. Once they are in an area such as A or B, the police detect 
+crime at a certain rate, say 10%. This is the true detection rate. For example, suppose the police 
+go to A and correctly detect 10% of the crime actually happening in the area.
+If the police detect 10% of the crime in A -- which, by assumption, contributes 
+to 50 unites of the crime -- they will detect 5 new units of crime. 
+actually happening in that area. We leave out false detection of crime 
+for simplicity. 
+
+Finally, the police **update** their beliefs about crime in A 
+on the basis of the new information. Since they detected 5 new units of crime in A, 
+they now believe there are 20 plus 5 units of crime in A. They will not update their beliefs about 
+crime in B at this time simply because the police did not go there. 
+If the police had gone to B, they would have updated their beliefs about crime in B, not A. 
+
+Each time the police go to an area and discover crime, they update 
+their beliefs about crime by area. The police decide where to go on the basis of where they believe crime is happening. When they patrol an area and discover crime, they update their beliefs and then decide again where to go, and so on. This process is **repeated** multiple times -- as many times as the police patrol neighborhoods (which means 
+for days, weeks, years). 
+
+We come to the question about **learning**: Will the police ultimately discover to what extent crime is truly allocated across areas? In terms of our example, will the police learn that crime is split 50:50 between A and B?
+
+The question rests on how, once the police detect crime, they will update 
+their beliefs about crime by area. Here is a simple model, not necessarily correct. 
+Suppose police go to area A and detect 10% of the 50 units of crime there. 
+The police belief about crime in A is updated as follows: initial belief about 
+crime in A (20 units) *plus* new units of crime detected (5 units). 
+New total crime in A: 25 units. The police belief about crime in B does not change. 
+The total crime (as believed by the police) 
+consists of the following:
+
+- initial belief about crime units in A: 20 units  
+
+- initial belief about crime units in B: 80 units
+
+- new crime units detected in A (10% of 50 units): 5 units
+
+The total crime estimated is now 105 units. To ensure that beliefs 
+about shares of crime add up to one, we normalize them:
+
+- new belief about share of crime in A: 25/105=23%
+
+- new belief about share of crime in B: 80/105=76%
+
+As expected, the police now believe that crime is more prevalent 
+in A than they previously believed and less prevalent in B than previously believed.
+This updating process can be repeated several times. 
+The hope is that, after sufficiently many times, the police beliefs about shares of crime by area 
+will converge to the true crime allocation of 50:50. As it turns out, this is not always the case. To see why, we will construct a simulation to explore what happens after many iterations of the updating process just described.  
+
+# The "update" function
+
+We start by stipulating values about true crime allocation between A and B (50% and 50%), police 
+beliefs about crime allocation (20% and 80%), and police crime detection rate (10%). 
+We will later change these assignments to see what happens. 
+
+
+```{r, include=TRUE}
+# true crime allocation between A and B
+a <- 0.5
+b <- 0.5
+
+# police crime detection rate when visiting an area
+x <- 0.1
+
+# police beliefs about crime allocation between A and B -- as "ac" and "bc"
+ac <- 0.2
+bc <- 0.8
+```
+
+We need a function that takes as inputs police beliefs about crime allocation at some point, then uses them to flip a coin to decide which area to patrol, and finally returns new beliefs about crime allocation once crime has been detected in an area. One way to implement such a function is by adding new columns to a matrix, where each new column contains the police latest beliefs about shares of crime between A and B.
+
+
+```{r, echo=TRUE}
+# starting matrix consisting of just two rows: "ac" and "bc" for believed crime allocation by areas A and B
+start <- c(ac, bc)          # vector consisting of ac and bc
+df <- data.frame(start)     # turn vector into data.frame
+
+# update function
+update <- function(df) {
+      # first row from last column of matrix, picks out ac
+          ac <- df[1, ncol(df)]
+      # second row from last column of matrix, picks out bc
+          bc <- df[2, ncol(df)]
+      # flip coin for decision where to go
+          outcome <- c(1, 0)
+          flip <- sample(outcome, 1, prob=c(ac,bc))  # ac and bc: probabilities of coin landing A or B
+      # Case 1 - police goes to area A
+        if (flip==1) {
+          # update ac and bc values by adding detected crime (a*x) and normalizing
+          # a is true crime in A and x is true detection rate
+            ac1_new <- (ac+a*x)/(ac+a*x+bc)
+            bc1_new <- (bc)/(ac+a*x+bc)
+          # update matrix
+            add <- c(ac1_new, bc1_new)
+            # dff new matrix with values of ac and bc updated after crime detection
+            dff <- data.frame(add)
+            df <- cbind(df, dff)
+            return(df)
+                        }
+        # Case 2 - police goes to area B  
+          else {
+             # update ac and bc values by adding detected crime (b*x) and normalizing
+            # b is true crime in B and x is true detection rate
+            ac2_new <- (ac)/(ac+b*x+bc)
+            bc2_new <- (bc+b*x)/(ac+b*x+bc)
+          # update matrix
+            add <- c(ac2_new, bc2_new)
+            dff <- data.frame(add)
+            df <- cbind(df, dff)
+            return(df)
+                 }
+  }
+```
+
+
+Let's see how the function works. We start out with data frame "df" which assigns priors belief about 
+crime allocation in A and B, say 20% in A and 80% in B. The first column gives the initial beliefs and the last column gives the updated beliefs about crime allocation. Since this is not a deterministic function but it depends on the flip of a coin, the output of 
+the function may vary.
+
+
+```{r, cache=TRUE}
+update(df)
+```
+
+
+# Modeling the feedback loop
+
+We have only applied the function once. We should apply the function many times since the police update their beliefs about crime allocation multiple times. Here we should capture the feedback loop. The output of the function at time n-1 is then used as input for the n-th application of the function. After all, the latest updated beliefs about crime allocation are used to flip a coin and decide where to dispatch police forces and detect crime, which then will be used to update beliefs about crime allocation, and so on. To capture this iteration, we construct a loop -- effectively, a "feedback loop" in predictive policing. 
+
+```{r, echo=TRUE}
+apply_n_times <- function(input, update, n){
+  for(i in 1:n){            # "update" function takes its output as input up to n applications
+    input <- update(input)
+  }
+  return(input)
+}
+```
+
+We can apply the function "update" 100 times and display the full matrix of results. As we go through the 100 columns in the matrix, we see that we started out with 0.2 and 0.8 and ended up, after some ups and downs, with values that are not close to the true crime shares. So even though the true crime allocation between area A and B is 50:50 by assumption and the police has a 10% true detection rate, police beliefs about crime allocation have not converged to the true values. 
+
+```{r, cache=TRUE}
+# starting matrix, ac and bc believed crime proportion by areas A and B
+ac <- 0.2
+bc <- 0.8
+start <- c(ac, bc)
+df <- data.frame(start)
+
+end <- apply_n_times(df, update, 100)
+# apply function "update" to itself 100 times and assigns to "end"
+end
+```
+
+How do we know this is always going to happen? Our function for updating beliefs about crime allocation is not a deterministic function. We should repeat the same procedure several times.  We repeat it 1000 times and plot the results of this experiment. 
+
+
+```{r}
+# apply_update_n_times(df, update, 100)[1, ncol(end)]
+# picks out first row and last column of this function  -- i.e. latest updated value of ac
+
+# apply_update_n_times(df, update, 100)[2, ncol(end)]
+# picks out second row and last column of this function  -- i.e. latest updated value of bc
+
+# replicate function "update" 1000 times
+last_ac <- replicate(1000, apply_n_times(df, update, 100)[1, ncol(end)])
+last_bc <- replicate(1000, apply_n_times(df, update, 100)[2, ncol(end)])
+```
+
+```{r}
+library(ggplot2)
+library(gridExtra) 
+library(ggpubr)
+library(grid)
+library(gridExtra)
+```
+
+
+```{r learning distribution}
+# histogram of results for latest ac values
+data <- as.data.frame(last_ac)
+a <- ggplot(data, aes(x=last_ac)) + 
+  geom_histogram(binwidth = 0.05, color="black", fill="grey") + 
+  theme_bw() +
+  geom_vline(xintercept = 0.2, linetype="dotted", color = "black", size=0.5) +
+  geom_vline(xintercept = 0.5, linetype="dashed", color = "red", size=0.5) +
+  xlab("Believed crime share") +
+  ggtitle("Learning distribution for A (10% crime detection + 20% prior)")
+
+# histogram of results for latest bc values
+data <- as.data.frame(last_bc)
+b <- ggplot(data, aes(x=last_bc)) + 
+  geom_histogram(binwidth = 0.05, color="black", fill="white") + 
+  theme_bw() +
+  geom_vline(xintercept = 0.8, linetype="dotted", color = "black", size=0.5) +
+  geom_vline(xintercept = 0.5, linetype="dashed", color = "red", size=0.5) +
+  xlab("Believed crime share") +
+  ggtitle("Learning distribution for B (10% crime detection + 80% prior)")
+
+grid.arrange(a, b, ncol = 1, top=textGrob("Believed crime tracks priors beliefs (dotted line) not true crime (dashed line)", vjust= 0.4, gp=gpar(fontsize=13,font=4)))
+```
+
+From the plots, we realize something disturbing. The police will often not learn much. It is  unlikely -- see small bars in the histogram -- that the police will learn the true shares of crime.  Instead, they will tend to learn that the shares of crime are similar to what they originally believed -- a feedback loop. They will often enough learn that the shares of crime are more extreme than they originally believed. If they thought area A contributed 20% of crime, they will often learn that it contributed much less than 20%. If they believed that B contributes 80%, they will often learn that it contributes much more than 80%.  This is a phenomenon we might call "polarization". 
+
+## Higher crime detection
+
+We see an even more radical polarization if the police true crime detection increases from 10% to 30%, everything else being equal. The histograms below show that the police will tend to learn about share crimes in terms even more extreme than they originally believed. 
+
+
+```{r high detection rate}
+# true crime allocation between A and B, no longer even
+a <- 0.5
+b <- 0.5
+
+# police crime detection rate when visiting an area
+x <- 0.30
+
+# police beliefs about crime allocation between A and B -- as "ac" and "bc"
+ac <- 0.2
+bc <- 0.8
+
+# starting matrix, ac and bc believed crime proportion by areas A and B
+start <- c(ac, bc)
+df <- data.frame(start)
+
+end <- apply_n_times(df, update, 100)
+# apply function "update" to itself 100 times and assigns to "end"
+
+# replicate function "update" 1000 times
+last_ac <- replicate(1000, apply_n_times(df, update, 100)[1, ncol(end)])
+last_bc <- replicate(1000, apply_n_times(df, update, 100)[2, ncol(end)])
+
+# histogram of results for latest ac values
+data <- as.data.frame(last_ac)
+a <- ggplot(data, aes(x=last_ac)) + 
+  geom_histogram(binwidth = 0.05, color="black", fill="grey") + 
+  theme_bw() +
+  geom_vline(xintercept = 0.2, linetype="dotted", color = "black", size=0.5) +
+  geom_vline(xintercept = 0.5, linetype="dashed", color = "red", size=0.5) +
+  xlab("Believed crime share") +
+  ggtitle("Learning distribution for A (30% crime detection + 20% prior)")
+
+# histogram of results for latest bc values
+data <- as.data.frame(last_bc)
+b <- ggplot(data, aes(x=last_bc)) + 
+  geom_histogram(binwidth = 0.05, color="black", fill="white") + 
+  theme_bw() +
+  geom_vline(xintercept = 0.8, linetype="dotted", color = "black", size=0.5) +
+  geom_vline(xintercept = 0.5, linetype="dashed", color = "red", size=0.5) +
+  xlab("Believed crime share") +
+  ggtitle("Learning distribution for B (30% crime detection + 80% prior)")
+
+grid.arrange(a, b, ncol = 1, top=textGrob("Polarization around priors beliefs (dotted line), not true crime (dashed line)", vjust= 0.4, gp=gpar(fontsize=13,font=4)))
+```
+
+## Even priors, uneven true crime
+
+
+We can perform another variation. Say crime allocation is no longer even, 
+but the police initially believe it is even. Detection rate is kept at 10% rate. 
+What we see is that police beliefs about crime shares will polarize, but they will 
+get closer to the true crimes shares. So this is an improvement, but still we do 
+not see any convergence to true crime shares. 
+
+
+
+```{r even priors}
+# true crime allocation between A and B, no longer even
+a <- 0.2
+b <- 0.8
+
+# police crime detection rate when visiting an area
+x <- 0.1
+
+# police beliefs about crime allocation between A and B -- as "ac" and "bc"
+ac <- 0.5
+bc <- 0.5
+
+# starting matrix, ac and bc believed crime proportion by areas A and B
+start <- c(ac, bc)
+df <- data.frame(start)
+
+end <- apply_n_times(df, update, 100)
+# apply function "update" to itself 100 times and assigns to "end"
+
+# replicate function "update" 1000 times
+last_ac <- replicate(1000, apply_n_times(df, update, 100)[1, ncol(end)])
+last_bc <- replicate(1000, apply_n_times(df, update, 100)[2, ncol(end)])
+
+# histogram of results for latest ac values
+data <- as.data.frame(last_ac)
+a <- ggplot(data, aes(x=last_ac)) + 
+  geom_histogram(binwidth = 0.05, color="black", fill="grey") + 
+  theme_bw() +
+  geom_vline(xintercept = 0.2, linetype="dashed", color = "red", size=0.5) +
+  geom_vline(xintercept = 0.5, linetype="dotted", color = "black", size=0.5) +
+  xlab("Believed crime share") +
+  ggtitle("Learning distribution for A (10% crime detection + 50% prior)")
+
+# histogram of results for latest bc values
+data <- as.data.frame(last_bc)
+b <- ggplot(data, aes(x=last_bc)) + 
+  geom_histogram(binwidth = 0.05, color="black", fill="white") + 
+  theme_bw() +
+  geom_vline(xintercept = 0.8, linetype="dashed", color = "red", size=0.5) +
+  geom_vline(xintercept = 0.5, linetype="dotted", color = "black", size=0.5) +
+  xlab("Believed crime share") +
+  ggtitle("Learning distribution for B (10% crime detection + 50% prior)")
+
+grid.arrange(a, b, ncol = 1, top=textGrob("Polarization close to true crime (dashed line) away from prior beliefs (dotted line)", vjust= 0.4, gp=gpar(fontsize=13,font=4)))
+
+```
+
+This improvement is short lived, though. Suppose the true shares of crime by area are close to one another, say 49:51, while the police prior beliefs about shares of crime are 50:50. The model predicts that, after a sufficiently large number of iterations -- the simulation included 500 updates -- the police will believe that crime is mostly concentrated in the area that contribute slightly more crime than the other. The area that contributes 51% of the crime will be believed to contribute almost the totality of crime. This is the phenomenon of "winner takes all". The histograms below illustrate this point. 
+
+```{r winner takes all, cache=TRUE}
+# true crime allocation between A and B, no longer even
+a <- 0.49
+b <- 0.51
+
+# police crime detection rate when visiting an area
+x <- 0.1
+
+# police beliefs about crime allocation between A and B -- as "ac" and "bc"
+ac <- 0.5
+bc <- 0.5
+
+# starting matrix, ac and bc believed crime proportion by areas A and B
+start <- c(ac, bc)
+df <- data.frame(start)
+
+end <- apply_n_times(df, update, 500)
+# apply function "update" to itself 100 times and assigns to "end"
+
+# replicate function "update" 1000 times
+last_ac <- replicate(1000, apply_n_times(df, update, 500)[1, ncol(end)])
+last_bc <- replicate(1000, apply_n_times(df, update, 500)[2, ncol(end)])
+
+# histogram of results for latest ac values
+data <- as.data.frame(last_ac)
+a <- ggplot(data, aes(x=last_ac)) + 
+  geom_histogram(binwidth = 0.05, color="black", fill="grey") + 
+  theme_bw() +
+  geom_vline(xintercept = 0.49, linetype="dashed", color = "red", size=0.5) +
+  geom_vline(xintercept = 0.5, linetype="dotted", color = "black", size=0.5) +
+  xlab("Believed crime share") +
+  ggtitle("Learning distribution for A (10% crime detection + 50% prior)")
+
+# histogram of results for latest bc values
+data <- as.data.frame(last_bc)
+b <- ggplot(data, aes(x=last_bc)) + 
+  geom_histogram(binwidth = 0.05, color="black", fill="white") + 
+  theme_bw() +
+  geom_vline(xintercept = 0.51, linetype="dashed", color = "red", size=0.5) +
+  geom_vline(xintercept = 0.5, linetype="dotted", color = "black", size=0.5) +
+  xlab("Believed crime share") +
+  ggtitle("Learning distribution for B (10% crime detection + 50% prior)")
+
+grid.arrange(a, b, ncol = 1, top=textGrob("Polarization away from true crime (dashed line)", vjust= 0.4, gp=gpar(fontsize=13,font=4)))
+```
+
+# Adding reports about crime
+
+The models so far show there is something dissatisfying about how the police learn about crime. Can we break the feedback loop and the polarization? We can allow for the police to be guided by both their own findings about crime as well as reports from citizens. 
+Let's support crime reporting uncovers 10% of the true crime in an area, just like police detect 10% of the crime in an area.
+
+
+```{r}
+# true crime allocation between A and B
+a <- 0.5
+b <- 0.5
+
+# police crime detection rate when visiting an area
+x <- 0.1
+
+#  crime reporting rate from citizens
+r <- 0.1
+
+# police beliefs about crime allocation between A and B -- as "ac" and "bc"
+ac <- 0.2
+bc <- 0.8
+```
+
+
+
+```{r}
+# starting matrix consisting of just two rows: "ac" and "bc" for believed crime allocation by areas A and B
+start <- c(ac, bc)          # vector consisting of ac and bc
+df <- data.frame(start)     # turn vector into data.frame
+
+# update function
+update_r <- function(df) {
+      # first row from last column of matrix, picks out ac
+          ac <- df[1, ncol(df)]
+      # second row from last column of matrix, picks out bc
+          bc <- df[2, ncol(df)]
+      # merge with crime reporting, 1/2 weight reporting    
+          ac <- (1/2*(ac)+1/2*(a*r))/((1/2*(ac)+1/2*(a*r))+(1/2*(bc)+1/2*(b*r)))
+          bc <- (1/2*(bc)+1/2*(b*r))/((1/2*(ac)+1/2*(a*r))+(1/2*(bc)+1/2*(b*r)))
+      # flip coin for decision where to go
+          outcome <- c(1, 0)
+          flip <- sample(outcome, 1, prob=c(ac,bc))  # ac and bc: probabilities of coin landing A or B
+      # Case 1 - police goes to area A
+        if (flip==1) {
+          # update ac and bc values by adding detected crime (a*x) and normalizing
+          # a is true crime in A and x is true detection rate
+            ac1_new <- (ac+a*x)/(ac+a*x+bc)
+            bc1_new <- (bc)/(ac+a*x+bc)
+          # update matrix
+            add <- c(ac1_new, bc1_new)
+            # dff new matrix with values of ac and bc updated after crime detection
+            dff <- data.frame(add)
+            df <- cbind(df, dff)
+            return(df)
+                        }
+        # Case 2 - police goes to area B  
+          else {
+             # update ac and bc values by adding detected crime (b*x) and normalizing
+            # b is true crime in B and x is true detection rate
+            ac2_new <- (ac)/(ac+b*x+bc)
+            bc2_new <- (bc+b*x)/(ac+b*x+bc)
+          # update matrix
+            add <- c(ac2_new, bc2_new)
+            dff <- data.frame(add)
+            df <- cbind(df, dff)
+            return(df)
+                 }
+  }
+```
+
+```{r}
+# starting matrix, ac and bc believed crime proportion by areas A and B
+start <- c(ac, bc)
+df <- data.frame(start)
+
+end <- apply_n_times(df, update_r, 100)
+# apply function "update" to itself 100 times and assigns to "end"
+
+# replicate function "update" 1000 times
+last_ac <- replicate(1000, apply_n_times(df, update_r, 100)[1, ncol(end)])
+last_bc <- replicate(1000, apply_n_times(df, update_r, 100)[2, ncol(end)])
+
+# histogram of results for latest ac values
+data <- as.data.frame(last_ac)
+a <- ggplot(data, aes(x=last_ac)) + 
+  geom_histogram(binwidth = 0.05, color="black", fill="grey") + 
+  theme_bw() +
+  geom_vline(xintercept = 0.2, linetype="dotted", color = "black", size=0.5) +
+  geom_vline(xintercept = 0.5, linetype="dashed", color = "red", size=0.5) +
+  xlab("Believed crime share") +
+  ggtitle("Learning distribution for A (10% crime detection + 20% prior)")
+
+# histogram of results for latest bc values
+data <- as.data.frame(last_bc)
+b <- ggplot(data, aes(x=last_bc)) + 
+  geom_histogram(binwidth = 0.05, color="black", fill="white") + 
+  theme_bw() +
+  geom_vline(xintercept = 0.8, linetype="dotted", color = "black", size=0.5) +
+  geom_vline(xintercept = 0.5, linetype="dashed", color = "red", size=0.5) +
+  xlab("Believed crime share") +
+  ggtitle("Learning distribution for B (10% crime detection + 80% prior)")
+
+grid.arrange(a, b, ncol = 1, top=textGrob("Convergence to true crime (dashed line) thanks to crime reports", vjust= 0.4, gp=gpar(fontsize=13,font=4)))
+
+```
+
+The outcome here is reassuring. By taking into account crime reports as well as  crime detection, police seem to converge to believing the true crime shares between A and B, despite the initial beliefs about crime being far away from the truth. 
+But how robust is this result? It does not seem robust. If we increase the police crime detection rate and the crime reporting rate to 60%, beliefs about crime shares no longer converge to the true crime values. The learning distribution is now split into two areas around the true values of the share of crime. 
+
+```{r}
+# true crime allocation between A and B
+a <- 0.5
+b <- 0.5
+
+# police crime detection rate when visiting an area
+x <- 0.6
+
+#  crime reporting rate from citizens
+r <- 0.6
+
+# police beliefs about crime allocation between A and B -- as "ac" and "bc"
+ac <- 0.2
+bc <- 0.8
+```
+
+
+
+```{r}
+# starting matrix consisting of just two rows: "ac" and "bc" for believed crime allocation by areas A and B
+start <- c(ac, bc)          # vector consisting of ac and bc
+df <- data.frame(start)     # turn vector into data.frame
+
+# update function
+update_r <- function(df) {
+      # first row from last column of matrix, picks out ac
+          ac <- df[1, ncol(df)]
+      # second row from last column of matrix, picks out bc
+          bc <- df[2, ncol(df)]
+      # merge with crime reporting, 1/2 weight reporting    
+          ac <- (1/2*(ac)+1/2*(a*r))/((1/2*(ac)+1/2*(a*r))+(1/2*(bc)+1/2*(b*r)))
+          bc <- (1/2*(bc)+1/2*(b*r))/((1/2*(ac)+1/2*(a*r))+(1/2*(bc)+1/2*(b*r)))
+      # flip coin for decision where to go
+          outcome <- c(1, 0)
+          flip <- sample(outcome, 1, prob=c(ac,bc))  # ac and bc: probabilities of coin landing A or B
+      # Case 1 - police goes to area A
+        if (flip==1) {
+          # update ac and bc values by adding detected crime (a*x) and normalizing
+          # a is true crime in A and x is true detection rate
+            ac1_new <- (ac+a*x)/(ac+a*x+bc)
+            bc1_new <- (bc)/(ac+a*x+bc)
+          # update matrix
+            add <- c(ac1_new, bc1_new)
+            # dff new matrix with values of ac and bc updated after crime detection
+            dff <- data.frame(add)
+            df <- cbind(df, dff)
+            return(df)
+                        }
+        # Case 2 - police goes to area B  
+          else {
+             # update ac and bc values by adding detected crime (b*x) and normalizing
+            # b is true crime in B and x is true detection rate
+            ac2_new <- (ac)/(ac+b*x+bc)
+            bc2_new <- (bc+b*x)/(ac+b*x+bc)
+          # update matrix
+            add <- c(ac2_new, bc2_new)
+            dff <- data.frame(add)
+            df <- cbind(df, dff)
+            return(df)
+                 }
+  }
+```
+
+```{r}
+# starting matrix, ac and bc believed crime proportion by areas A and B
+start <- c(ac, bc)
+df <- data.frame(start)
+
+end <- apply_n_times(df, update_r, 100)
+# apply function "update" to itself 100 times and assigns to "end"
+
+# replicate function "update" 1000 times
+last_ac <- replicate(1000, apply_n_times(df, update_r, 100)[1, ncol(end)])
+last_bc <- replicate(1000, apply_n_times(df, update_r, 100)[2, ncol(end)])
+
+# histogram of results for latest ac values
+data <- as.data.frame(last_ac)
+a <- ggplot(data, aes(x=last_ac)) + 
+  geom_histogram(binwidth = 0.05, color="black", fill="grey") + 
+  theme_bw() +
+  geom_vline(xintercept = 0.2, linetype="dotted", color = "black", size=0.5) +
+  geom_vline(xintercept = 0.5, linetype="dashed", color = "red", size=0.5) +
+  xlab("Believed crime share") +
+  ggtitle("Learning distribution for A (10% crime detection + 20% prior)")
+
+# histogram of results for latest bc values
+data <- as.data.frame(last_bc)
+b <- ggplot(data, aes(x=last_bc)) + 
+  geom_histogram(binwidth = 0.05, color="black", fill="white") + 
+  theme_bw() +
+  geom_vline(xintercept = 0.8, linetype="dotted", color = "black", size=0.5) +
+  geom_vline(xintercept = 0.5, linetype="dashed", color = "red", size=0.5) +
+  xlab("Believed crime share") +
+  ggtitle("Learning distribution for B (10% crime detection + 80% prior)")
+
+grid.arrange(a, b, ncol = 1, top=textGrob("Split around true crime (dashed line) even with crime reports", vjust= 0.4, gp=gpar(fontsize=13,font=4)))
+
+```
+
+
+Ultimately the problem seems to be about the right way of designing one's updating function. What is the right way to update one's beliefs about crime -- taking into account both crime reporting as well as discovered crime -- and converge to the true value?
+
+# No flipping: a deterministic update function
+
+Perhaps the problem is that the police flip a coin to decide where to patrol. Given the outcome of the coin flip, the police go 
+-- as a whole -- to just one area at a time. What if police resources were allocated proportionally to what police believe the shares of crime to be? That is, what if areas that are believed to have x% of crime get x% of police resources? This would seem the most rational way to allocate resources. Then, the police can update their beliefs about shares of crime by area and allocate police resources according to the new information. Will this procedure ensure that the police learn about the true shares of crime? The answer is somewhat affirmative.
+
+Let's start with assigning hypothetical values to the police beliefs about crime shares. Say the police believe 
+20% of the crime takes take in area A and the remaining 80% in area B. Suppose true crime shares are actually 55% for A and 45% for B. Police detection rate and reporting rate about crime are both at 10%. 
+
+```{r}
+# true crime allocation between A and B
+a <- 0.55
+b <- 0.45
+
+# police crime detection rate when visiting an area
+x <- 0.1
+
+#  crime reporting rate from citizens
+r <- 0.1
+
+# police beliefs about crime allocation between A and B -- as "ac" and "bc"
+ac <- 0.2
+bc <- 0.8
+```
+
+
+Police resources are deployed proportionally to 
+how much crime is believed to occur in a certain area.  So 
+our update function should be deterministic. Details in the code. 
+
+```{r}
+# starting matrix consisting of just two rows: "ac" and "bc" for believed crime allocation by areas A and B
+start <- c(ac, bc)          # vector consisting of ac and bc
+df <- data.frame(start)     # turn vector into data.frame
+
+# update function
+update_rp <- function(df) {
+      # first row from last column of matrix, picks out ac
+          ac <- df[1, ncol(df)]
+      # second row from last column of matrix, picks out bc
+          bc <- df[2, ncol(df)]
+      # merge with crime reporting, 1/2 weight reporting    
+          ac <- (1/2*(ac)+1/2*(a*r))/((1/2*(ac)+1/2*(a*r))+(1/2*(bc)+1/2*(b*r)))
+          bc <- (1/2*(bc)+1/2*(b*r))/((1/2*(ac)+1/2*(a*r))+(1/2*(bc)+1/2*(b*r)))
+      
+      # update ac and bc values by adding detected crime (a*x) and normalizing
+      # a is true crime in A and x is true detection rate
+      # detection rate of crime (a*x and b*x) in a and b is weighted by prior beliefs (ac, bc), so a*x*ac and b*x*bc
+            ac_new <- (ac+a*x*ac)/((ac+a*x*ac)+(bc+b*x*bc))
+            bc_new <- (bc+b*x*bc)/((ac+a*x*ac)+(bc+b*x*bc))
+      # update matrix
+            add <- c(ac_new, bc_new)
+      # dff new matrix with values of ac and bc updated after crime detection
+            dff <- data.frame(add)
+            df <- cbind(df, dff)
+            return(df)
+                   }
+```
+
+
+Below are the results 
+of iterating the deterministic update function 100 times along with a plot.
+
+
+```{r}
+# starting matrix, ac and bc believed crime proportion by areas A and B
+start <- c(ac, bc)
+df <- data.frame(start)
+end <- apply_n_times(df, update_rp, 100) # repeat updating n times
+share_a <- as.numeric(as.data.frame(end)[1,]) # collect ac values
+share_b <- as.numeric(as.data.frame(end)[2,]) # collect bc values
+iterations <- c(0:100) # label for numbers of iterations
+data.frame(iterations, share_a, share_b)
+```
+
+
+```{r}
+# histogram of results for latest ac values
+data <- data.frame(iterations, share_a, share_b)
+a <- ggplot(data) + 
+  geom_point(aes(x=iterations, y=share_a), color="blue") +
+  geom_point(aes(x=iterations, y=share_b), color="red") +
+  theme_bw() +
+  ylim(0, 1) +
+  geom_hline(yintercept = 0.45, linetype="dashed", color = "red", size=0.5) +
+  geom_hline(yintercept = 0.55, linetype="dashed", color = "blue", size=0.5) +
+  ylab("Beliefs about crime shares by area") +
+  ggtitle("Quasi convergence to true crimes shares (dashed lines)")
+a 
+```
+
+The plot shows that, as the number of iterations increases, police beliefs about shares of crime converge toward values relatively close to the true values of 45% and 55%. But it looks like the police will tend to overestimate the true crime share (for the area that actually contributes more crime) or underestimate the true crime share (for the area that contributes less crime). This a weaker form of the "polarization" phenomenon we saw earlier. So the update function is still not what one would ideally want to have. How can the update function be improved? 
+ 
+ 
+ 
+ 
