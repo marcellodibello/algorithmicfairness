@@ -2,12 +2,19 @@
 title: "[Algorithmic Fairness](https://www.marcellodibello.com/algorithmicfairness/) -- Feedback Loops"
 author: "Marcello Di Bello - ASU - Fall 2021"
 output:
+  tint::tintPdf: 
   tint::tintHtml: 
-  # tint::tintPdf: 
   #tufte::tufte_handout: default
   # tufte::tufte_html: default
 ---
+<style type="text/css">
 
+body{ /* Normal  */
+      font-size: 20px;
+      font-family:'Avenir Next';
+  }
+
+</style>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
