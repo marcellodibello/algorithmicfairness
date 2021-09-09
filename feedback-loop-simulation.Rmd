@@ -9,6 +9,15 @@ output:
     df_print: paged
 ---
 
+<style type="text/css">
+
+body{ /* Normal  */
+      font-size: 20px;
+      font-family:'Avenir Next';
+      background-color:white;
+  }
+  
+</style>
 
 This note describes an elementary model to represent feedback loops in predictive policing. We are trying to model the following scenario. Different areas of a city contribute different shares of the overall crime. The police will make decisions about which areas to patrol depending on where they believe crime is happening, focusing on areas that contribute more crime. As police detect crime during patrolling, they will update their beliefs about the locations of crime and use the updated beliefs to guide further decisions about where to patrol. And so on. The hope is that, after sufficient iterations, the police will acquire an accurate picture about where crime is happening and be able to deploy its resources effectively. But is that the case? Empirical research and simulations 
 of predictive policing show that police will often form a distorted picture about where crime is happening. As the police acquires more information, it appears as though they do not always learn about the true locations of crime. The police prior beliefs about crime persist sometimes unchanged even after several iterations, creating a "feedback loop". This note examines under what conditions 
