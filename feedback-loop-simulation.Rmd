@@ -698,7 +698,7 @@ data.frame(iterations, share_a, share_b)
 ```
 
 
-```{r}
+```{r deterministic update}
 # histogram of results for latest ac values
 data <- data.frame(iterations, share_a, share_b)
 a <- ggplot(data) + 

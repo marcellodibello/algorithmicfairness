@@ -390,6 +390,9 @@ Another problem with data is that decisions based on inadequate data magnify err
 
 *Key readings and materials*
 
+- [Class notes Wk 4]() (if interested, check out my note on [Simulating Feedback Loops in Predictive Policing](https://www.marcellodibello.com/algorithmicfairness/feedback-loop-simulation.html))
+
+
 - O'Neil, [Weapons of Math Destruction](https://www.amazon.com/Weapons-Math-Destruction-Increases-Inequality/dp/0553418831/) - Chps. 3, 4 and 5 
 
 -  Lum and Isaac, [To Predict and Serve?](https://rss.onlinelibrary.wiley.com/doi/10.1111/j.1740-9713.2016.00960.x)
@@ -399,9 +402,10 @@ Another problem with data is that decisions based on inadequate data magnify err
 
 
 -  Ensign, Friedler, Neville, Scheidegger and Venkata, [Runaway Feedback Loops in Predictive policing](https://arxiv.org/abs/1706.09847) - [video](https://www.youtube.com/watch?v=9C6epG-Wyuw)
-      - [Simulating Feedback Loops in Predictive Policing](https://www.marcellodibello.com/algorithmicfairness/feedback-loop-last.html)
-
+      
 - Harcourt, [Against Prediction](https://www.amazon.com/Against-Prediction-Profiling-Punishing-Actuarial/dp/0226316149) - [Chp. 5](https://www.tau.ac.il/law/events/15-12-06/C-Chapter5.pdf)
+
+- Brantingham et al (2018), [Does Predictive Policing Lead to Biased Arrests? Results From a Randomized Control Trial](https://www.tandfonline.com/doi/full/10.1080/2330443X.2018.1438940)
 
 
 **First essay due**
