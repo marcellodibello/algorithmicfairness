@@ -3,6 +3,8 @@ title: "SVM with ProPublica COMPAS Data"
 author: "Marcello Di Bello"
 output:
   html_document:
+    toc: true
+    theme: united
     df_print: paged
 ---
 

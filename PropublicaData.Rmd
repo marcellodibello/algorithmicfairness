@@ -3,6 +3,8 @@ title: "Exploring the ProPublica COMPAS data"
 author: "Marcello Di Bello"
 output:
   html_document:
+      toc: false
+      theme: united
       code_folding: hide
       df_print: paged
   pdf_document: default
