@@ -10,9 +10,13 @@ output:
 body{ /* Normal  */
       font-size: 20px;
       font-family:'Avenir Next';
+      background-color:white;
   }
-
+  
 </style>
+
+
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)

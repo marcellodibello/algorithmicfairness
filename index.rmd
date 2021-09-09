@@ -390,7 +390,7 @@ Another problem with data is that decisions based on inadequate data magnify err
 
 *Key readings and materials*
 
-- [Class notes Wk 4]() (if interested, check out my note on [Simulating Feedback Loops in Predictive Policing](https://www.marcellodibello.com/algorithmicfairness/feedback-loop-simulation.html))
+- [Class notes Wk 4](https://www.marcellodibello.com/algorithmicfairness/handout/Feedback-Loops.html) (if interested, check out my note on [Simulating Feedback Loops in Predictive Policing](https://www.marcellodibello.com/algorithmicfairness/feedback-loop-simulation.html))
 
 
 - O'Neil, [Weapons of Math Destruction](https://www.amazon.com/Weapons-Math-Destruction-Increases-Inequality/dp/0553418831/) - Chps. 3, 4 and 5 
