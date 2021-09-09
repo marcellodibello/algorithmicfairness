@@ -11,6 +11,16 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+<style type="text/css">
+
+body{ /* Normal  */
+      font-size: 20px;
+      font-family:'Avenir Next';
+      background-color:white;
+  }
+  
+</style>
+
 # An anecdote
 
 Douglas Hofstadter, the legendary author of 1979 *Gödel, Escher, Bach: an Eternal Golden Braid*, during a talk at Google in 2014, said: 
