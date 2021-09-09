@@ -184,6 +184,15 @@ pre code {
 </div>
 
 
+<style type="text/css">
+
+body{ /* Normal  */
+      font-size: 20px;
+      font-family:'Avenir Next';
+      background-color:white;
+  }
+  
+</style>
 <p>ProPublica’s 2016 article &quot;<a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">Machine Bias: There’s Software Used Across the Country to Predict Future Criminals. And it’s Biased Against Blacks.</a> shows that the COMPAS algorithm designed by Northpointe, now <a href="https://www.equivant.com/">Equivant</a>, is racially biased, specifically, the false positive rates and the false negative rates are not the same when they are calculated separately for black people and white people. The data that ProPublica used to arrive at this result is publicly available on GitHub <a href="https://github.com/propublica/compas-analysis">here</a>.</p>
 <p>This note explores ProPublica’s data and plots a few histograms that illustrate the racial breakdown in the data and the risk score score distribution by race. The R code is hidden by default. You can inspect the code by clicking “code” on the right and follow along if you’d like.</p>
 <div id="loading-and-filtering-data" class="section level1">

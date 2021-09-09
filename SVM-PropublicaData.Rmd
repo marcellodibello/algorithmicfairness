@@ -8,7 +8,15 @@ output:
     df_print: paged
 ---
 
+<style type="text/css">
 
+body{ /* Normal  */
+      font-size: 20px;
+      font-family:'Avenir Next';
+      background-color:white;
+  }
+  
+</style>
 
 This note describes R code to create and display a support vector machine (SVM) model for predicting recidivism using the ProPublica data about COMPAS available [here](https://github.com/propublica/compas-analysis). Even though the model uses only two risk factors or predictors (age and priors count), its performance is relatively good. The model, however, performs differently across racial groups despite race not being a risk factor or predictor in the model.
 
