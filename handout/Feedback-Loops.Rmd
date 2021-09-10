@@ -2,8 +2,8 @@
 title: "[Algorithmic Fairness](https://www.marcellodibello.com/algorithmicfairness/) -- Feedback Loops"
 author: "Marcello Di Bello - ASU - Fall 2021 - Week #4"
 output:
-  tufte::tufte_handout: default
   tufte::tufte_html: default
+  tufte::tufte_handout: default
 ---
 
 <!--
@@ -120,22 +120,25 @@ Only the last claim is squarely about feedback loops.
 
 `r tufte::margin_note("More details about the simulation are available in my note on Simulating Feedback Loops in Predictive Policing")`
 
-Suppose police want to learn about shares of crime from two areas, A and B. As a matter of fact, each area contributes 50 units of crime, but the police initially believe that one area contributes more crime than the other, say 20:80. 
-Police collect information about where crime is happening every day by patrolling. Suppose police patrolling correctly detects 10% of the crimes happening in an area. There are no false positives. Police update their beliefs about shares of crime by area with information from patrolling every day. Will the police eventually learn the true shares of crime by area?
+Suppose police want to learn about shares of crime from two areas, A and B. Each area contributes a certain share  of crime, and the police have prior beliefs about how much crime one area contributes relative to the other.
+What the police believe initially need not be---and most likely will not be---correct. Police collect information about where crime is happening every day by patrolling. Suppose police patrolling correctly detects 10% of the crimes happening in an area. There are no false positives. Police update their beliefs about shares of crime by area with information from patrolling every day. Will the police eventually learn the true shares of crime by area?
 
-**Scenario 1**: Police decide the area to patrol by flipping a weighted coin. Side A and side B of the coin have a probability corresponding to the share of crime the police believe is happening in A and B respectively. Depending on the outcome of the coin flip, police patrol one area per day.  In this scenario, the police will *not learn* that crime shares are 50:50 even though patrolling correctly detects crime at equal rates in both areas.
+**Scenario 1**: Police decide the area to patrol by flipping a weighted coin. Side A and side B of the coin have a probability corresponding to the share of crime the police believe is happening in A and B respectively. Police initially believe A contributes 20% of crime and B contributes 80%, but these beliefs are updated as police acquire more information about crime. True crime shares are 50:50. Depending on the outcome of the coin flip, police patrol one area per day.  In this scenario, the police will *not learn* that crime shares are in fact 50:50 even though patrolling an area correctly detect crime at equal rates in either area.
 
 
 ```{r, echo=FALSE, fig.margin = FALSE, fig.fullwidth = FALSE, fig.cap="Scenario 1 with coin flip. Police will tend to learn that the shares of crime are similar to what they originally believed. In fact, they will often enough learn that the shares of crime are more extreme than they originally believed. ", out.width = '85%'}
 knitr::include_graphics("/Users/mdibello/My Drive/Teaching/algorithmicfairness/feedback-loop-simulation_files/figure-html/learning distribution-1.png") 
 ```
 
-```{r, echo=FALSE, fig.margin = FALSE, fig.fullwidth = FALSE, fig.cap="Scenario 1 with coin flip. Police prior beliefs about shares of crime are 49:51. The police will eventually believe that crime is mostly concentrated in the area that contributes slightly more crime than the other. The area that contributes 51 percent of the crime will be believed to contribute almost the totality of crime. This is a winner-takes-all phenomenon.", out.width = '85%'}
+**Scenario 2**: Same as the previous scenario except that true crime shares by area are now 49:51 and police initially believe that crime is shared equally, 50:50. Police will not learn the true shares of crime by area, but in fact, form  distorted beliefs that both overestimate and underestimate crime.
+
+
+```{r, echo=FALSE, fig.margin = FALSE, fig.fullwidth = FALSE, fig.cap="Scenario 1 with coin flip. The police will eventually believe that crime is mostly concentrated in the area that contributes slightly more crime than the other. The area that contributes 51 percent of the crime will be believed to contribute almost the totality of crime. This is a winner-takes-all phenomenon.", out.width = '85%'}
 knitr::include_graphics("/Users/mdibello/My Drive/Teaching/algorithmicfairness/feedback-loop-simulation_files/figure-html/winner takes all-1.png") 
 ```
 
 
-**Scenario 2**: Instead of flipping a coin, police send resources in proportion to how much crime they believe is happening in an area. They will split their presence by area accordingly. In this scenario, police will approximately learn the true shares of crime by area.
+**Scenario 3**: Instead of flipping a coin, police send resources in proportion to how much crime they believe is happening in an area. They will split their presence by area accordingly. In this scenario, police will approximately learn the true shares of crime by area.
 
 
 ```{r, echo=FALSE, fig.margin = FALSE, fig.fullwidth = FALSE, fig.cap="Deterministic proportional allocation of police resources. Police beliefs about shares of crime converge toward values relatively close to the true values of 45:55 even if prior beliefs about crime shares were initially far away from the true values. This requires, however, that police arrest data be combiend with crime reports from citizens.", out.width = '85%'}

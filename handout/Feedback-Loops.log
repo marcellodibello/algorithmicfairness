@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.8.16)  9 SEP 2021 20:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.8.16)  10 SEP 2021 01:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -769,7 +769,7 @@ ation_files/figure-html/learning distribution-1.png Graphic file (type png)
 tion_files/figure-html/learning distribution-1.png>
 Package pdftex.def Info: /Users/mdibello/My Drive/Teaching/algorithmicfairness/
 feedback-loop-simulation_files/figure-html/learning distribution-1.png  used on
- input line 285.
+ input line 288.
 (pdftex.def)             Requested size: 265.19225pt x 189.42303pt.
 </Users/mdibello/My Drive/Teaching/algorithmicfairness/feedback-loop-simulation
 _files/figure-html/winner takes all-1.png, id=55, 1349.04pt x 963.6pt>
@@ -779,36 +779,37 @@ ation_files/figure-html/winner takes all-1.png Graphic file (type png)
 tion_files/figure-html/winner takes all-1.png>
 Package pdftex.def Info: /Users/mdibello/My Drive/Teaching/algorithmicfairness/
 feedback-loop-simulation_files/figure-html/winner takes all-1.png  used on inpu
-t line 289.
+t line 298.
 (pdftex.def)             Requested size: 265.19225pt x 189.42303pt.
+[3]
 </Users/mdibello/My Drive/Teaching/algorithmicfairness/feedback-loop-simulation
-_files/figure-html/deterministic update-1.png, id=56, 1349.04pt x 963.6pt>
+_files/figure-html/deterministic update-1.png, id=71, 1349.04pt x 963.6pt>
 File: /Users/mdibello/My Drive/Teaching/algorithmicfairness/feedback-loop-simul
 ation_files/figure-html/deterministic update-1.png Graphic file (type png)
 <use /Users/mdibello/My Drive/Teaching/algorithmicfairness/feedback-loop-simula
 tion_files/figure-html/deterministic update-1.png>
 Package pdftex.def Info: /Users/mdibello/My Drive/Teaching/algorithmicfairness/
 feedback-loop-simulation_files/figure-html/deterministic update-1.png  used on 
-input line 298.
+input line 307.
 (pdftex.def)             Requested size: 265.19225pt x 189.42303pt.
 
 Package bibentry Warning: You have used \nobibliography* 
 (bibentry)                without a following \bibliography.
 (bibentry)                You may not be able to run BibTeX.
 
-[3] [4 </Users/mdibello/My Drive/Teaching/algorithmicfairness/feedback-loop-sim
-ulation_files/figure-html/learning distribution-1.png> </Users/mdibello/My Driv
-e/Teaching/algorithmicfairness/feedback-loop-simulation_files/figure-html/winne
-r takes all-1.png> </Users/mdibello/My Drive/Teaching/algorithmicfairness/feedb
+[4 </Users/mdibello/My Drive/Teaching/algorithmicfairness/feedback-loop-simulat
+ion_files/figure-html/learning distribution-1.png> </Users/mdibello/My Drive/Te
+aching/algorithmicfairness/feedback-loop-simulation_files/figure-html/winner ta
+kes all-1.png>] [5 </Users/mdibello/My Drive/Teaching/algorithmicfairness/feedb
 ack-loop-simulation_files/figure-html/deterministic update-1.png>] (./Feedback-
 Loops.aux)
 Package rerunfilecheck Info: File `Feedback-Loops.out' has not changed.
 (rerunfilecheck)             Checksum: 31F6C2E5F3C3B56012551E9B2122F7A6;553.
  ) 
 Here is how much of TeX's memory you used:
- 13127 strings out of 478994
- 192950 string characters out of 5858184
- 532503 words of memory out of 5000000
+ 13128 strings out of 478994
+ 192956 string characters out of 5858184
+ 531503 words of memory out of 5000000
  30243 multiletter control sequences out of 15000+600000
  474314 words of font info for 137 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -822,10 +823,10 @@ nts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/typ
 e1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw
 /palatino/uplr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on Feedback-Loops.pdf (4 pages, 337510 bytes).
+Output written on Feedback-Loops.pdf (5 pages, 338964 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
- 94 compressed objects within 1 object stream
- 27 named destinations out of 1000 (max. 500000)
+ 120 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
+ 28 named destinations out of 1000 (max. 500000)
  1064 words of extra memory for PDF output out of 10000 (max. 10000000)
 
