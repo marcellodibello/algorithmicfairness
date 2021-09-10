@@ -82,7 +82,7 @@ Each time the police go to an area and discover crime, they update
 their beliefs about crime by area. The police decide where to go on the basis of where they believe crime is happening. When they patrol an area and discover crime, they update their beliefs and then decide again where to go, and so on. This process is **repeated** multiple times -- as many times as the police patrol neighborhoods (which means 
 for days, weeks, years). 
 
-We come to the question about **learning**: Will the police ultimately discover to what extent crime is truly allocated across areas? In terms of our example, will the police learn that crime is split 50:50 between A and B?
+Will the police ultimately discover to what extent crime is truly allocated across areas? In terms of our example, will the police learn that crime is split 50:50 between A and B?
 
 The question rests on how, once the police detect crime, they will update 
 their beliefs about crime by area. Here is a simple model, not necessarily correct. 
@@ -657,6 +657,8 @@ bc <- 0.8
 ```
 
 
+## Proportional police deployment accompanied by citizens reports
+
 Police resources are deployed proportionally to 
 how much crime is believed to occur in a certain area.  So 
 our update function should be deterministic. Details in the code. 
@@ -673,8 +675,10 @@ update_rp <- function(df) {
       # second row from last column of matrix, picks out bc
           bc <- df[2, ncol(df)]
       # merge with crime reporting, 1/2 weight reporting    
-          ac <- (1/2*(ac)+1/2*(a*r))/((1/2*(ac)+1/2*(a*r))+(1/2*(bc)+1/2*(b*r)))
-          bc <- (1/2*(bc)+1/2*(b*r))/((1/2*(ac)+1/2*(a*r))+(1/2*(bc)+1/2*(b*r)))
+          wr <- 1/2 # weight for reports r
+          wp <- 1/2 # weight for police p
+          ac <- (wp*(ac)+wr*(a*r))/((wp*(ac)+wr*(a*r))+(wp*(bc)+wr*(b*r)))
+          bc <- (wp*(bc)+wr*(b*r))/((wp*(ac)+wr*(a*r))+(wp*(bc)+wr*(b*r)))
       
       # update ac and bc values by adding detected crime (a*x) and normalizing
       # a is true crime in A and x is true detection rate
@@ -723,7 +727,139 @@ a
 ```
 
 The plot shows that, as the number of iterations increases, police beliefs about shares of crime converge toward values relatively close to the true values of 45% and 55%. But it looks like the police will tend to overestimate the true crime share (for the area that actually contributes more crime) or underestimate the true crime share (for the area that contributes less crime). This a weaker form of the "polarization" phenomenon we saw earlier. So the update function is still not what one would ideally want to have. How can the update function be improved? 
+
+## Doing away with reports 
+
+Recall that this method of updating relies on crime reports from citizens as well as police data, each weighed equally. There is a simple way to improve the function, that is, to completely disregard police data and rely only on crime reports from citizens. Since reports from citizens, by assumption, are not tied to selective police deployment, they will quickly lead to discover true shares of crime. To see why reports are so crucial, suppose we dispense with them. Do feedback loops return?
  
  
+```{r}
+# true crime allocation between A and B
+a <- 0.55
+b <- 0.45
+
+# police crime detection rate when visiting an area
+x <- 0.1
+
+#  crime reporting rate from citizens
+r <- 0.1
+
+# police beliefs about crime allocation between A and B -- as "ac" and "bc"
+ac <- 0.2
+bc <- 0.8
+```
+
+
+```{r}
+# starting matrix consisting of just two rows: "ac" and "bc" for believed crime allocation by areas A and B
+start <- c(ac, bc)          # vector consisting of ac and bc
+df <- data.frame(start)     # turn vector into data.frame
+
+# update function
+update_rp <- function(df) {
+      # first row from last column of matrix, picks out ac
+          ac <- df[1, ncol(df)]
+      # second row from last column of matrix, picks out bc
+          bc <- df[2, ncol(df)]
+      # merge with crime reporting, 1/2 weight reporting    
+          wr <- 0 # weight for reports r
+          wp <- 1 # weight for police p
+          ac <- (wp*(ac)+wr*(a*r))/((wp*(ac)+wr*(a*r))+(wp*(bc)+wr*(b*r)))
+          bc <- (wp*(bc)+wr*(b*r))/((wp*(ac)+wr*(a*r))+(wp*(bc)+wr*(b*r)))
+      
+      # update ac and bc values by adding detected crime (a*x) and normalizing
+      # a is true crime in A and x is true detection rate
+      # detection rate of crime (a*x and b*x) in a and b is weighted by prior beliefs (ac, bc), so a*x*ac and b*x*bc
+            ac_new <- (ac+a*x*ac)/((ac+a*x*ac)+(bc+b*x*bc))
+            bc_new <- (bc+b*x*bc)/((ac+a*x*ac)+(bc+b*x*bc))
+      # update matrix
+            add <- c(ac_new, bc_new)
+      # dff new matrix with values of ac and bc updated after crime detection
+            dff <- data.frame(add)
+            df <- cbind(df, dff)
+            return(df)
+                   }
+```
+
+
+Below are the results 
+of iterating the deterministic update function 500 times 
+along with a plot, asuming no reliance on crime reports.
+
+
+```{r}
+# starting matrix, ac and bc believed crime proportion by areas A and B
+start <- c(ac, bc)
+df <- data.frame(start)
+end <- apply_n_times(df, update_rp, 500) # repeat updating n times
+share_a <- as.numeric(as.data.frame(end)[1,]) # collect ac values
+share_b <- as.numeric(as.data.frame(end)[2,]) # collect bc values
+iterations <- c(0:500) # label for numbers of iterations
+data.frame(iterations, share_a, share_b)
+```
+
+
+```{r deterministic update no crime reporting}
+# histogram of results for latest ac values
+data <- data.frame(iterations, share_a, share_b)
+a <- ggplot(data) + 
+  geom_point(aes(x=iterations, y=share_a), color="blue") +
+  geom_point(aes(x=iterations, y=share_b), color="red") +
+  theme_bw() +
+  ylim(0, 1) +
+  geom_hline(yintercept = 0.45, linetype="dashed", color = "red", size=0.5) +
+  geom_hline(yintercept = 0.55, linetype="dashed", color = "blue", size=0.5) +
+  ylab("Beliefs about crime shares by area") +
+  ggtitle("No crime reporting - winner takes all driven by true crime shares (dashed lines)")
+a 
+```
  
+ The plot shows that the police will form beliefs about crime shares that are somewhat sensitive to true shares of crime, but it will overestimate the shares of crime for the area with slightly more crime and underestimated the shares of crime for the area will slightly less share of crime. This is a winner-takes-all phenomenon.
  
+ As another variation, we can stipulate that the true shares of crime are exactly 50:50.
+ 
+```{r}
+# true crime allocation between A and B
+a <- 0.5
+b <- 0.5
+
+# police crime detection rate when visiting an area
+x <- 0.1
+
+#  crime reporting rate from citizens
+r <- 0.1
+
+# police beliefs about crime allocation between A and B -- as "ac" and "bc"
+ac <- 0.2
+bc <- 0.8
+```
+ 
+```{r}
+# starting matrix, ac and bc believed crime proportion by areas A and B
+start <- c(ac, bc)
+df <- data.frame(start)
+end <- apply_n_times(df, update_rp, 500) # repeat updating n times
+share_a <- as.numeric(as.data.frame(end)[1,]) # collect ac values
+share_b <- as.numeric(as.data.frame(end)[2,]) # collect bc values
+iterations <- c(0:500) # label for numbers of iterations
+```
+
+```{r deterministic update even priors}
+# histogram of results for latest ac values
+data <- data.frame(iterations, share_a, share_b)
+a <- ggplot(data) + 
+  geom_point(aes(x=iterations, y=share_a), color="blue") +
+  geom_point(aes(x=iterations, y=share_b), color="red") +
+  theme_bw() +
+  ylim(0, 1) +
+  geom_hline(yintercept = 0.45, linetype="dashed", color = "red", size=0.5) +
+  geom_hline(yintercept = 0.55, linetype="dashed", color = "blue", size=0.5) +
+  ylab("Beliefs about crime shares by area") +
+  ggtitle("Even priors - no learning about true crime shares (dashed lines)")
+a 
+```
+
+The plot shows that the police learn nothing. No matter how much patrolling they do and data they collect, they will stick to their guns and keep believing whatever they initially believed about  shares of crime by area irrespective of true crime shares. There is no feedback loop any more, but there is also an absolute lack of learning. This is no less troubling. Doing away with crime reports by citizens is disastrous even if we allocate police resources proportionally.
+
+
+
