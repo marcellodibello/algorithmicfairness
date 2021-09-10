@@ -2,8 +2,8 @@
 title: "[Algorithmic Fairness](https://www.marcellodibello.com/algorithmicfairness/) -- Feedback Loops"
 author: "Marcello Di Bello - ASU - Fall 2021 - Week #4"
 output:
-  tufte::tufte_html: default
   tufte::tufte_handout: default
+  tufte::tufte_html: default
 ---
 
 <!--
@@ -138,7 +138,7 @@ knitr::include_graphics("/Users/mdibello/My Drive/Teaching/algorithmicfairness/f
 **Scenario 2**: Instead of flipping a coin, police send resources in proportion to how much crime they believe is happening in an area. They will split their presence by area accordingly. In this scenario, police will approximately learn the true shares of crime by area.
 
 
-```{r, echo=FALSE, fig.margin = FALSE, fig.fullwidth = FALSE, fig.cap="Deterministic proportional allocation of police resources. Police beliefs about shares of crime converge toward values relatively close to the true values of 45:55 even if prior beliefs about crime shares were initially far away from the true values.", out.width = '85%'}
+```{r, echo=FALSE, fig.margin = FALSE, fig.fullwidth = FALSE, fig.cap="Deterministic proportional allocation of police resources. Police beliefs about shares of crime converge toward values relatively close to the true values of 45:55 even if prior beliefs about crime shares were initially far away from the true values. This requires, however, that police arrest data be combiend with crime reports from citizens.", out.width = '85%'}
 knitr::include_graphics("/Users/mdibello/My Drive/Teaching/algorithmicfairness/feedback-loop-simulation_files/figure-html/deterministic update-1.png") 
 ```
 
