@@ -730,7 +730,7 @@ The plot shows that, as the number of iterations increases, police beliefs about
 
 ## Doing away with reports 
 
-Recall that this method of updating relies on crime reports from citizens as well as police data, each weighed equally. There is a simple way to improve the function, that is, to completely disregard police data and rely only on crime reports from citizens. Since reports from citizens, by assumption, are not tied to selective police deployment, they will quickly lead to discover true shares of crime. To see why reports are so crucial, suppose we dispense with them. Do feedback loops return?
+Recall that this method of updating relies on crime reports from citizens as well as police data, each weighed equally. There is a simple way to improve the function, that is, to disregard police data and rely only on crime reports from citizens. Since reports from citizens, by assumption, are not tied to selective police deployment, they will quickly lead to discover the true shares of crime. To see why reports are so crucial, suppose we dispense with them. Will feedback loops return?
  
  
 ```{r}
@@ -784,7 +784,7 @@ update_rp <- function(df) {
 
 Below are the results 
 of iterating the deterministic update function 500 times 
-along with a plot, asuming no reliance on crime reports.
+along with a plot, assuming no reliance on crime reports.
 
 
 ```{r}
@@ -814,7 +814,7 @@ a <- ggplot(data) +
 a 
 ```
  
- The plot shows that the police will form beliefs about crime shares that are somewhat sensitive to true shares of crime, but it will overestimate the shares of crime for the area with slightly more crime and underestimated the shares of crime for the area will slightly less share of crime. This is a winner-takes-all phenomenon.
+ The plot shows that the police will form beliefs about crime shares that are somewhat sensitive to the true shares of crime, but the police will overestimate the shares of crime for the area with slightly more crime and underestimate the shares of crime for the area will slightly less crime. This is a winner-takes-all phenomenon.
  
  As another variation, we can stipulate that the true shares of crime are exactly 50:50.
  
@@ -852,14 +852,14 @@ a <- ggplot(data) +
   geom_point(aes(x=iterations, y=share_b), color="red") +
   theme_bw() +
   ylim(0, 1) +
-  geom_hline(yintercept = 0.45, linetype="dashed", color = "red", size=0.5) +
-  geom_hline(yintercept = 0.55, linetype="dashed", color = "blue", size=0.5) +
+  geom_hline(yintercept = 0.4999, linetype="dashed", color = "red", size=0.5) +
+  geom_hline(yintercept = 0.5111, linetype="dashed", color = "blue", size=0.5) +
   ylab("Beliefs about crime shares by area") +
   ggtitle("Even priors - no learning about true crime shares (dashed lines)")
 a 
 ```
 
-The plot shows that the police learn nothing. No matter how much patrolling they do and data they collect, they will stick to their guns and keep believing whatever they initially believed about  shares of crime by area irrespective of true crime shares. There is no feedback loop any more, but there is also an absolute lack of learning. This is no less troubling. Doing away with crime reports by citizens is disastrous even if we allocate police resources proportionally.
+The plot shows that the police does not learn anything. No matter how much patrolling they do and data they collect, they will stick to their guns and keep believing whatever they initially believed about  shares of crime by area irrespective of true crime shares. There is no feedback loop any more, but there is also no learning. This is no less troubling than a pernicious feedback loop. Doing away with crime reports by citizens is disastrous even if we allocate police resources proportionally.
 
 
 

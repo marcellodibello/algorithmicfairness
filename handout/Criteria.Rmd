@@ -2,8 +2,8 @@
 title: "[Algorithmic Fairness](https://www.marcellodibello.com/algorithmicfairness/) -- Fairness Criteria"
 author: "Marcello Di Bello - ASU - Fall 2021 - Week #5"
 output:
-  tufte::tufte_html: default
   tufte::tufte_handout: default
+  tufte::tufte_html: default
 ---
 
 <!--
@@ -88,7 +88,7 @@ predictive, one could in theory build an accurate risk model using only examples
 features and risk, which by our assumption would generalize to the entire population. This phenomenon
 highlights a tension in many informal discussions of fairness, with scholars advocating both for representative
 training data and for the exclusion of protected attributes. In reality, representative data are often most
-important precisely when protected attributes add information, in which case their use is arguably justified (p. 10)^[Corbett-Davies and Goel, [The Measure and Mismeasure of Fairness](https://arxiv.org/pdf/1808.00023.pdf)]
+important precisely when protected attributes add information, in which case their use is arguably justified (p. 10).^[Quotations in this section are from the paper by Corbett-Davies and Goel (2018), [The Measure and Mismeasure of Fairness](https://arxiv.org/pdf/1808.00023.pdf)]
 
 # .... equal false positives
 
