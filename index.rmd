@@ -426,6 +426,8 @@ We will examine these definitions and their relationship to accuracy.
 
 *Key readings and materials*
 
+- [Class notes Wk 5](https://www.marcellodibello.com/algorithmicfairness/handout/Criteria.html)
+
 - Kearns and Roth, *The Ethical Algorithm*, Chp. 2 
 
 -  Corbett-Davies and  Goel. [The Measure and Mismeasure of Fairness: A Critical Review of Fair Machine Learning](https://arxiv.org/abs/1808.00023) - [video](https://www.youtube.com/watch?v=Qc6fYWPkDtU)
