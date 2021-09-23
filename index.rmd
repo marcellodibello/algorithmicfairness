@@ -458,7 +458,7 @@ the University of Virginia School of Law and the author of one of the readings a
 
 *Key readings and materials*
 
-- [Class notes Wk 6](https://www.marcellodibello.com/algorithmicfairness/handout/impossibility.html) (check out [Chouldechova's Impossibility: In Pictures](https://www.marcellodibello.com/algorithmicfairness/PPV.pdf))
+- [Class notes Wk 6](https://www.marcellodibello.com/algorithmicfairness/handout/impossibility.html) (also check out [Chouldechova's Impossibility: In Pictures](https://www.marcellodibello.com/algorithmicfairness/PPV.pdf))
 
 - Hellman, [Measuring Algorithmic Fairness](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3418528)
 
@@ -683,9 +683,10 @@ What would that mean?
 
 ## Wk 16 - 12/2
 
-**TBA**
+**Q&A with Seth Lazar and Jake Stone**
 
-
+[Seth Lazar](http://www.sethlazar.xyz/) and Jake Stone from the Australian National University will present 
+their ongoing project 'Machine Learning and the Ethics of Inference'
 
 **Third essay or research paper due**
 
