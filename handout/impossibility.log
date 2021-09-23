@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.8.16)  23 SEP 2021 01:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.8.16)  23 SEP 2021 14:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -734,7 +734,7 @@ LaTeX Warning: Marginpar on page 2 moved.
 
 LaTeX Warning: Marginpar on page 3 moved.
 
-<impossibility_files/figure-latex/unnamed-chunk-1-1.pdf, id=49, 273.02pt x 168.
+<impossibility_files/figure-latex/unnamed-chunk-1-1.pdf, id=53, 273.02pt x 168.
 63pt>
 File: impossibility_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (type
  pdf)
@@ -760,21 +760,21 @@ LaTeX Warning: Marginpar on page 4 moved.
 
 LaTeX Warning: Marginpar on page 4 moved.
 
+[4 <./impossibility_files/figure-latex/unnamed-chunk-1-1.pdf>] [5]
 
 Package bibentry Warning: You have used \nobibliography* 
 (bibentry)                without a following \bibliography.
 (bibentry)                You may not be able to run BibTeX.
 
-[4 <./impossibility_files/figure-latex/unnamed-chunk-1-1.pdf>] (./impossibility
-.aux)
+[6] (./impossibility.aux)
 Package rerunfilecheck Info: File `impossibility.out' has not changed.
-(rerunfilecheck)             Checksum: D38702EAA6CD01F2987A56A5AF8CFBF0;588.
+(rerunfilecheck)             Checksum: 519B4403F1F87A59D9D57B7614C157AF;836.
  ) 
 Here is how much of TeX's memory you used:
- 13180 strings out of 478994
- 191225 string characters out of 5858184
- 526953 words of memory out of 5000000
- 30288 multiletter control sequences out of 15000+600000
+ 13189 strings out of 478994
+ 191355 string characters out of 5858184
+ 527062 words of memory out of 5000000
+ 30290 multiletter control sequences out of 15000+600000
  471401 words of font info for 132 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  105i,12n,105p,300b,360s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -787,10 +787,10 @@ dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2021/texmf-dist/fo
 nts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/ty
 pe1/urw/palatino/uplr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw
 /palatino/uplri8a.pfb>
-Output written on impossibility.pdf (4 pages, 124270 bytes).
+Output written on impossibility.pdf (6 pages, 129576 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 93 compressed objects within 1 object stream
- 26 named destinations out of 1000 (max. 500000)
- 1054 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 131 PDF objects out of 1000 (max. 8388607)
+ 110 compressed objects within 2 object streams
+ 33 named destinations out of 1000 (max. 500000)
+ 1062 words of extra memory for PDF output out of 10000 (max. 10000000)
 

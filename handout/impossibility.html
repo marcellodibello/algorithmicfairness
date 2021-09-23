@@ -149,7 +149,7 @@ body{ /* Normal  */
 <p>The theorem states that, given different base rates or prevalence across groups, no algorithm can satisfy both predictive calibration and classification balance unless the algorithm achieves perfect prediction. The proof is involved.</p>
 </div>
 <div id="the-diagonal" class="section level1">
-<h1>The Diagonal</h1>
+<h1><strong>The Diagonal</strong></h1>
 <p>The two impossibility theorems that use four criteria of fairness:</p>
 <table>
 <thead>
@@ -173,6 +173,28 @@ body{ /* Normal  */
 </tbody>
 </table>
 <p>But what about <em>1. classification parity</em> (equality in <span class="math inline">\(FPR\)</span> and <span class="math inline">\(FNR\)</span>) and <em>4. prediction calibration</em>. Are these two criteria compatible?</p>
+</div>
+<div id="hellmans-measurign-algorithmc-fairness" class="section level1">
+<h1><strong>Hellman’s Measurign Algorithmc Fairness</strong></h1>
+<p>The starting point of the paper are two families of fairness criteria, those based on equality of predictive value (or predictive accuracy) and those based on equality in error rates. The paper makes three claims: conceptual, normative and legal.</p>
+<ol style="list-style-type: decimal">
+<li>Conceptual claim</li>
+</ol>
+<p><em>Non-comparative</em>. Predictive value (or predictive accuracy) matters for how we should form our beliefs. For example, if a student passes a test and the test has high predictive accuracy, we should be confident that the student is actually well-prepared. If the test has low predictive accuracy, we should not be confident that the student is actually well-prepared.</p>
+<p><em>Comparative</em>. Like predictive accuracy, equal predictive value (EPV) matters for how we should form our beliefs. If a test has less predictive accuracy for men than for women (see example on page 832), we should be less confident that a man who passed the test is actually well-prepared than how confident we should be that a woman who also passed the same test is actually well-prepared.</p>
+<p>Does this difference imply that men have been treated unfairly or that women have been treated unfairly? It seems not. Fair treatment pertains to decisions and actions, and instead, equal predictive value guides belief formation.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Normative claim</li>
+</ol>
+<p><em>Non-comparative</em>. When we make a decision—such as convict someone or put someone in preventative detention—we could make a false positive decision or false negative decision. Before we make a decision, we should weigh the these types of mistakes against one another and strike the right balance between false positives and false negatives.</p>
+<p><em>Comparative</em>. Fairness requires that, when we make a decision, we strike the <em>same balance</em> between false positives and false negatives across groups. In other words, fairness requires we comply with error ratio parity (ERP). The violation of error ratio parity (ERP) is ‘importantly suggestive’ (p. 836) of unfairness.</p>
+<p>Both EPV and ERP are important. An algorithm should probably satisfy both. But only the latter matters for assessing the fairness of decisions and actions. The former matters for forming equally accurate beliefs.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Legal claim</li>
+</ol>
+<p>One way to improve both EPV and ERP is to improve the informational content of the data that which algorithm uses to assess risk scores. The informational content can be improved by relying on protected classifications such as race or gender in constructing the risk scores.</p>
+<p>But isn’t it unconstitutional to explicit rely on protected classifications for making decisions? Wouldn’t that amount to a form of discrimination? US Constitutional anti-discrimination law imposes heightened judicial review (strict scrutiny) for disparate treatment on the basis of protected classifications. But there might be ways to rely on protected classifications in making decisions which do not count as disparate treatment inviting strict scrutiny.</p>
+<p>Consider the case of race. For one thing, race-specific decision thresholds would trigger strict scrutiny and be unlikely to pass judicial review. However, using race more indirectly for assigning different weights to other predictors—say, because some predictors are more reliable indicators of the outcome of interest for different racial groups—need not count as disparate treatment on the basis of race.</p>
 </div>
 
 
