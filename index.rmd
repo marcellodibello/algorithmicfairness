@@ -484,6 +484,8 @@ The debate about algorithmic fairness is nothing new. Since the development of s
 
 *Key readings and materials*
 
+- [Class notes Wk 7](https://www.marcellodibello.com/algorithmicfairness/handout/history.html)
+
 - Rodrigo Ochigame, [The Long History of Algorithmic Fairness](https://phenomenalworld.org/analysis/long-history-algorithmic-fairness)  
 
 - Barbara Kiviat, [Which Data Fairly Differentiate?](https://sociologicalscience.com/articles-v8-2-26/)
