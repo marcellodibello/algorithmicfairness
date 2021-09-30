@@ -32,7 +32,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-Our goal is twofold: one, to track people's ideas of fairness about data and risk assessment; two, to explore the history of risk assessment with a focus on banks and insurance companies. 
+Our goal is twofold: one, to understand people's ideas of fairness about data and risk assessment; two, to explore the history of risk assessment with a focus on banks and insurance companies. 
 
 
 # **(Un)fair Data**
@@ -48,14 +48,14 @@ Personal Data in Two Market Settings](https://sociologicalscience.com/download/v
 
 Kiviat constructed a representative sample of the US population and asked participants questions about what types of data they would consider fair to use in lending and insurance policy decisions. Data included things such as: accident history, speeding tickets, driving style, credit score, when and where a person drives, Zip code, rent payment on time,
 utility and TV bill payment on time, income.
-`r tufte::margin_note("Check out findings on pp. 34-35 of the paper.")`
+`r tufte::margin_note("Check out Kiviat's research findings on pp. 34-35 of the paper.")`
 
 ## Relatedness: statistical and logical 
 
 
 Many respondents maintained that fair data should be 
 *related* to the outcome of interest, such as timely loan repayment in lending 
-or no car accident in car insurance decisions. `r tufte::margin_note("To beat competition and incraese profits, many lenders are now using alternative credit data---non-traditional data about creditworthiness. Check out reports about Alternative Credit Data by companies such as Experian or Transunion.")` Relatedness is understood, first, as 
+or no car accident in car insurance decisions. `r tufte::margin_note("To beat competition and boost profits, many lenders are now using alternative credit data---non-traditional data about creditworthiness. Check out reports about Alternative Credit Data by companies such as Experian or Transunion.")` Relatedness is understood, first, as 
 merely statistical. One respondent noted:
 
 > "If there is a statistical correlation between how often you move and accident history, this seems
@@ -75,7 +75,7 @@ In other words, logical relatedness is understood as: (a) the data describe a si
 
 Kiviat notes an interesting---if not 
 disturbing---implication of this distinction that many lenders or insurers 
-might pick up. 
+might exploit:
 
 > "...a focus on personal disposition, rather
 than situational similarly, enables data to reach further, into a broader range of new
@@ -134,12 +134,12 @@ the money on the table? Each of us has contributed equal amounts of money.
 
 Algorithms and mathematization were also seen as the solution to 
 interminable disputes, war, social divisions 
-and diplomatic intractability as in Leibniz' *Calculemus!*
+and diplomatic intractability as in Leibniz' *calculemus!*
 
 
 ## The mathematization of jurisprudence (18th century) 
 
-Condorcet (1743-1794) and Laplace (1949-1827) set to mathematize 
+Condorcet (1743-1794) and Laplace (1749-1827) set to mathematize 
 the moral sciences, especially jurisprudence and legal decision-making. 
 For example, Condorcet's jury theorem shows that the accuracy of jury decisions 
 improves monotonically the more people are involved, assuming 
