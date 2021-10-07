@@ -509,6 +509,8 @@ in algorithmic bias and how the social sciences measure the causal effect of rac
 
 *Key readings and materials*
 
+- [Class notes Wk 8](https://www.marcellodibello.com/algorithmicfairness/handout/structural.html)
+
 - Hu, [What is 'Race in Algorithmic Discrimination on the Basis of Race?](https://www.youtube.com/watch?v=m5GdAgZnpzA&list=PLdn0giYPTOk1bBDFhz047rrZ5t5I_Sju6&index=15)
 
 - Hu, Disparate Causes, [Part I](https://phenomenalworld.org/analysis/disparate-causes-i) and [Part II](https://phenomenalworld.org/analysis/disparate-causes-pt-ii)
