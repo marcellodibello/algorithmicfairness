@@ -5,7 +5,7 @@ title: "Algorithmic Fairness "
 subtitle: "PHI420/PHI591 - Fall 21"
 author: "[Marcello Di Bello](https://www.marcellodibello.com/)  - mdibello@asu.edu"
 output:
-  rmdformats::html_clean:
+    rmdformats::html_clean:
     fig_width: 6
     fig_height: 6
     highlight: kate
@@ -545,6 +545,8 @@ for today. *Please come prepared to ask questions*.
 
 
 *Key readings and materials*
+
+- [Class notes Wk 9](https://www.marcellodibello.com/algorithmicfairness/handout/structural2.html)
 
 - Zimmerman & Lee-Stronach, [Proceed with Caution](https://static1.squarespace.com/static/5edf7fd2ee3e960a7bd85641/t/60c4e825c714e269022fa850/1623517225765/Proceed+with+Caution+-+Annette+Zimmermann+and+Chad+Lee-Stronach+-+accepted+version+-+Canadian+Journal+of+Philosophy+2021.pdf)
 
