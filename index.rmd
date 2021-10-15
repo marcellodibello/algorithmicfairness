@@ -560,7 +560,7 @@ for today. *Please come prepared to ask questions*.
 
 **Algorithmic Equal Protection**
 
-Algorithimic fairneess is closely conected with antidiscrimination 
+Algorithmic fairness is closely connected with antidiscrimination 
 and equal protection jurisprudence, specifically the notions 
 of "disparate treatment" and "disparate impact".  Any differential treatment that is due to racial animus or discriminatory intent is clearly illegal. But 
 the Supreme Court has allowed the use of race in specified contexts, for example, in college admissions for the purpose of fostering diversity (see e.g. [Fisher v. University of Texas (2016)](https://www.oyez.org/cases/2015/14-981)). Evidence of disparate impact against a protected group is enough to make a prima facie case of discrimination. This applies to sectors such as employment and housing (see e.g. [Title VII of the Civil Rights Act of 1964](https://www.eeoc.gov/laws/statutes/titlevii.cfm) and [Hazelwood School District v. United States (1977)](https://en.wikipedia.org/wiki/Hazelwood_School_District_v._United_States)). 
@@ -576,8 +576,8 @@ can help to understand what algorithmic fairness consists in.
 
 - Any court opinion linked above
 
-## Wk 11 - 10/28
 
+<!---
 **The Economics of Discrimination**
 
 The academic debate about algorithmic fairness mirrors, in some important ways, 
@@ -602,12 +602,13 @@ approach to discrimination guided by Nobel prize winners [Gary Becker](https://e
 
 -  Simoiu,  Corbett-Davies and  Goel, [The Problem of Infra-Marginality](https://5harad.com/papers/threshold-test.pdf)
 
+--->
 
-## Wk 12 - 11/4
+## Wk 11 - 10/28
 
 **Fairness v. Welfare**
 
-We now analize the question of algorithmic 
+We now analyze the question of algorithmic 
 fairness from the perspective of utilitarianism. 
 Utilitarianism, roughly, says that the right action 
 is one that maximizes social welfare. 
@@ -628,8 +629,10 @@ require to treat people unfairly.
 -  Bentham, Introduction to the Principles of Morals and Legislation, 
 [Chps. I–II](https://www.econlib.org/library/Bentham/bnthPML.html)
 
+-  Becker, [The Economic Way of Looking at Life](https://www.nobelprize.org/uploads/2018/06/becker-lecture.pdf) (mostly focus on the sections about discrimination and crime)
 
-## Wk 13 - 11/11
+
+## Wk 12 - 11/4
 
 **Equality** 
 
@@ -664,6 +667,9 @@ What would algorithmic fairness look like in light of these egaliatarian views?
 -  Heidari,  Loi, Gummadi and Krause, [A Moral Framework for Understanding fair ML Through Economic Models of Equality of Opportunity](https://www.cs.cornell.edu/~hh732/heidari2019moral.pdf)
 
 
+## Wk 13 - 11/11
+
+**Veterans Day, No class**
 
 ## Wk 14 - 11/18
 
