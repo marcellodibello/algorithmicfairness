@@ -570,11 +570,16 @@ can help to understand what algorithmic fairness consists in.
 
 *Key readings and materials*
 
+- [Class notes Wk 10](https://www.marcellodibello.com/algorithmicfairness/handout/law.html)
+
+
 - Barocas and Selbst, [Big Data's Disparate Impact](http://www.californialawreview.org/wp-content/uploads/2016/06/2Barocas-Selbst.pdf)
 
 *Additional readings and materials*
 
 - Any court opinion linked above
+
+- Owes, [Another Equality](https://law.yale.edu/sites/default/files/documents/faculty/papers/Fiss_AnotherEquality.pdf)
 
 
 <!---
