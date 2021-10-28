@@ -616,25 +616,24 @@ approach to discrimination guided by Nobel prize winners [Gary Becker](https://e
 We now analyze the question of algorithmic 
 fairness from the perspective of utilitarianism. 
 Utilitarianism, roughly, says that the right action 
-is one that maximizes social welfare. 
-If utilitarianism is the correct 
+is one that maximizes social welfare. If utilitarianism is the correct 
 ethical theory, algorithms should maximize 
-social welfare and this may 
-require to treat people unfairly. 
+social welfare and this may require to treat people unfairly. Or does it?
 
 *Key readings and materials*
 
-
-- Kaplow and  Shavell, [Fairness Versus Welfare](https://www.nber.org/papers/w9622)
 
 - Huq, [Racial Equity in Algorithmic Criminal Justice](https://scholarship.law.duke.edu/cgi/viewcontent.cgi?article=3972&context=dlj)
 
 *Additional readings and materials*
 
+-  Becker, [The Economic Way of Looking at Life](https://www.nobelprize.org/uploads/2018/06/becker-lecture.pdf) (mostly focus on the sections about discrimination and crime)
+
+- Kaplow and  Shavell, [Fairness Versus Welfare](https://www.nber.org/papers/w9622)
+
 -  Bentham, Introduction to the Principles of Morals and Legislation, 
 [Chps. I–II](https://www.econlib.org/library/Bentham/bnthPML.html)
 
--  Becker, [The Economic Way of Looking at Life](https://www.nobelprize.org/uploads/2018/06/becker-lecture.pdf) (mostly focus on the sections about discrimination and crime)
 
 
 ## Wk 12 - 11/4
