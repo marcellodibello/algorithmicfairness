@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.8.16)  27 OCT 2021 19:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.8.16)  28 OCT 2021 01:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -707,6 +707,9 @@ LaTeX Warning: Marginpar on page 1 moved.
 
 LaTeX Warning: Marginpar on page 1 moved.
 
+
+LaTeX Warning: Marginpar on page 1 moved.
+
 [1
 
 {/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
@@ -716,7 +719,23 @@ LaTeX Warning: Marginpar on page 2 moved.
 
 LaTeX Warning: Marginpar on page 2 moved.
 
-[2] [3]
+
+LaTeX Warning: Marginpar on page 2 moved.
+
+[2]
+
+LaTeX Warning: Marginpar on page 3 moved.
+
+
+LaTeX Warning: Marginpar on page 3 moved.
+
+
+LaTeX Warning: Marginpar on page 3 moved.
+
+[3]
+
+LaTeX Warning: Marginpar on page 4 moved.
+
 
 LaTeX Warning: Marginpar on page 4 moved.
 
@@ -730,26 +749,26 @@ Package bibentry Warning: You have used \nobibliography*
 
 [4] (./Econ.aux)
 Package rerunfilecheck Info: File `Econ.out' has not changed.
-(rerunfilecheck)             Checksum: 31EE90571808C5BF88953014D8227514;352.
+(rerunfilecheck)             Checksum: AF5DF81CA4CCE269ECF551B5750FFED8;503.
  ) 
 Here is how much of TeX's memory you used:
- 13067 strings out of 478994
- 189653 string characters out of 5858184
- 524098 words of memory out of 5000000
- 30201 multiletter control sequences out of 15000+600000
+ 13071 strings out of 478994
+ 189761 string characters out of 5858184
+ 529170 words of memory out of 5000000
+ 30203 multiletter control sequences out of 15000+600000
  461979 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 105i,11n,105p,387b,452s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 105i,11n,105p,512b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2021/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2
 021/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2021/tex
 mf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2021/texmf-dis
 t/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts
 /type1/urw/palatino/uplri8a.pfb>
-Output written on Econ.pdf (4 pages, 92025 bytes).
+Output written on Econ.pdf (4 pages, 94320 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
- 25 named destinations out of 1000 (max. 500000)
- 1041 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 100 PDF objects out of 1000 (max. 8388607)
+ 88 compressed objects within 1 object stream
+ 27 named destinations out of 1000 (max. 500000)
+ 1049 words of extra memory for PDF output out of 10000 (max. 10000000)
 

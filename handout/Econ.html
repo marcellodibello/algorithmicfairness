@@ -80,145 +80,105 @@ body{ /* Normal  */
   }
   
 </style>
-<p>Our goal today is to understand algorithmic fairness (also called equality, equity) from the point of view of utilitarianism. We will read an article by Aziz Huq<label for="tufte-sn-1" class="margin-toggle sidenote-number">1</label><input type="checkbox" id="tufte-sn-1" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">1</span> <a href="https://www.californialawreview.org/wp-content/uploads/2016/06/2Barocas-Selbst.pdf">Big Data Disparate Impact</a>, <em>California Law Review</em>, 2016, 104:671-732</span> who argues that efficiency and equity coincide, at least as far as algorithmic decisions are concerned. Kaplow and Shavell<label for="tufte-sn-2" class="margin-toggle sidenote-number">2</label><input type="checkbox" id="tufte-sn-2" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">2</span> On this distinction, see Fiss, <a href="https://law.yale.edu/sites/default/files/documents/faculty/papers/Fiss_AnotherEquality.pdf">Another Equality</a>, <em>Issues in Legal Scholarship: The Origins and Fate of Antisubordination Theory</em>, 2004, Article 20</span> argue—beyond the realm of algorithmic decisions—that there is a tension between fairness and welfare, though the word ‘fairness’ for them refers to any non-consequentialist conception of justice. The unifying question for today’s discussion can be out as follows: what does utilitarianism and more generally consequentialism have to say about algorithmic fairness? As we will see, it has to say quite a bit!</p>
-<div id="equal-protection-jurisprudence" class="section level2">
-<h2>Equal protection jurisprudence</h2>
-<p>Suppose the preceeding arguments against classification fairness are correct. Are we to conclude that its alternative, predictive fairness, is the right notion? A larger problem remains. A clear analytical framework for algorithmic fairness is still missing. The computer science literature provides several possible definitions, but no clear reason why they matter for algorithmic fairness and to what extent. Defending one conception or another, in a piecemeal way, is unsatisfactory.</p>
-<p>One obvious place to look for a general framework is <a href="https://www.law.cornell.edu/wex/equal_protection">equal protection jurisprudence</a>, specifically, the notions of disparate treatment and disparate impact. Aziz Z. Huq has shown, however, this is not going to work; see his 2019 article <a href="https://scholarship.law.duke.edu/dlj/vol68/iss6/1/">Racial Equity in Algorithmic Criminal Justice</a>, <em>Duke Law Journal</em> (68: 1043-1134).</p>
-<p>Start with <em>disparate treatment</em>. Any differential treatment that is due to racial animus or discrminatory intent is clearly illegal. The use of race as a factor is not automatically prohibited, but must be justified with a clear rationale, an inquiry known as “strict scrutiny”. The Supreme Court has allowed the use of race in specified contexts, for example, in college admissions for the purpose of fostering diversity; see <a href="https://en.wikipedia.org/wiki/Fisher_v._University_of_Texas_(2016)">Fisher v. University of Texas</a> (2016).</p>
-<p>Disparate treatment is unlikely to be helpful here. Algorithms hardly have a racially discriminatory intent nor do they explicitly rely on race as a predictor. Perhaps, the concern is that using race sends a demeaning message and entrenches racial stereotypes. But the use of race in algorithms – if race is used at all – is usually opaque. No demeaning message can be clearly identified. Perhpas, the problem with racial classification is that using race in algorithms would fail to treat defendants as individuals. But so long as race is used with other factors or not used at all, this concern seems unjustified.</p>
+<p>Our goal today is to examine algorithmic fairness from the point of view of utilitarianism. We examine an article by Aziz Huq<label for="tufte-sn-1" class="margin-toggle sidenote-number">1</label><input type="checkbox" id="tufte-sn-1" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">1</span> Huq (2019), <a href="https://scholarship.law.duke.edu/cgi/viewcontent.cgi?article=3972&amp;context=dlj">Racial Equity in Algorithmic Criminal Justice</a>, <em>Duke Law Journal</em>, 68: 1043-1134.</span> who argues that efficiency and equity coincide, at least as far as algorithmic decisions are concerned. The unifying question for today discussion can be put as follows: what does utilitarianism and more generally consequentialism have to say about algorithmic fairness? As we will see, they have quite a bit to say!</p>
+<!---aplow and Shavell^[Kaplow and Shavell (2003), [Fairness Versus Welfare: Notes on the Pareto Principle, Preferences, and Distributive Justice](https://www.nber.org/papers/w9622), *National Bureau of Economic Research*, Working Paper 9622.] argue---beyond the realm of algorithmic decisions---that there is a tension between fairness and welfare, though the word 'fairness' for them refers to any non-consequentialist conception of justice. 
+--->
+<div id="equal-protection-jurisprudence" class="section level1">
+<h1><strong>Equal protection jurisprudence</strong></h1>
+<p>As a preliminary point (PART II), Huq shows that <a href="https://www.law.cornell.edu/wex/equal_protection">equal protection jurisprudence</a> based on the 14th Amendment to the US Constitution is unhelpful for understanding what algorithmic fairness requires.<label for="tufte-mn-1" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-1" class="margin-toggle"><span class="marginnote">Huq’s analysis of equal protection jurisprudence complements the discussion about Title VII antidiscrimination employment law from last week. See Barocas and Selbst, Big Data Disparate Impact, California Law Review, 2016, 104:671-732</span>. This jurisprudence focused on two main ideas: (i) limiting the use of racial classification; and (ii) banning racialized intention. A third idea—(iii) limiting racial disparities or disparate impact —has been mostly aside in equal protection jurisprudence.</p>
+<div id="i-racialized-intent" class="section level2">
+<h2>(i) Racialized intent</h2>
+<p>Any differential treatment that is due to racial animus or discriminatory intent is clearly illegal. The use of race as a factor is not automatically prohibited, but must be justified with a clear rationale, an inquiry known as “strict scrutiny”. The Supreme Court has allowed the use of race in specified contexts under strict scrutiny, for example, in college admissions for the purpose of fostering diversity.<label for="tufte-sn-2" class="margin-toggle sidenote-number">2</label><input type="checkbox" id="tufte-sn-2" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">2</span> See <a href="https://www.oyez.org/cases/2012/11-345">Fisher v. University of Texas at Austin</a>, 570 U.S. 297 (2013) and <a href="https://supreme.justia.com/cases/federal/us/579/14-981/">Fisher v. University of Texas at Austin</a>, 579 U.S. ___ (2016).</span></p>
+<p>Algorithms hardly have a racially discriminatory intent. Perhaps, the argument could be that algorithm rely on racially tainted historical data and using such algorithms counts as a racially discriminatory intent. But tainted data do not seem enough to trigger a constitutional violation of equal protection. Huq writes:</p>
+<blockquote>
+<p>“Even if flawed training data were identified, it seems unlikely that its tainted nature could suffice to establish a constitutional concern in practice. Any moderately competent municipality found using flawed data would … defend its decision as the best option given historically shaped constraints. Because a constitutional violation cannot be shown unless the state relied on race as a ground of decision, as opposed to acting in spite of race, this defense would likely succeed.” (p. 1093)</p>
+</blockquote>
+</div>
+<div id="ii-racial-classification" class="section level2">
+<h2>(ii) Racial classification</h2>
+<p>Racial classification is usually prohibited, partly on the grounds that an epxlicit use of race as criterion for decision sends publicly a demeaning message and entrenches racial stereotypes. But the use of race in algorithms—if race is used at all—is usually opaque. No demeaning message can be clearly identified.</p>
+<p>Further, racial classification is not always prohibited. For example, race is routinely used as part of a suspect description in criminal investigations. Federal Appellate courts have not objected to this practice and the US Supreme Court has declined to intervene.<label for="tufte-sn-3" class="margin-toggle sidenote-number">3</label><input type="checkbox" id="tufte-sn-3" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">3</span> See, for example, <a href="https://casetext.com/case/brown-v-city-of-oneonta">Brown v. City of Oneonta</a> 195 F.3d 111 (2d Cir. 1999), cert. denied, 534 US 816 (2001).</span></p>
+<p>Huq thinks that the use of race as one of the predictors in an algorithmic classifier is akin to the use of race in a suspect description:</p>
+<blockquote>
+<p>“… a classifier based on training data is akin to a suspect description of a familiar sort, insofar as both are predicated on historical facts about crime. <label for="tufte-mn-2" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-2" class="margin-toggle"><span class="marginnote">Do you agree with this parallelism between race as a predictor and race as feature in eyewitness description??</span>. Indeed, an advocate of algorithmic criminal justice might note that human observers are more likely than a machine to err in their deployment of race as a signal of criminality than an algorithm.” (p. 1096)</p>
+</blockquote>
+</div>
+<div id="iii-racial-disaparity" class="section level2">
+<h2>(iii) Racial disaparity</h2>
+<p>What about <em>disparate impact</em> as invoked in <a href="https://www.eeoc.gov/laws/statutes/titlevii.cfm">Title VII</a> emplyment discrimination cases? Evidence of disparate impact against a protected group is enough to make a <em>prima facie</em> case of discrimination; see e.g. <a href="https://en.wikipedia.org/wiki/Hazelwood_School_District_v._United_States">Hazelwood School District v. United States</a> (1977). This applies to sectors such as employment and housing. The criminal justice system, however, seems exempt.<label for="tufte-sn-4" class="margin-toggle sidenote-number">4</label><input type="checkbox" id="tufte-sn-4" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">4</span> In <a href="https://www.oyez.org/cases/1986/84-6811">McClensky v. Kemp</a> (1987), the US Supreme Court ruled that disparate racial impact is not enough to establish a constitutional violation. An elaborate statistical analysis – showing that death penalty decisions in Georgia disproportionately targeted African Americans, controlling for several variables – was not enough to convince the Court that the system violated equal protection.</span></p>
+</div>
+<div id="today-and-back-then" class="section level2">
+<h2>Today and back then</h2>
 <p>Huq makes a historical comment:</p>
 <blockquote>
-<p>Current doctrinal approaches to constitutional racial equality … were configured in the context of judicial efforts to dismantle educational segregation in the Jim Crow South and then during a political backlash to the Civil Rights Movement … the legal conception of racial discrimination as a matter of intention or classification would reflect judicial concern with the discretionary choices of the police officer, school board president, or state legislator—that is, the modal problems presented by mid-century civil rights law (1101).</p>
+<p>“Current doctrinal approaches to constitutional racial equality … were configured in the context of judicial efforts to dismantle educational segregation in the Jim Crow South and then during a political backlash to the Civil Rights Movement … the legal conception of racial discrimination as a matter of intention or classification would reflect judicial concern with the discretionary choices of the police officer, school board president, or state legislator—that is, the modal problems presented by mid-century civil rights law.” (p. 1101)</p>
 </blockquote>
 <p>Today’s context is much different:</p>
 <blockquote>
-<p>A set of tools developed for a regulatory world of dispersed state actors, occasionally motivated by naked animus, cannot be mechanically translated into a world of centralized, computational decision-making (1103).</p>
+<p>“A set of tools developed for a regulatory world of dispersed state actors, occasionally motivated by naked animus, cannot be mechanically translated into a world of centralized, computational decision-making.” (p. 1103)</p>
 </blockquote>
-<p>What about <em>disparate impact</em> as invoked in <a href="https://www.eeoc.gov/laws/statutes/titlevii.cfm">Title VII</a> discrimination cases? Evidence of disparate impact against a protected group is enough to make a <em>prima facie</em> case of discrimination; see e.g. <a href="https://en.wikipedia.org/wiki/Hazelwood_School_District_v._United_States">Hazelwood School District v. United States</a> (1977). This applies to sectors such as employment and housing. The criminal justice system, however, seems exempt. In <a href="https://www.oyez.org/cases/1986/84-6811">McClensky v. Kemp</a> (1987), the US Supreme Court ruled that disparate racial impact is not enough to establish a constitutional violation. An elaborate statistical analysis – showing that death penalty decisions in Georgia disproportionately targeted African Americans, controlling for several variables – was not enough to convince the Court that the system violated equal protection.</p>
 </div>
-<div id="huq" class="section level2">
-<h2>Cost/benefit and multiple thresholds</h2>
-<p>If the legal framework is either obsolete or inapplicable, what else is there? Huq in his 2019 <a href="https://scholarship.law.duke.edu/dlj/vol68/iss6/1/">article</a> favors a cost/benefit framework:</p>
+</div>
+<div id="costbenefit-analysis" class="section level1">
+<h1><strong>Cost/benefit analysis</strong></h1>
+<p>If the legal framework is either obsolete or inapplicable, what else is there? In PART III, Huq puts forward a cost/benefit framework:</p>
 <blockquote>
-<p>the key question for racial equity is whether the costs that an algorithmically driven policy imposes upon a minority group outweigh the benefits accruing to that group (1111).</p>
+<p>“the key question for racial equity is whether the costs that an algorithmically driven policy imposes upon a minority group outweigh the benefits accruing to that group.” (p. 1111)</p>
 </blockquote>
-<p>A narrow view considers just immediate benefits (say, increased public safety) and immediate costs (say, unwarranted detention). But besides immediate costs, there are also more far reaching externalities:</p>
+<p><label for="tufte-mn-3" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-3" class="margin-toggle"><span class="marginnote">The expected cost (or benefit) of an action is the sum of the costs (or benefits) of the possible outcomes associated with the action, where the cost (or benefit) of each outcome is weighed by the respective probability of the outcome. So the expected cost of <taking an umbrella> is the sum of the cost of taking an umbrella when it does not rain (outcome 1) and the costs of taking an umbrella when it does rain (outcome 2), each outcome weighed by its probability.</span> Here Huq is applying the maxim that we should select the course of action in which the expected costs outweigh the expected benefits. The expected cost</p>
+<div id="spillover-costs-and-two-decision-thresholds" class="section level2">
+<h2>Spillover costs and two decision thresholds</h2>
+<p>A narrow view considers just immediate benefits (say, increased public safety) and immediate costs (say, unwarranted detention). But besides immediate costs, there are also broader externalities:</p>
 <blockquote>
-<p>[they] take many forms, including the effect of high incarceration rates on black communities and children as well as the social signification of race as a marker of criminality (1113)</p>
+<p>“[they] take many forms, including the effect of high incarceration rates on black communities and children as well as the social signification of race as a marker of criminality.” (p. 1113)</p>
 </blockquote>
 <p>These negative spillover effects on family life, employment and racial stigma, are likely to disproportionately affect minorities. As Huq writes:</p>
 <blockquote>
-<p>the spillover costs of coercion of minority individuals for the minority group will be greater on a per capita basis than the costs of coercing majority group members (1113).</p>
+<p>“the spillover costs of coercion of minority individuals for the minority group will be greater on a per capita basis than the costs of coercing majority group members.” (p. 1113)</p>
 </blockquote>
 <p>This observation has an important consequence:</p>
 <blockquote>
-<p>accounting for both the immediate and spillover costs of crime control when its immediate benefits are small conduces to a bifurcated risk threshold—one rule for the majority, and one for minority (1131).</p>
+<p>“accounting for both the immediate and spillover costs of crime control when its immediate benefits are small conduces to a bifurcated risk threshold—one rule for the majority, and one for minority.” (p. 1131)</p>
 </blockquote>
-<p>In other words, if decision thresholds should be set at a socially efficient level balancing the costs and benefits of pre-trial coercion, and if the costs of coercion are higher for blacks than for whites because of uneven spillover effects, then the standard for imposing coercion must be <em>more stringent</em> for blacks than for whites, other things equal.</p>
-<p>This is a powerful argument. The emphasis on spillover costs has the merit of broadening the discussion about algorithmic fairness beyond a narrow focus on different equality metrics. Cost/benefit analysis offers a more principled way to think about the issue. But there are complications.</p>
-<p>First, Huq emphasizes negative spillover effects and externalities, but he believes these are less relevant in the case of serious crimes:</p>
-<blockquote>
-<p>… to focus solely on the immediate costs and benefits of a coercive intervention and to ignore externalities … seems a plausible approach with serious crimes, where externalities are dwarfed by immediate costs and benefits (1113).</p>
-</blockquote>
-<p>When negative externalities can be ignored, the same threshold should presumably be imposed for whites and blacks for pre-trial coercion, other things being equal. But is this true of serious crimes? Serious crimes in some communities might have greater net spillover costs than in other communities. A wealthier family can more easily cope with the loss of an adult figure than a less wealthy family.</p>
-<p>Huq’s consequentialist framework would mandate that a <em>less</em> stringent threshold apply for algorithm-based coercion meant to prevent serious crimes in black communities so long as the prevention of serious crime in black communites has greater net benefits. On this view, coercing blacks at much higer rates than whites is justified provided coercion has positive net benefits for both communities.</p>
-<p>The second complication is that the costs/benefit framework makes little difference between reoffenders and non-reoffenders. Huq’s utilitarian calculus is not sensitive to this difference:</p>
-<blockquote>
-<p>there is no particular reason to believe that any of these spillover costs are less if the person subject to the coercion is in fact a true rather than false positive … what should matter is the absolute cost of using a coercive tactic against a member of a minority group, net of benefit, for all members of that racial group. (1127-28)</p>
-</blockquote>
-<p>A tacit notion of equality is at work here. It is unfair for a group, considered as a whole, to accrue positive benefits as a result of algorithmic coercion and for another group, again considered as a whole, to accrue negative net benefits. Call this <em>expected utility equality</em>. One wonders, why equalize along this dimension? By appealig to the cost/benefit framework, Huq has implicitly adopted yet another conception of algorithmic fairness.</p>
-<p>whether, and if so to what extent, the jurisprudence about discrimination can help us make sense of the notion of algorithmic fairness. The answer—according to Barocas and Selbst<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>—is “it is not very helpful”, but it is nevertheless useful to understand why exactly.</p>
-<p>The next question is, if current discrimination law is no good for identifying algorithmic discrimination, what would an adequate legal definition of discrimination look like, one that correctly captures algorithmic discrimination? Is this even possible?</p>
-<p>To answer this question, we need to ask another, even more fundamental and difficult question.<label for="tufte-mn-1" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-1" class="margin-toggle"><span class="marginnote">We have been asking this question throughout the semester under different names, focusing on the positive (algorithmic fairness) rather than the negative side (algorithmic discrimination). These notions may come apart. Is algorithmic fairness a broader notion than lack of algorithmic discrimination?</span> What is algorithmic discrimination?</p>
+<p><label for="tufte-mn-4" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-4" class="margin-toggle"><span class="marginnote">The emphasis on spillover costs has the merit of broadening the discussion about algorithmic fairness beyond a narrow focus on equality metrics. Cost/benefit analysis seems to offer a principled way to think about the issue. Do you see any weakensses in Huq’s argument?</span></p>
+<p>In other words, if decision thresholds should be set at a socially efficient level balancing the costs and benefits of pre-trial coercion, and if the costs of coercion are higher for blacks than for whites because of uneven spillover effects, the standard for imposing coercion must be <em>more stringent</em> for blacks than for whites, other things equal.</p>
 </div>
-<div id="discrimination-in-data-mining" class="section level1">
-<h1><strong>Discrimination in data mining</strong></h1>
-<p>Barocas and Selbst provide a taxonomy. Their taxonomy include things that some may not agree count as algorithmic discrimination (or discrimination in data mining, in their terminology). According to this taxonomy, data mining is discriminatory at several junctures:</p>
-<ol style="list-style-type: decimal">
-<li><p>The definition of the target variables (such as “creditworthy”)</p></li>
-<li><p>Training data: 2a. labeling and 2b. representativeness of the data</p></li>
-<li><p>Feature selection <label for="tufte-mn-2" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-2" class="margin-toggle"><span class="marginnote">First four items correspond to aspects of the data mining: 1. target variables are defined; 2. data are collected and labelled; 3. predictors are selected; 4. correlation are found in the data.</span> for making predictions</p></li>
-<li><p>Patterns in the data</p></li>
-<li><p>Masking</p></li>
-</ol>
-<p>For each of the 5 items, discrimination is evidenced by an outcome that goes to the detriment of a protected group. Here is an illustration. Suppose data mining finds patterns of higher loan default rates that correlate with lower academic performance and lower socio-economic status. <label for="tufte-mn-3" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-3" class="margin-toggle"><span class="marginnote">We have seen this vicious cycle a number of times. Deborah Hellman calls it compounding injustice.</span> Socio-economic status and academic performance is then used to predict the target variable “creditworthiness”. The algorithmic predictions have a disproportionate adverse effect on protected groups and exclude them from access to credit.</p>
-<p>Barocas and Selbst discuss the target variable “creditworthiness”:</p>
-<p><label for="tufte-mn-4" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-4" class="margin-toggle"><span class="marginnote">Do you agree with this constructivist point of view? For them, crediworthiness is not tracking anything real except the interests and expectations of lenders.</span></p>
+<div id="serious-crimes" class="section level2">
+<h2>Serious crimes</h2>
+<p>Huq emphasizes negative spillover effects and externalities, but he believes these are less relevant in the case of serious crimes:</p>
+<p><label for="tufte-mn-5" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-5" class="margin-toggle"><span class="marginnote">Is this true of serious crimes? Serious crimes in some communities might have greater net spillover costs than in other communities. A wealthier family can more easily cope with the loss of an adult figure than a less wealthy family.</span></p>
 <blockquote>
-<p>creditworthiness is a function of the particular way the credit industry has constructed the credit issuing and repayment system. That is, an individual’s ability to repay some minimum amount of an outstanding debt on a monthly basis is taken to be a nonarbitrary standard by which to determine in advance and all-at-once whether he is worthy of credit. (p. 679)</p>
+<p>“… to focus solely on the immediate costs and benefits of a coercive intervention and to ignore externalities … seems a plausible approach with serious crimes, where externalities are dwarfed by immediate costs and benefits.” (p. 1113)</p>
+</blockquote>
+<p>When negative externalities can be ignored, the same threshold should presumably be imposed for whites and blacks for pre-trial coercion, other things being equal.</p>
+</div>
+<div id="mistaken-decisions" class="section level2">
+<h2>Mistaken decisions</h2>
+<p>An interesting—but controversial—aspect of the Huq’s costs/benefit framework is that it makes little difference between actual reoffenders and non-reoffenders. Huq’ writes:</p>
+<p><label for="tufte-mn-6" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-6" class="margin-toggle"><span class="marginnote">Recall the debate betwen ProPublica and Northpointe. The question was, is predictive parity or classification parity the right measure of algorithmic fairness? Both measures are concerned with false positives and false negatives (from different angles, predictive and diagnostic). Huq rejects the common assumption behind the question.</span></p>
+<blockquote>
+<p>“there is noparticular reason to believe that any of these spillover costs are less if the person subject to the coercion is in fact a true rather than false positive … what should matter is the absolute cost of using a coercive tactic against a member of a minority group, net of benefit, for all members of that racial group.” (p. 1127-28)</p>
 </blockquote>
 </div>
-<div id="title-vii-employment-discrimination" class="section level1">
-<h1><strong>Title VII Employment Discrimination</strong></h1>
-<p>Let’s not turn from data mining to antidiscrimination law in employment. There are two main legal doctrines.</p>
-<div id="a.-disparate-treatment" class="section level2">
-<h2>A. Disparate treatment</h2>
-<p>A successful claim of disparate treatment discrimination in employment is established, as follows:</p>
-<p><em>STEP 1</em>: plaintiff makes a <em>prima facie</em> case showing that a similarly situated person who does not belong to the protected group (race, gender, etc.) would have been treated differently.</p>
-<p><em>STEP 2</em>: the defendant (employer) responds with a legitimate, non discriminatory reason for the treatment.</p>
-<p><em>STEP 3</em>: <label for="tufte-mn-5" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-5" class="margin-toggle"><span class="marginnote">The assumption here is that, if the reason is pre-textual, the emplyoyer’s true reason for the decision must be the intention to discriminate.</span> plaintiff establishes by preponderance of the evidence that the reason given by the defendant is pre-textual.</p>
-</div>
-<div id="b.-disparate-impact" class="section level2">
-<h2>B. Disparate impact</h2>
-<p>A successful claim of disparate impact discrimination in employment is established, as follows:</p>
-<p><em>STEP 1</em>: plaintiff makes a <em>prima facie</em> case showing that members of a protected group are disparately impacted (say they are hired for high paying positions at lower rates).</p>
-<p><em>STEP 2</em>: defendant (employer) responds that the employment practice has a job-related purpose (“business necessity defense”). The interpretation of this second step varies. It can be more or less stringent, depending on how “necessary” the employment practice in question should be for the business purpose.</p>
-<p><label for="tufte-mn-6" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-6" class="margin-toggle"><span class="marginnote">Question: Are the forms of data mining discrimination seen earlier included in disparate treatment or disparate effect? Barocas and Selbst think that they are not. Why do they think so?</span></p>
-<p><em>STEP 3</em>: plaintiff establishes that the employment could have achieved the above job-related purpose with an alternative employment practice that would have had no disparate impact.</p>
-<p>Here is a clarification about the last step and the second step:</p>
+<div id="does-welfare-align-with-fairness" class="section level2">
+<h2>Does welfare align with fairness?</h2>
+<p>Huq’s theory purports to reconcile welfare (utility, efficiency) with racial equity (or more generally fairness). This is a strength of the theory. Huq’s argument rests on two assumptions. First,</p>
 <blockquote>
-<p>it is hard to imagine a business practice that is “necessary” while there exists a less discriminatory alternative that is just as effective. If business necessity or job-relatedness is a less stringent requirement, though, then the presence of the alternative employment practice requirement does at least give it some teeth. (p. 706)</p>
+<p>“…most crime is intraracial, such that costs and benefits do not cross the color line by and large.” (p. 1114)</p>
+</blockquote>
+<p>Second, it assumes away circumstances in which racial equity and social efficiency come apart. These circumstances include:</p>
+<blockquote>
+<p>“… a policy benefits both the minority and the majority group, but the former benefit less than the latter. As a result of this gap, the extent of racial stratification increases even as the minority is benefited.” (p. 1114)</p>
+</blockquote>
+<p><label for="tufte-mn-7" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-7" class="margin-toggle"><span class="marginnote">Huq thinks circumstances in which racial equity and efficiency come apart are rare. If they do come apart, Huq would prioritize fairness over welfare—at least in the absence of catastrophic general welfare losses (p. 1115)</span></p>
+<blockquote>
+<p>“…net gains from a policy for a majority group may exceed the net cost imposed on a minority group. Imagine, for example, a national security policy that generates significant benefits by imposing crushing burdens on a very small ethnic or religious minority.” (p. 1114)</p>
 </blockquote>
 </div>
 </div>
-<div id="predictive-algorithms-and-title-vii" class="section level1">
-<h1><strong>Predictive Algorithms and Title VII</strong></h1>
-<p>Can we use employment discrimination law—as described above—to show that algorithms discriminate? Barocas and Selbst think that predictive algorithms are likely to overcome discrimination challenges under Title VII.</p>
-<p>Disparate treatment rests on intentional discrimination, but most algorithmic discrimination is unintentional. <label for="tufte-mn-7" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-7" class="margin-toggle"><span class="marginnote">Question: Why is algorithmic discrimination unintentional? What about masking? What do Barocas and Selbst say about that?</span> So this is a non-starter.</p>
-<p>Disparate impact is more promising for establishing algorithmic discrimination. To answer the charge of discrimination, the employer should show that the employment practice based on algorithmic recommendation serves a business purpose (STEP 2):</p>
-<blockquote>
-<p>Once a target variable is established as job related, the first question is whether the model is predictive of that trait. The nature of data mining suggests that this will be the case … The second question asks whether the model adequately predicts what it is supposed to predict. (p. 707)</p>
-</blockquote>
-<p>If the employer shows that the deployment of the algorithm has a business purpose, the plaintiff can still invoke the alternative employment practice prong (STEP 3).</p>
-<blockquote>
-<p>… there is good reason to believe that any or all of the data mining models predicated on legitimately job-related traits pass muster under the business necessity defense. Models trained on biased samples, mislabeled examples, and limited features, however, might trigger liability under the alternative employment practice prong. If a plaintiff can show that an alternative, less discriminatory practice that accomplishes the same goals exists. (p. 709)</p>
-</blockquote>
-</div>
-<div id="are-reforms-possible" class="section level1">
-<h1><strong>Are reforms possible?</strong></h1>
-<p>If current law about employment discrimination is unable to capture the distinctive ways in which algorithms discriminate, how should the law be reformed? This is not going to be easy.</p>
-<div id="internal-difficulties" class="section level2">
-<h2>Internal difficulties</h2>
-<p>Recall the five ways algorithms can discriminate. These forms of discrimination cannot be easily declared illegal as a matter of law.</p>
-<p><label for="tufte-mn-8" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-8" class="margin-toggle"><span class="marginnote">Question: Should impossibility theorems be added to the internal difficulties?</span></p>
-<ol style="list-style-type: decimal">
-<li><p>The definition of the target variable can be a source of algorithmic discrimination. But target variables are necessarily open to interpretation, disagreement, subjective decisions. The law can hardly regulate this process.</p></li>
-<li><p>Biased labels in the historical data are another sources of algorithmic discrimination. Such biases are widespread. Yet dispensing with historical data would end data mining itself.</p></li>
-<li><p>Predictors that are not fine-grained enough are another source of algorithmic discrimination. The granularity of the predictors could be improved by collecting more data, but when is enough enough? We can apply a cost-benefit analysis model, assessing:</p></li>
-</ol>
-<blockquote>
-<p>… (1) whether the errors seem avoidable because (2) gaining access to additional or more granular data would be trivial or (3) would not involve costs that (4) outweigh the benefits. This seems to suggest that the task of evaluating the legitimacy of feature selection can be reduced to a rather straightforward cost-benefit analysis. (p. 719)</p>
-</blockquote>
-<p>The problem is, this cost-benefit model might recommend that disadvantaged groups suffer disproportionately, say, false positives decisions so long as the costs of balancing these errors across groups outweigh the benefits.</p>
-</div>
-<div id="external-difficulties" class="section level2">
-<h2>External difficulties</h2>
-<p>As some argued, two rationales underlie antidiscrimination law:<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p>
-<ul>
-<li><p><em>Anticlassification</em>: the goal of antidiscrimination law is to ensure that protected classifications are not used as criteria, reasons, grounds for a decision. This is a form of procedural fairness, loosely connected with a prohibition against disparate <em>treatment</em>.</p></li>
-<li><p><em>Antisubordination</em>: the goal of antidiscrimination law is to ensure that substantive inequalities and group disadvantages are eliminated. This is a form of substantive fairness, loosely connected with a prohibition against disparate <em>impact</em>.</p></li>
-</ul>
-<p>These two rationales can be invoked to make sense of our intuitions about what we find discriminatory. Here is a challanging case:</p>
-<blockquote>
-<p>…should the law permit a company to hire no women at all—or none that it correctly predicts will depart following the birth of a child—because it is the most rational choice according to their model? The answer seems obviously to be no. But why not? (p. 727)</p>
-</blockquote>
-<p>Disparate treatment doctrine avoids discrimination if there is a non-discriminatory rationale for the decision. So disparate treatment is unlikely to answer the question in the right way. Could disparate impact (antisubordination) do better?</p>
-<blockquote>
-<p>… the prohibition would have to rest on a substantive commitment to equal representation of women in the workplace. (p. 727)</p>
-</blockquote>
-<p>Barocas and Selbst conjecture that endorsing an antisubordination reading of discrimination law will help in making sense of algorithmic discrimination. However, this will not be easy, especially because the US Sup Ct has disregarded the use of disparate impact (the closest notion to antisubordination) for constitutional questions about discrimination not related to employment practices. <label for="tufte-mn-9" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-9" class="margin-toggle"><span class="marginnote">What we discussed was limited to title VII discrimination. But the other legal source for discrimination is the Equal Protection clause of the 14th Amendment to the US Constitution.</span> For example, an elaborate statistical analysis – showing that death penalty decisions in Georgia disproportionately targeted African Americans, controlling for several variables – was not enough to convince the Court that the system violated equal protection (see <a href="https://www.oyez.org/cases/1986/84-6811">McClensky v. Kemp</a> (1987)).</p>
-</div>
+<div id="a-possible-objection" class="section level1">
+<h1>A possible objection</h1>
+<p>Huq’s proposal allows for seemingly objectionable trade-offs. <label for="tufte-mn-8" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-8" class="margin-toggle"><span class="marginnote">See on this point, footnote 307, citing Forman’s 2017 book Locking Up Our Own showing how black politicians in the 70’s and 80’s believed that police coertion should be exercised more stringently in black comunities to combat rampant drug crime</span> For example, Huq’s consequentialist framework would mandate that a <em>less</em> stringent threshold apply for algorithm-based coercion that prevented serious crimes from occurring in black communities so long as the prevention of serious crime in black communities had greater overall net benefit. On this view, coercing blacks at higher rates than whites would be justified provided coercion had positive net benefits for both communities. Is this an intended result of the theory?</p>
 </div>
 
 
