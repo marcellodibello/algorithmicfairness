@@ -622,6 +622,8 @@ social welfare and this may require to treat people unfairly. Or does it?
 
 *Key readings and materials*
 
+- [Class notes Wk 11](https://www.marcellodibello.com/algorithmicfairness/handout/Econ.html)
+
 
 - Huq, [Racial Equity in Algorithmic Criminal Justice](https://scholarship.law.duke.edu/cgi/viewcontent.cgi?article=3972&context=dlj)
 

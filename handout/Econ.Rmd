@@ -2,8 +2,8 @@
 title: "[Algorithmic Fairness](https://www.marcellodibello.com/algorithmicfairness/) -- Fairness v. Welfare"
 author: "Marcello Di Bello - ASU - Fall 2021 - Week #11"
 output:
-  tufte::tufte_handout: default
   tufte::tufte_html: default
+  tufte::tufte_handout: default
 ---
 
 <!--
@@ -44,16 +44,16 @@ As a preliminary point (PART II), Huq shows that
 [equal protection jurisprudence](https://www.law.cornell.edu/wex/equal_protection) based on the 14th Amendment 
 to the US Constitution is unhelpful for understanding 
 what algorithmic fairness requires.`r tufte::margin_note("Huq's analysis of equal protection jurisprudence complements the discussion about Title VII antidiscrimination employment law from last week. See Barocas and Selbst, Big Data Disparate Impact, California Law Review, 2016, 104:671-732")`.
-This jurisprudence focused on two main ideas: (i) limiting the use of racial classification; 
+This jurisprudence focuses on two main ideas: (i) limiting the use of racial classification; 
 and (ii) banning racialized intention. A third idea---(iii) limiting racial disparities or disparate impact ---has 
 been mostly aside in equal protection jurisprudence. 
 
 ## (i) Racialized intent 
 
-Any differential treatment that is due to racial animus or discriminatory intent is clearly illegal. The use of race as a factor is not automatically prohibited,  but must be justified with a clear rationale, an inquiry known as "strict scrutiny". The Supreme Court has allowed the use of race in specified contexts under strict scrutiny, for example, in college admissions for the purpose of fostering diversity.^[See [Fisher v. University of Texas at Austin](https://www.oyez.org/cases/2012/11-345), 570 U.S. 297 (2013) and [Fisher v. University of Texas at Austin](https://supreme.justia.com/cases/federal/us/579/14-981/), 579 U.S. ___ (2016).]
+Any differential treatment that is due to racial animus or discriminatory intent is clearly illegal. The use of race as a facto in a decision is not automatically prohibited,  but must be justified with a clear rationale, an inquiry known as "strict scrutiny". The Supreme Court has allowed the use of race in specific contexts under strict scrutiny, for example, in college admissions for the purpose of fostering diversity.^[See [Fisher v. University of Texas at Austin](https://www.oyez.org/cases/2012/11-345), 570 U.S. 297 (2013) and [Fisher v. University of Texas at Austin](https://supreme.justia.com/cases/federal/us/579/14-981/), 579 U.S. ___ (2016).]
 
 Algorithms hardly have a racially discriminatory intent. Perhaps, the argument could be 
-that algorithm rely on racially tainted historical data and using such algorithms counts as a racially discriminatory intent. But tainted data do not seem enough to trigger a constitutional violation of equal protection. Huq writes: 
+that algorithms rely on racially biased historical data and intentionally using such algorithms counts as having a racially discriminatory intent. But biased data do not seem enough to trigger a constitutional violation of equal protection. Huq writes: 
 
 > "Even if flawed training data were identified, it seems unlikely that its
 tainted nature could suffice to establish a constitutional concern in
@@ -66,8 +66,8 @@ succeed." (p. 1093)
 
 ## (ii) Racial classification 
 
-Racial classification is usually prohibited, partly on the grounds that 
-an epxlicit use of race as criterion for decision sends publicly a demeaning message and entrenches racial stereotypes. But the use of race in algorithms---if race is used at all---is usually opaque. No demeaning message can be clearly identified. 
+Racial classification is usually prohibited, partly on the ground that 
+an explicit use of race as criterion in a decision sends publicly a demeaning message and entrenches racial stereotypes. But the use of race in algorithms---if race is used at all---is usually opaque. No demeaning message can be clearly identified. 
 
 Further, racial classification is not always prohibited. 
 For example, race is routinely used as part of a suspect description in criminal investigations. 
@@ -77,15 +77,15 @@ the US Supreme Court has declined to intervene.^[See, for example, [Brown v. Cit
 Huq thinks that the use of race as one of the predictors in an algorithmic 
 classifier is akin to the use of race in a suspect description:
 
-> "... a classifier based on training data is akin to a suspect description of a
+> "a classifier based on training data is akin to a suspect description of a
 familiar sort, insofar as both are predicated on historical facts about
-crime. `r tufte::margin_note("Do you agree with this parallelism between race as a predictor and race as feature in eyewitness description??")`. Indeed, an advocate of algorithmic criminal justice might note
+crime. `r tufte::margin_note("Do you agree with this parallelism between race as a predictor and race as feature in eyewitness description?")` ... an advocate of algorithmic criminal justice might note
 that human observers are more likely than a machine to err in their
 deployment of race as a signal of criminality than an algorithm." (p. 1096)
 
 ## (iii) Racial disaparity 
 
-What about *disparate impact* as invoked in [Title VII](https://www.eeoc.gov/laws/statutes/titlevii.cfm) emplyment discrimination cases? Evidence of disparate impact against a protected group is enough to make a *prima facie* case of discrimination; see e.g. [Hazelwood School District v. United States](https://en.wikipedia.org/wiki/Hazelwood_School_District_v._United_States) (1977). This applies to sectors such as employment and housing. The criminal justice system, however, seems exempt.^[In [McClensky v. Kemp](https://www.oyez.org/cases/1986/84-6811) (1987), the US Supreme Court ruled that disparate racial impact is not enough to establish a constitutional violation. An elaborate statistical analysis -- showing that death penalty decisions in Georgia disproportionately targeted African Americans, controlling for several variables -- was not enough to convince the Court that the system violated equal protection.]
+What about *disparate impact* as invoked in [Title VII](https://www.eeoc.gov/laws/statutes/titlevii.cfm) employment discrimination cases? Evidence of disparate impact against a protected group is enough to make a *prima facie* case of discrimination; see e.g. [Hazelwood School District v. United States](https://en.wikipedia.org/wiki/Hazelwood_School_District_v._United_States) (1977). This applies to sectors such as employment and housing. The criminal justice system, however, seems exempt.^[In [McClensky v. Kemp](https://www.oyez.org/cases/1986/84-6811) (1987), the US Supreme Court ruled that disparate racial impact is not enough to establish a constitutional violation. An elaborate statistical analysis -- showing that death penalty decisions in Georgia disproportionately targeted African Americans, controlling for several variables -- was not enough to convince the Court that the system violated equal protection.]
 
 
 
@@ -119,10 +119,9 @@ In PART III, Huq puts forward a cost/benefit framework:
 that an algorithmically driven policy imposes upon a minority group
 outweigh the benefits accruing to that group." (p. 1111)
 
-`r tufte::margin_note("The expected cost (or benefit) of an action is the sum of the costs (or benefits) of the possible outcomes associated with the action, where the cost (or benefit) of each outcome is weighed by the respective probability of the outcome. So the expected cost of <taking an umbrella> is the sum of the cost of taking an umbrella when it does not rain (outcome 1) and the costs of taking an umbrella when it does rain (outcome 2), each outcome weighed by its probability.")`
+`r tufte::margin_note("The expected cost (or benefit) of an action is the sum of the costs (or benefits) of the possible outcomes associated with the action, where the cost (or benefit) of each outcome is weighed by the  probability of the outcome. So the expected cost of <taking an umbrella> is the sum of the cost of taking an umbrella when it does not rain (outcome 1) and the costs of taking an umbrella when it does rain (outcome 2), each outcome weighed by its probability.")`
 Here Huq is applying the maxim that we should select the course of action in 
 which the expected costs outweigh the expected benefits.
-The expected cost
 
 ## Spillover costs and two decision thresholds
 
@@ -135,8 +134,10 @@ there are also broader externalities:
 on black communities and children as well as the social signification of
 race as a marker of criminality." (p. 1113)
 
-These negative spillover effects on family life, employment and racial stigma, 
+These spillover costs on family life, employment and racial stigma, 
 are likely to disproportionately affect minorities. As Huq writes:
+
+`r tufte::margin_note("Why does this claim hold?")`
 
 >  "the spillover costs of coercion of minority
 individuals for the minority group will be greater on a per capita basis
@@ -149,9 +150,9 @@ and spillover costs of crime control when its immediate benefits are
 small conduces to a bifurcated risk threshold—one rule for the
 majority, and one for minority." (p. 1131)
 
-`r tufte::margin_note("The emphasis on spillover costs has the merit of broadening the discussion about algorithmic fairness beyond a narrow focus on equality metrics. Cost/benefit analysis seems to offer a principled way to think about the issue. Do you see any weakensses in Huq's argument?")`
+`r tufte::margin_note("The emphasis on spillover costs has the merit of broadening the discussion about algorithmic fairness beyond a narrow focus on equality metrics. Cost/benefit analysis seems to offer a principled way to think about the issue. Do you see any weakensses in Huq's argument? Can yuo reconstruct the arguement here more precisely?")`
 
-In other words, if decision thresholds should be set at a socially efficient level balancing the costs and benefits of pre-trial coercion, and if the costs of coercion are higher for blacks than for whites because of uneven spillover effects, the standard for imposing coercion must be *more stringent* for blacks than for whites, other things equal.
+In other words, if decision thresholds should be set at a socially efficient level balancing the costs and benefits of pre-trial coercion, and if the costs of coercion are higher for blacks than for whites because of uneven spillover costs, the standard for imposing coercion must be *more stringent* for blacks than for whites, other things equal.
 
 
 ## Serious crimes
@@ -180,7 +181,7 @@ Huq' writes:
 
 `r tufte::margin_note("Recall  the debate betwen ProPublica and Northpointe. The question was, is predictive parity or classification parity the right measure of algorithmic fairness? Both measures are concerned with false positives and false negatives (from different angles, predictive and diagnostic). Huq rejects the common assumption behind the question.")`
 
-> "there is noparticular reason to believe that any of these spillover costs are less if
+> "there is no particular reason to believe that any of these spillover costs are less if
 the person subject to the coercion is in fact a true rather than false
 positive ... what should matter is the absolute cost of using a coercive tactic against a
 member of a minority group, net of benefit, for all members of that
@@ -191,6 +192,8 @@ racial group." (p. 1127-28)
 Huq's theory purports to reconcile welfare (utility, efficiency) with racial equity 
 (or more generally fairness). This is a strength of the theory. Huq's argument 
 rests on two assumptions. First,
+
+`r tufte::margin_note("Why is this assumption crucial for the argument?")`
 
 > "...most crime is intraracial, such
 that costs and benefits do not cross the color line by and large." (p. 1114)
@@ -216,8 +219,8 @@ crushing burdens on a very small ethnic or religious minority." (p. 1114)
 # A possible objection
 
 Huq's proposal allows for seemingly objectionable trade-offs. 
-`r tufte::margin_note("See on this point, footnote 307, citing Forman's 2017 book Locking Up Our Own showing how black politicians in the 70's and 80's believed that police coertion should be exercised more stringently in black comunities to combat rampant drug crime")`
-For example, Huq's consequentialist framework would mandate that a *less* stringent threshold apply for algorithm-based coercion that prevented serious crimes from occurring in black communities so long as the prevention of serious crime in black communities had greater overall net benefit.  On this view, coercing blacks at higher rates than whites would be justified provided coercion had positive net benefits for both communities. Is this an intended result of the theory?
+`r tufte::margin_note("See on this point, footnote 307, citing Forman's 2017 book Locking Up Our Own showing how black politicians in the 70's and 80's believed that police coertion should be exercised more stringently in black comunities to combat rampant drug crime whose reduction would benefit black communities the most. Some use this argument to justify racial profiling---that the net beneficiaries of racial profiling are residents of high crime black neighborhoods. See  Risse and  Zeckhauser (2004), Racial Profiling, Philosophy and Public Affairs, 32(2): 131-170.")`
+For example, his consequentialist framework would mandate that a *less* stringent threshold apply for algorithm-based coercion that prevented serious crimes from occurring in black communities so long as the prevention of serious crime in black communities had greater overall net benefit.  On this view, coercing blacks at higher rates than whites would be justified provided coercion had positive net benefits for both communities. Is this an intended result of the theory?
 
 
 
