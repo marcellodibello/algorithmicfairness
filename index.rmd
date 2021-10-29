@@ -679,22 +679,12 @@ What would algorithmic fairness look like in light of these egaliatarian views?
 
 ## Wk 14 - 11/18
 
-**Individualized Decisions** 
 
-Since algorithms often rely on statistical generalizations and correlations, 
-some worry that algorithms disregard  the individual circumstances 
-of each person. Do people have a right to be treated as individuals? 
-What would that mean?
+**Workshop**
 
-*Key readings and materials*
+Students will workshop their research papers by giving short presentations, preferably accompanied by either a handout or slides and followed by Q&A. 
 
-- Lippert-Rasmussen, [We Are All Different](https://link.springer.com/article/10.1007%2Fs10892-010-9095-6)
 
-*Additional readings and materials*
-
-- Eidelson, [Treating People as Individuals](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2298429)
-
-- Beeghly, [Failing to Treat Persons as Individuals](https://quod.lib.umich.edu/e/ergo/12405314.0005.026/--failing-to-treat-persons-as-individuals?rgn=main;view=fulltext)
 
 ## Wk 15 - 11/25
 
@@ -704,8 +694,27 @@ What would that mean?
 
 **Q&A with Seth Lazar and Jake Stone**
 
-[Seth Lazar](http://www.sethlazar.xyz/) and Jake Stone from the Australian National University will present 
-their ongoing project 'Machine Learning and the Ethics of Inference'
+In the first part of the, [Seth Lazar](http://www.sethlazar.xyz/) and Jake Stone from the Australian National University will present their ongoing project 'Machine Learning and the Ethics of Inference'
+
+**Individualized Decisions** 
+
+Since algorithms often rely on statistical generalizations and correlations, 
+some worry that algorithms disregard  the individual circumstances 
+of each person. Do people have a right to be treated as individuals? 
+What would that mean?
+
+*Key readings and materials*
+
+- Renee Bolinger, [Algorithms and the Individual in Criminal Law](https://www.reneebolinger.com/uploads/1/0/2/6/102668958/bolinger_algorithms_and_individual_v6.pdf)
+
+- Lippert-Rasmussen, [We Are All Different](https://link.springer.com/article/10.1007%2Fs10892-010-9095-6)
+
+*Additional readings and materials*
+
+- Eidelson, [Treating People as Individuals](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2298429)
+
+- Beeghly, [Failing to Treat Persons as Individuals](https://quod.lib.umich.edu/e/ergo/12405314.0005.026/--failing-to-treat-persons-as-individuals?rgn=main;view=fulltext)
+
 
 **Third essay or research paper due**
 
