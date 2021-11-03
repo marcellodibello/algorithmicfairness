@@ -254,7 +254,36 @@ included in the course materials.
 
 *Please come talk to me before you start working on the research paper.* 
 
+
+
+
+# Handouts 
+
+[Week 1](https://www.marcellodibello.com/algorithmicfairness/handout/intro-algofairness.html) | 
+[Week 2](https://www.marcellodibello.com/algorithmicfairness/handout/ProPublica-Northpointe.html) |
+[Week 3](https://www.marcellodibello.com/algorithmicfairness/handout/Biased-Data.html) |
+[Week 4](https://www.marcellodibello.com/algorithmicfairness/handout/Feedback-Loops.html) |
+[Week 5](https://www.marcellodibello.com/algorithmicfairness/handout/Criteria.html) |
+[Week 6](https://www.marcellodibello.com/algorithmicfairness/handout/impossibility.html) |
+[Week 7](https://www.marcellodibello.com/algorithmicfairness/handout/history.html)  |
+[Week 8](https://www.marcellodibello.com/algorithmicfairness/handout/structural.html) |
+[Week 9](https://www.marcellodibello.com/algorithmicfairness/handout/structural2.html) |
+[Week 10](https://www.marcellodibello.com/algorithmicfairness/handout/law.html) |
+[Weeek 11](https://www.marcellodibello.com/algorithmicfairness/handout/Econ.html) |
+Week 12 |
+Week 13 - No class |
+Week 14 - Workshop |
+Week 15 - No class |
+Week 16  |
+
+**Additional class notes** 
+
+- [SVM with ProPublica COMPAS Data](https://www.marcellodibello.com/algorithmicfairness/SVM-PropublicaData.html)
+- [Simulating Feedback Loops in Predictive Policing](https://www.marcellodibello.com/algorithmicfairness/feedback-loop-simulation.html)
+-  [Chouldechova's Impossibility: In Pictures](https://www.marcellodibello.com/algorithmicfairness/PPV.pdf)
+
 # Schedule 
+
 
 ## Wk 1 - 8/19
 
