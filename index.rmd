@@ -270,7 +270,7 @@ included in the course materials.
 [Week 9](https://www.marcellodibello.com/algorithmicfairness/handout/structural2.html) |
 [Week 10](https://www.marcellodibello.com/algorithmicfairness/handout/law.html) |
 [Weeek 11](https://www.marcellodibello.com/algorithmicfairness/handout/Econ.html) |
-Week 12 |
+[Weeek 11](https://www.marcellodibello.com/algorithmicfairness/handout/Equality.html) |
 Week 13 - No class |
 Week 14 - Workshop |
 Week 15 - No class |
@@ -683,12 +683,14 @@ What would algorithmic fairness look like in light of these egaliatarian views?
 
 *Key readings and materials*
 
-- Rawls, Justice as Fairness, Part 2, Sections 12-18
+- [Class notes Wk 12](https://www.marcellodibello.com/algorithmicfairness/handout/Equality.html)
 
 
 - Anderson, [What is the Point of Equality?](https://www.philosophy.rutgers.edu/joomlatools-files/docman-files/4ElizabethAnderson.pdf)
 
 - Binns, [Fairness in Machine Learning: Lessons from Political Philosophy](http://proceedings.mlr.press/v81/binns18a/binns18a.pdf)
+
+- Rawls, Justice as Fairness, Part 2, Sections 12-18
 
 
 *Additional readings and materials*

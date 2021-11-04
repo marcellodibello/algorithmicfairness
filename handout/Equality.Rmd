@@ -2,8 +2,8 @@
 title: "[Algorithmic Fairness](https://www.marcellodibello.com/algorithmicfairness/) -- Equality"
 author: "Marcello Di Bello - ASU - Fall 2021 - Week #12"
 output:
-  tufte::tufte_handout: default
   tufte::tufte_html: default
+  tufte::tufte_handout: default
 ---
 
 <!--
@@ -32,19 +32,22 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-Our goal today is to examine how philosophers in contemporary political philosophy, within 
-the analytic tradition, have analysed the idea of fairness and equality. In particular, 
-we will look at the work of Elizabeth Anderson. But we will also consider a range of other views, mostly luck egalitarianism. 
+Our goal today is to examine how contemporary political philosophy, within 
+the analytic tradition, has examined the question of equality in distributive justice. In particular, we will look at the work of Elizabeth Anderson who defends *democratic equality*. We will also consider another theory 
+of distributive justice, *luck egalitarianism*. 
 
-The goal is to survey the conceptual terrain and see if some of the ideas from political philosophy can be used to inform discussion about algorithmic fairness.  On the other hand, we should ask whether political philosophy has something to learn here. Does algorithmic fairness pose a distinctive challenge to our philosophical theorizing about what fairness? In other words, is there something distinctive and novel about adding the qualification 'algorithmic' to the concept of fairness? 
+`r tufte::margin_note("A distinction might be useful here. We can think of algorithmic fairness as part of a theory of discrimination, but also as part of a theory of distributive justice. In the former sense, algorithmic fairness amoutns to algorithmic non-discrimination. Today we explore theories of distributive justice and ask whether they can be relevant for understanding algorithmic fairness. See Binns (2018), Fairness in Machine Learning: Lessons from Political
+Philosophy, Proceedings of Machine Learning Research 81:1–11.")`
+
+The goal is to see if ideas from political philosophy can be used to inform our examination of algorithmic fairness.  On the other hand, we should ask whether political philosophy has something to learn here. Does algorithmic fairness pose a distinctive challenge to our philosophical theorizing about equality and distributive justice? In other words, is there something distinctive and novel about adding the qualification 'algorithmic' to the concept of fairness? 
 
 
 ----------------
 
-Anderson^[Anderson (1999), What is the Point of Equality? *Ethics*, 109(2): 287-337]
+Anderson's paper^[Anderson (1999), [What is the Point of Equality?](https://www.philosophy.rutgers.edu/joomlatools-files/docman-files/4ElizabethAnderson.pdf) *Ethics*, 109(2): 287-337]
  begins with an outline 
-of luck egalitarianism. She will then proceed to criticize this view 
-of egalitarianism and propose her own conception, democratic equality. 
+of luck egalitarianism. She then proceeds to criticize this view and propose 
+her own theory, democratic equality. 
 
 
 # **Luck egalitarianism**
@@ -62,8 +65,8 @@ a. The redistribution of goods does not apply to deserved gains, only to those
 gains that are the result of luck (i.e. undeserved gains). 
 
 b. The redistribution of resources does not amount to equality of 
-outcomes, but only equality of opportunities. Luck egalitarianism aims to 
-equality *ex ante*, even though choices people make down the road might lead to inequalities. 
+outcomes, but only equality of opportunities. Luck egalitarianism aims to ensure
+equality *ex ante*. It is a "starting-gate theory" (p. 308).
 
 The redistribution of goods 
 should only apply to gains due to so-called 'brute luck'.`r tufte::margin_note("The other kind of luck is bad option luck for which luck egaliatarians envision no redressing.")` No compensation should be given for 
@@ -78,7 +81,7 @@ egalitarianism on pp. 296-298. Here are a couple of examples:
 - *The problem of dependent caretakers*.
 Consider those people, often women, who decide to take care 
 of children or the elderly. `r tufte::margin_note("Luck egalitarianism seems 
-to foster egoism here. Should caretakers prefer to take care only of themselves?.")` 
+to foster egoism here. Should caretakers prefer to take care only of themselves?")` 
  They receive no compensation for their services and thus have to depend on the salaries of others. 
  According to luck egalitarianism (the most intransigent version, at least), claims of distributive justice 
 do not apply to them. This seems unjust.
@@ -86,27 +89,28 @@ do not apply to them. This seems unjust.
 - *The problem of paternalism*. Luck egalitarians admit 
 that some are going to make bad choices---say, instead 
 of saving money, they blow it away in the latest trend in fashion, technology, etc. 
-Luck egalitarians have *pity* for these people, call them the *imprudent*.
+Luck egalitarians have *pity* for these people and call them the *imprudent*.
 They recommend that the state make  decisions for the imprudent.
 
 
-So, when it comes to losses that result from "bad" choices, luck egalitarians fail to redress unjust inequalities (caretaker example), and when they do redress them, they often do it from a paternalist standpoint (imprudent example)
+So, when it comes to losses that result from "bad" choices, luck egalitarians fail to redress unjust inequalities (caretaker example), and when they do redress them, they often do it from a paternalist standpoint (imprudent example).
 
 
 ## Criticism 2: victims of brute luck
 
-Luck egalitarianism--Anderson argues--also has problem in addressing inequalities that result from brute luck, such as inequalities in the distribution of goods that results from differences 
+Luck egalitarianism--Anderson argues--also face difficulties in addressing inequalities that result from brute luck, i.e. inequalities that results from differences 
 in talents, natural endowments, intelligence, physical appearance, etc. 
-Here is what a society run by luck egalitarianism would mandate:
+Here is what a society run by luck egalitarians would say:
 
-> "To `r tufte::margin_note("According to Anderson, p. 307, envy toward those who are superior and pity toward those who are inferior are the attitudes that regulate luck egalitarianism.")` the ugly and socially awkward: How sad that you are so repulsive to people around you that no one wants to be your friendor lifetime companion ...  you can console yourself in your miserable loneliness by consuming these material goods that we, the beautiful and charming ones, will provide. And who knows? Maybe you won't be such a loser in love once potential dates see how rich you are." (p. 305)
+> "To `r tufte::margin_note("According to Anderson, p. 307, envy toward those who are superior and pity toward those who are inferior are the attitudes that regulate luck egalitarianism.")` the ugly and socially awkward: How sad that you are so repulsive to people around you that no one wants to be your friend or lifetime companion ...  you can console yourself in your miserable loneliness by consuming these material goods that we, the beautiful and charming ones, will provide. And who knows? Maybe you won't be such a loser in love once potential dates see how rich you are." (p. 305)
 
-This message is disrespectful. `r tufte::margin_note("See list of five desiderata for a good theory of equality on page 314.")` Luck egalitarianism--Anderson argues--fails to express 
-equal concerns and respect for people. 
+This seems a caricature, but also a consequence of luck egalitarianism. 
+The message is disrespectful. `r tufte::margin_note("See list of five desiderata for a good theory of equality on page 314.")` Luck egalitarianism--Anderson argues--fails to express 
+equal concern and respect for people. 
 
 ## Diagnosis
 
-What has gone wrong in luck egalitarianism. At first, 
+What has gone wrong in luck egalitarianism? At first, 
 it looked like a promising theory, combining the best 
 of capitalism and socialism:
 
@@ -132,17 +136,16 @@ This point has two important consequences:
 > (b) "the social condition of living a
 free life is that one stand in relations of equality with others." (p. 315)
 
-In other words, first,  `r tufte::margin_note("Could Anderson here be 
-too optimistic about the synergy of freedom and equality?.")` the aim of egalitarianism is to ensure that the hierarchy is no longer the basis 
-for decisions about distributive justice; and second, if asymmetries in power (=oppression) are eliminated, people can truly be free because they relate to one another as equals. So freedom requires equality. They are not in conflict.
+In other words, first,  `r tufte::margin_note("Is Anderson here  
+too optimistic about the synergy of freedom and equality?")` the aim of egalitarianism is to ensure that the hierarchy is no longer the basis for decisions about distributive justice; and second, if asymmetries in power (=oppression) are eliminated, people can truly be free because they relate to one another as equals. So freedom requires equality. They are not in conflict.
 
 
 ## The capability approach
 
 What does it mean for people to relate to one another as equals? 
-The key for Anderson is to ensure that people have access 
-to capabilities (=freedom to achieve valued functionings) 
-sufficient for them to be equal in different respects: as human beings; as participants in a system of cooperative production `r tufte::margin_note("No one is higher up in the food chain. As Anderson puts it on p. 322: Michael Jordan could not make so many baskets if no one kept the basketball court swept clean.")`; and as citizens. 
+The key for Anderson is to ensure that people have equal access 
+to neutral good such as capabilities (=freedom to achieve valued functionings) 
+sufficient for them to be equal in different respects: as human beings; as participants in a system of cooperative production; `r tufte::margin_note("No one is higher up in the food chain. As Anderson puts it on p. 322: Michael Jordan could not make so many baskets if no one kept the basketball court swept clean.")` and as citizens. 
 
 Inequality in the distributions of goods are allowed:
 
@@ -159,7 +162,7 @@ Luck egalitarians classify the disabled (or the ugly) as inferior and this infer
 is the justification for distributive justice:
 
 > "[the] criterion of undominated diversity `r tufte::margin_note("Recall the definition 
-of undominated diversity on page 303.") allows the disabled to make claims 
+of undominated diversity on page 303.")` allows the disabled to make claims 
 of justice regarding their disability only if everyone regards their condition 
 as so wretched that everyone would prefer being someone else."  (p. 333)
 
@@ -177,22 +180,22 @@ person rather than the norm insultingly suggests that the defect lies in
 the person rather than in society. ... democratic
 equality prefers altering social norms to redistributing material resources in response to the disadvantages faced by the unsightly." (p. 336)
 
-The aim should not so much to give resources or goods to the disabled to compensate for their inferiority, but rather, to ensure that they can participate as equals to society. In this sense, egalitarianism may require reshaping social norms, not necessarily---and not always---redistributing material goods. 
+The aim need not be to give goods to the disabled or the ugly to compensate for their inferiority, but to ensure they can participate as equals to society. Egalitarianism may require reshaping social norms, not necessarily redistributing material goods. 
 
 
 ## **Applications to algorithmic decision-making**
 
+Can we apply these theories---luck egalitarianism and democratic equality---to 
+algorithmic fairness? 
+
 According to luck egalitarianism, algorithmic decisions should equalize the benefits and burdens 
-they allocate to *equally deserving* people. Inequalities due to mere luck should be removed. 
-Classification parity might be well suited to  his end. The problem is, however, 
-what it means to be "equally deserving". Banks loans, for example, are not given 
-to equally deserving people. 
+they allocate to *equally deserving* people. Inequalities due to mere luck should be removed, and
+classification parity might be well suited to his end. `r tufte::margin_note("The problem is, however, 
+what it means to be equally deserving. Banks loans, for example, are not given 
+to equally deserving people.")` 
 
 On the other hand, Anderson's key idea is that egalitarianism should make hierarchies -- rankings of superior and inferior people -- morally irrelevant. Luck egalitarianism reinforces hierarchies because it makes 
-them the very foundation of distributive justice.  
-
-If this is right, one question to explore is whether or not algorithms -- as they are used to guide decisions in criminal justice, health care, welfare benefits, bank loans -- reinforce hierarchies. Anderson's democratic egalitarianism can offer a guiding principle for regulating the use of algorithms in decision-making. 
-
+them the very foundation of distributive justice.  If this is right, one question to explore is whether or not algorithms -- as they are used to guide decisions in criminal justice, health care, welfare benefits, bank loans, etc. -- reinforce or create hierarchies, even when they allocate non-punitive goods.`r tufte::margin_note("On gthis point, see Accominotti and Tadmon (2020), How the Reification of Merit Breeds Inequality: Theory and Experimental Evidence. Working Paper (42). International Inequalities Institute, London School of Economics and Political Science.")`
 
 
 

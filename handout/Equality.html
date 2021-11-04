@@ -80,116 +80,97 @@ body{ /* Normal  */
   }
   
 </style>
-<p>Our goal today is to examine how philosophers in contemporary political philosophy, within the analytic tradition, have analysed the idea of fairness and equality. We will look at teh work of John Rawls and Elizabeth Anderson. But in focusing on these two authors we will also consider range of other views. The goal is to survey the conceptual terrain and see if some of the ideas from political philosophy can be used to inform discussion about algorithmic fairness. The underlying question for today’s discussion is this. Does algorithmic fairness pose a distinctive challenge to our philosophical theorizing about what fairness? In other is algorithmic fairness just an instance of fairness, or is there something distinctive and novel about adding the qualification ‘algorithmic’ to the concept of fairness?</p>
+<p>Our goal today is to examine how contemporary political philosophy, within the analytic tradition, has examined the question of equality in distributive justice. In particular, we will look at the work of Elizabeth Anderson who defends <em>democratic equality</em>. We will also consider another theory of distributive justice, <em>luck egalitarianism</em>.</p>
+<p><label for="tufte-mn-1" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-1" class="margin-toggle"><span class="marginnote">A distinction might be useful here. We can think of algorithmic fairness as part of a theory of discrimination, but also as part of a theory of distributive justice. In the former sense, algorithmic fairness amoutns to algorithmic non-discrimination. Today we explore theories of distributive justice and ask whether they can be relevant for understanding algorithmic fairness. See Binns (2018), Fairness in Machine Learning: Lessons from Political Philosophy, Proceedings of Machine Learning Research 81:1–11.</span></p>
+<p>The goal is to see if ideas from political philosophy can be used to inform our examination of algorithmic fairness. On the other hand, we should ask whether political philosophy has something to learn here. Does algorithmic fairness pose a distinctive challenge to our philosophical theorizing about equality and distributive justice? In other words, is there something distinctive and novel about adding the qualification ‘algorithmic’ to the concept of fairness?</p>
 <hr />
+<p>Anderson’s paper<label for="tufte-sn-1" class="margin-toggle sidenote-number">1</label><input type="checkbox" id="tufte-sn-1" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">1</span> Anderson (1999), <a href="https://www.philosophy.rutgers.edu/joomlatools-files/docman-files/4ElizabethAnderson.pdf">What is the Point of Equality?</a> <em>Ethics</em>, 109(2): 287-337</span> begins with an outline of luck egalitarianism. She then proceeds to criticize this view and propose her own theory, democratic equality.</p>
+<div id="luck-egalitarianism" class="section level1">
+<h1><strong>Luck egalitarianism</strong></h1>
+<blockquote>
+<p>“The concern of distributive justice is to compensate individuals for misfortune. Some people are blessed with good luck, some are cursed with bad luck, and it is the responsibility of society–all of us regarded collectively–to alter the distribution of goods and evils that arises from the jumble of lotteries that constitutes human life … Distributive justice stipulates that the lucky should transfer some or all of their gains due to luck to the unlucky”<label for="tufte-sn-2" class="margin-toggle sidenote-number">2</label><input type="checkbox" id="tufte-sn-2" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">2</span> Arneson, Rawls, Responsibility, and Distributive Justice. In <em>Injustice, Political Liberalism, and Utilitarianism: Themes from Harsanyi</em> (ed. Salles and Weymark), Cambridge UP, 2010.</span></p>
+</blockquote>
+<p>Two key points are worth stressing:</p>
 <ol style="list-style-type: lower-alpha">
-<li><span class="newthought">Let</span>’s start with <strong>Ralws</strong>.</li>
+<li><p>The redistribution of goods does not apply to deserved gains, only to those gains that are the result of luck (i.e. undeserved gains).</p></li>
+<li><p>The redistribution of resources does not amount to equality of outcomes, but only equality of opportunities. Luck egalitarianism aims to ensure equality <em>ex ante</em>. It is a “starting-gate theory” (p. 308).</p></li>
 </ol>
-<hr />
+<p>The redistribution of goods should only apply to gains due to so-called ‘brute luck’.<label for="tufte-mn-2" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-2" class="margin-toggle"><span class="marginnote">The other kind of luck is bad option luck for which luck egaliatarians envision no redressing.</span> No compensation should be given for losses that people incur as a result of bad choices or risks they could foresee.</p>
+<div id="criticism-1-victims-of-bad-choices" class="section level2">
+<h2>Criticism 1: victims of “bad” choices</h2>
+<p>Anderson lists several cases that are problematic for luck egalitarianism on pp. 296-298. Here are a couple of examples:</p>
+<ul>
+<li><p><em>The problem of dependent caretakers</em>. Consider those people, often women, who decide to take care of children or the elderly. <label for="tufte-mn-3" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-3" class="margin-toggle"><span class="marginnote">Luck egalitarianism seems to foster egoism here. Should caretakers prefer to take care only of themselves?</span> They receive no compensation for their services and thus have to depend on the salaries of others. According to luck egalitarianism (the most intransigent version, at least), claims of distributive justice do not apply to them. This seems unjust.</p></li>
+<li><p><em>The problem of paternalism</em>. Luck egalitarians admit that some are going to make bad choices—say, instead of saving money, they blow it away in the latest trend in fashion, technology, etc. Luck egalitarians have <em>pity</em> for these people and call them the <em>imprudent</em>. They recommend that the state make decisions for the imprudent.</p></li>
+</ul>
+<p>So, when it comes to losses that result from “bad” choices, luck egalitarians fail to redress unjust inequalities (caretaker example), and when they do redress them, they often do it from a paternalist standpoint (imprudent example).</p>
+</div>
+<div id="criticism-2-victims-of-brute-luck" class="section level2">
+<h2>Criticism 2: victims of brute luck</h2>
+<p>Luck egalitarianism–Anderson argues–also face difficulties in addressing inequalities that result from brute luck, i.e. inequalities that results from differences in talents, natural endowments, intelligence, physical appearance, etc. Here is what a society run by luck egalitarians would say:</p>
+<blockquote>
+<p>“To <label for="tufte-mn-4" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-4" class="margin-toggle"><span class="marginnote">According to Anderson, p. 307, envy toward those who are superior and pity toward those who are inferior are the attitudes that regulate luck egalitarianism.</span> the ugly and socially awkward: How sad that you are so repulsive to people around you that no one wants to be your friend or lifetime companion … you can console yourself in your miserable loneliness by consuming these material goods that we, the beautiful and charming ones, will provide. And who knows? Maybe you won’t be such a loser in love once potential dates see how rich you are.” (p. 305)</p>
+</blockquote>
+<p>This seems a caricature, but also a consequence of luck egalitarianism. The message is disrespectful. <label for="tufte-mn-5" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-5" class="margin-toggle"><span class="marginnote">See list of five desiderata for a good theory of equality on page 314.</span> Luck egalitarianism–Anderson argues–fails to express equal concern and respect for people.</p>
+</div>
+<div id="diagnosis" class="section level2">
+<h2>Diagnosis</h2>
+<p>What has gone wrong in luck egalitarianism? At first, it looked like a promising theory, combining the best of capitalism and socialism:</p>
+<blockquote>
+<p>“Equality of fortune can thus be seen as an attempt to combine the best of capitalism and socialism. Its free market aspects promote efficiency … individual responsibility. Its socialist aspects give everyone a fair start in life and protect the innocent against bad brute luck.” (p. 308)</p>
+</blockquote>
+<p>But luck egalitarianism seems to combines the worse of capitalism (=ruthless individualism) and socialism (=intrusive paternalism):</p>
+<blockquote>
+<p>“equality of fortune appears to give us some of the worst aspects of capitalism and socialism … It offers no aid to those it labels irresponsible, and humiliating aid to those it labels innately inferior.” (p. 308)</p>
+</blockquote>
+</div>
+</div>
+<div id="andersons-proposal-democratic-equality" class="section level1">
+<h1><strong>Anderson’s proposal: democratic equality</strong></h1>
+<p>Egalitarianism, as Anderson sees it, has two main parts: a negative one that consists in the elimination of oppression (i.e. the fact that some people dominate, exploit, marginalize others), and a positive one that consists in ensuring that people relate to one another as equal (in a sense to be specified).</p>
+<p>This point has two important consequences:</p>
+<blockquote>
 <ol style="list-style-type: lower-alpha">
-<li><span class="newthought">Let</span>’s now move with <strong>Elizabeth Anderson</strong>.</li>
+<li>“The basis for people’s claims to distributed goods is that they are equals, not inferiors, to others.” (p. 314)</li>
 </ol>
-<blockquote>
-<p>“The concern of distributive justice is to compensate individuals for misfortune. Some people are blessed with good luck, some are cursed with bad luck, and it is the responsibility of society–all of us regarded collectively–to alter the distribution ogoods and evils that arises from the jumble of lotteries that constitutes human life … Distributive justice stipulates that the lucky should transfer some or all of their gains due to luck to the unlucky”^[Arneson, Rawls, Responsibility, and Distributive Justice. In <em>Injustice, Political Liberalism, and Utilitarianism: Themes from Harsanyi</em> (ed. Salles and Weymark), Cambridge UP, 2010.</p>
 </blockquote>
-<div id="equal-protection-jurisprudence" class="section level1">
-<h1><strong>Equal protection jurisprudence</strong></h1>
-<p>As a preliminary point (PART II), Huq shows that <a href="https://www.law.cornell.edu/wex/equal_protection">equal protection jurisprudence</a> based on the 14th Amendment to the US Constitution is unhelpful for understanding what algorithmic fairness requires.<label for="tufte-mn-1" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-1" class="margin-toggle"><span class="marginnote">Huq’s analysis of equal protection jurisprudence complements the discussion about Title VII antidiscrimination employment law from last week. See Barocas and Selbst, Big Data Disparate Impact, California Law Review, 2016, 104:671-732</span>. This jurisprudence focuses on two main ideas: (i) limiting the use of racial classification; and (ii) banning racialized intention. A third idea—(iii) limiting racial disparities or disparate impact —has been mostly aside in equal protection jurisprudence.</p>
-<div id="i-racialized-intent" class="section level2">
-<h2>(i) Racialized intent</h2>
-<p>Any differential treatment that is due to racial animus or discriminatory intent is clearly illegal. The use of race as a facto in a decision is not automatically prohibited, but must be justified with a clear rationale, an inquiry known as “strict scrutiny”. The Supreme Court has allowed the use of race in specific contexts under strict scrutiny, for example, in college admissions for the purpose of fostering diversity.<label for="tufte-sn-1" class="margin-toggle sidenote-number">1</label><input type="checkbox" id="tufte-sn-1" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">1</span> See <a href="https://www.oyez.org/cases/2012/11-345">Fisher v. University of Texas at Austin</a>, 570 U.S. 297 (2013) and <a href="https://supreme.justia.com/cases/federal/us/579/14-981/">Fisher v. University of Texas at Austin</a>, 579 U.S. ___ (2016).</span></p>
-<p>Algorithms hardly have a racially discriminatory intent. Perhaps, the argument could be that algorithms rely on racially biased historical data and intentionally using such algorithms counts as having a racially discriminatory intent. But biased data do not seem enough to trigger a constitutional violation of equal protection. Huq writes:</p>
 <blockquote>
-<p>“Even if flawed training data were identified, it seems unlikely that its tainted nature could suffice to establish a constitutional concern in practice. Any moderately competent municipality found using flawed data would … defend its decision as the best option given historically shaped constraints. Because a constitutional violation cannot be shown unless the state relied on race as a ground of decision, as opposed to acting in spite of race, this defense would likely succeed.” (p. 1093)</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>“the social condition of living a free life is that one stand in relations of equality with others.” (p. 315)</li>
+</ol>
 </blockquote>
-</div>
-<div id="ii-racial-classification" class="section level2">
-<h2>(ii) Racial classification</h2>
-<p>Racial classification is usually prohibited, partly on the ground that an explicit use of race as criterion in a decision sends publicly a demeaning message and entrenches racial stereotypes. But the use of race in algorithms—if race is used at all—is usually opaque. No demeaning message can be clearly identified.</p>
-<p>Further, racial classification is not always prohibited. For example, race is routinely used as part of a suspect description in criminal investigations. Federal Appellate courts have not objected to this practice and the US Supreme Court has declined to intervene.<label for="tufte-sn-2" class="margin-toggle sidenote-number">2</label><input type="checkbox" id="tufte-sn-2" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">2</span> See, for example, <a href="https://casetext.com/case/brown-v-city-of-oneonta">Brown v. City of Oneonta</a> 195 F.3d 111 (2d Cir. 1999), cert. denied, 534 US 816 (2001).</span></p>
-<p>Huq thinks that the use of race as one of the predictors in an algorithmic classifier is akin to the use of race in a suspect description:</p>
+<p>In other words, first, <label for="tufte-mn-6" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-6" class="margin-toggle"><span class="marginnote">Is Anderson here<br />
+too optimistic about the synergy of freedom and equality?</span> the aim of egalitarianism is to ensure that the hierarchy is no longer the basis for decisions about distributive justice; and second, if asymmetries in power (=oppression) are eliminated, people can truly be free because they relate to one another as equals. So freedom requires equality. They are not in conflict.</p>
+<div id="the-capability-approach" class="section level2">
+<h2>The capability approach</h2>
+<p>What does it mean for people to relate to one another as equals? The key for Anderson is to ensure that people have equal access to neutral good such as capabilities (=freedom to achieve valued functionings) sufficient for them to be equal in different respects: as human beings; as participants in a system of cooperative production; <label for="tufte-mn-7" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-7" class="margin-toggle"><span class="marginnote">No one is higher up in the food chain. As Anderson puts it on p. 322: Michael Jordan could not make so many baskets if no one kept the basketball court swept clean.</span> and as citizens.</p>
+<p>Inequality in the distributions of goods are allowed:</p>
 <blockquote>
-<p>“a classifier based on training data is akin to a suspect description of a familiar sort, insofar as both are predicated on historical facts about crime. <label for="tufte-mn-2" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-2" class="margin-toggle"><span class="marginnote">Do you agree with this parallelism between race as a predictor and race as feature in eyewitness description?</span> … an advocate of algorithmic criminal justice might note that human observers are more likely than a machine to err in their deployment of race as a signal of criminality than an algorithm.” (p. 1096)</p>
+<p>“Once all citizens enjoy a decent set of freedoms, sufficient for functioning as an equal in society, income inequalities beyond that point do not seem so troubling in themselves. The degree of acceptable income inequality would depend in part on how easy it was to convert income into status inequality … The stronger the barriers against commodifying social status, political influence, and the like, the more acceptable are significant income inequalities.” (p. 326)</p>
 </blockquote>
 </div>
-<div id="iii-racial-disaparity" class="section level2">
-<h2>(iii) Racial disaparity</h2>
-<p>What about <em>disparate impact</em> as invoked in <a href="https://www.eeoc.gov/laws/statutes/titlevii.cfm">Title VII</a> employment discrimination cases? Evidence of disparate impact against a protected group is enough to make a <em>prima facie</em> case of discrimination; see e.g. <a href="https://en.wikipedia.org/wiki/Hazelwood_School_District_v._United_States">Hazelwood School District v. United States</a> (1977). This applies to sectors such as employment and housing. The criminal justice system, however, seems exempt.<label for="tufte-sn-3" class="margin-toggle sidenote-number">3</label><input type="checkbox" id="tufte-sn-3" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">3</span> In <a href="https://www.oyez.org/cases/1986/84-6811">McClensky v. Kemp</a> (1987), the US Supreme Court ruled that disparate racial impact is not enough to establish a constitutional violation. An elaborate statistical analysis – showing that death penalty decisions in Georgia disproportionately targeted African Americans, controlling for several variables – was not enough to convince the Court that the system violated equal protection.</span></p>
+<div id="respecting-the-disabled-and-the-ugly" class="section level2">
+<h2>Respecting the disabled and the ugly</h2>
+<p>Luck egalitarians classify the disabled (or the ugly) as inferior and this inferiority is the justification for distributive justice:</p>
+<blockquote>
+<p>“[the] criterion of undominated diversity <label for="tufte-mn-8" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-8" class="margin-toggle"><span class="marginnote">Recall the definition of undominated diversity on page 303.</span> allows the disabled to make claims of justice regarding their disability only if everyone regards their condition as so wretched that everyone would prefer being someone else.” (p. 333)</p>
+</blockquote>
+<p>But this approach get things backwards:</p>
+<blockquote>
+<p>“[W]hat the disabled are actually complaining about … They do not ask that they be compensated for the disability itself. Rather, they ask that the social disadvantages others impose on them for having the disability be removed.” (p. 334)</p>
+</blockquote>
+<p>How does Anderson’s conception of egalitarianism escape the objection that she levels against luck egalitarianism in the case of the disabled or the ugly? Here is her answer:</p>
+<blockquote>
+<p>“the injustice lies not in the natural misfortune of the ugly but in the social fact that people shun others on account of their appearance. To change the person rather than the norm insultingly suggests that the defect lies in the person rather than in society. … democratic equality prefers altering social norms to redistributing material resources in response to the disadvantages faced by the unsightly.” (p. 336)</p>
+</blockquote>
+<p>The aim need not be to give goods to the disabled or the ugly to compensate for their inferiority, but to ensure they can participate as equals to society. Egalitarianism may require reshaping social norms, not necessarily redistributing material goods.</p>
 </div>
-<div id="today-and-back-then" class="section level2">
-<h2>Today and back then</h2>
-<p>Huq makes a historical comment:</p>
-<blockquote>
-<p>“Current doctrinal approaches to constitutional racial equality … were configured in the context of judicial efforts to dismantle educational segregation in the Jim Crow South and then during a political backlash to the Civil Rights Movement … the legal conception of racial discrimination as a matter of intention or classification would reflect judicial concern with the discretionary choices of the police officer, school board president, or state legislator—that is, the modal problems presented by mid-century civil rights law.” (p. 1101)</p>
-</blockquote>
-<p>Today’s context is much different:</p>
-<blockquote>
-<p>“A set of tools developed for a regulatory world of dispersed state actors, occasionally motivated by naked animus, cannot be mechanically translated into a world of centralized, computational decision-making.” (p. 1103)</p>
-</blockquote>
+<div id="applications-to-algorithmic-decision-making" class="section level2">
+<h2><strong>Applications to algorithmic decision-making</strong></h2>
+<p>Can we apply these theories—luck egalitarianism and democratic equality—to algorithmic fairness?</p>
+<p>According to luck egalitarianism, algorithmic decisions should equalize the benefits and burdens they allocate to <em>equally deserving</em> people. Inequalities due to mere luck should be removed, and classification parity might be well suited to his end. <label for="tufte-mn-9" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-9" class="margin-toggle"><span class="marginnote">The problem is, however, what it means to be equally deserving. Banks loans, for example, are not given to equally deserving people.</span></p>
+<p>On the other hand, Anderson’s key idea is that egalitarianism should make hierarchies – rankings of superior and inferior people – morally irrelevant. Luck egalitarianism reinforces hierarchies because it makes them the very foundation of distributive justice. If this is right, one question to explore is whether or not algorithms – as they are used to guide decisions in criminal justice, health care, welfare benefits, bank loans, etc. – reinforce or create hierarchies, even when they allocate non-punitive goods.<label for="tufte-mn-10" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-10" class="margin-toggle"><span class="marginnote">On gthis point, see Accominotti and Tadmon (2020), How the Reification of Merit Breeds Inequality: Theory and Experimental Evidence. Working Paper (42). International Inequalities Institute, London School of Economics and Political Science.</span></p>
 </div>
-</div>
-<div id="costbenefit-analysis" class="section level1">
-<h1><strong>Cost/benefit analysis</strong></h1>
-<p>If the legal framework is either obsolete or inapplicable, what else is there? In PART III, Huq puts forward a cost/benefit framework:</p>
-<blockquote>
-<p>“the key question for racial equity is whether the costs that an algorithmically driven policy imposes upon a minority group outweigh the benefits accruing to that group.” (p. 1111)</p>
-</blockquote>
-<p><label for="tufte-mn-3" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-3" class="margin-toggle"><span class="marginnote">The expected cost (or benefit) of an action is the sum of the costs (or benefits) of the possible outcomes associated with the action, where the cost (or benefit) of each outcome is weighed by the probability of the outcome. So the expected cost of <taking an umbrella> is the sum of the cost of taking an umbrella when it does not rain (outcome 1) and the costs of taking an umbrella when it does rain (outcome 2), each outcome weighed by its probability.</span> Here Huq is applying the maxim that we should select the course of action in which the expected costs outweigh the expected benefits.</p>
-<div id="spillover-costs-and-two-decision-thresholds" class="section level2">
-<h2>Spillover costs and two decision thresholds</h2>
-<p>A narrow view considers just immediate benefits (say, increased public safety) and immediate costs (say, unwarranted detention). But besides immediate costs, there are also broader externalities:</p>
-<blockquote>
-<p>“[they] take many forms, including the effect of high incarceration rates on black communities and children as well as the social signification of race as a marker of criminality.” (p. 1113)</p>
-</blockquote>
-<p>These spillover costs on family life, employment and racial stigma, are likely to disproportionately affect minorities. As Huq writes:</p>
-<p><label for="tufte-mn-4" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-4" class="margin-toggle"><span class="marginnote">Why does this claim hold?</span></p>
-<blockquote>
-<p>“the spillover costs of coercion of minority individuals for the minority group will be greater on a per capita basis than the costs of coercing majority group members.” (p. 1113)</p>
-</blockquote>
-<p>This observation has an important consequence:</p>
-<blockquote>
-<p>“accounting for both the immediate and spillover costs of crime control when its immediate benefits are small conduces to a bifurcated risk threshold—one rule for the majority, and one for minority.” (p. 1131)</p>
-</blockquote>
-<p><label for="tufte-mn-5" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-5" class="margin-toggle"><span class="marginnote">The emphasis on spillover costs has the merit of broadening the discussion about algorithmic fairness beyond a narrow focus on equality metrics. Cost/benefit analysis seems to offer a principled way to think about the issue. Do you see any weakensses in Huq’s argument? Can yuo reconstruct the arguement here more precisely?</span></p>
-<p>In other words, if decision thresholds should be set at a socially efficient level balancing the costs and benefits of pre-trial coercion, and if the costs of coercion are higher for blacks than for whites because of uneven spillover costs, the standard for imposing coercion must be <em>more stringent</em> for blacks than for whites, other things equal.</p>
-</div>
-<div id="serious-crimes" class="section level2">
-<h2>Serious crimes</h2>
-<p>Huq emphasizes negative spillover effects and externalities, but he believes these are less relevant in the case of serious crimes:</p>
-<p><label for="tufte-mn-6" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-6" class="margin-toggle"><span class="marginnote">Is this true of serious crimes? Serious crimes in some communities might have greater net spillover costs than in other communities. A wealthier family can more easily cope with the loss of an adult figure than a less wealthy family.</span></p>
-<blockquote>
-<p>“… to focus solely on the immediate costs and benefits of a coercive intervention and to ignore externalities … seems a plausible approach with serious crimes, where externalities are dwarfed by immediate costs and benefits.” (p. 1113)</p>
-</blockquote>
-<p>When negative externalities can be ignored, the same threshold should presumably be imposed for whites and blacks for pre-trial coercion, other things being equal.</p>
-</div>
-<div id="mistaken-decisions" class="section level2">
-<h2>Mistaken decisions</h2>
-<p>An interesting—but controversial—aspect of the Huq’s costs/benefit framework is that it makes little difference between actual reoffenders and non-reoffenders. Huq’ writes:</p>
-<p><label for="tufte-mn-7" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-7" class="margin-toggle"><span class="marginnote">Recall the debate betwen ProPublica and Northpointe. The question was, is predictive parity or classification parity the right measure of algorithmic fairness? Both measures are concerned with false positives and false negatives (from different angles, predictive and diagnostic). Huq rejects the common assumption behind the question.</span></p>
-<blockquote>
-<p>“there is no particular reason to believe that any of these spillover costs are less if the person subject to the coercion is in fact a true rather than false positive … what should matter is the absolute cost of using a coercive tactic against a member of a minority group, net of benefit, for all members of that racial group.” (p. 1127-28)</p>
-</blockquote>
-</div>
-<div id="does-welfare-align-with-fairness" class="section level2">
-<h2>Does welfare align with fairness?</h2>
-<p>Huq’s theory purports to reconcile welfare (utility, efficiency) with racial equity (or more generally fairness). This is a strength of the theory. Huq’s argument rests on two assumptions. First,</p>
-<p><label for="tufte-mn-8" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-8" class="margin-toggle"><span class="marginnote">Why is this assumption crucial for the argument?</span></p>
-<blockquote>
-<p>“…most crime is intraracial, such that costs and benefits do not cross the color line by and large.” (p. 1114)</p>
-</blockquote>
-<p>Second, it assumes away circumstances in which racial equity and social efficiency come apart. These circumstances include:</p>
-<blockquote>
-<p>“… a policy benefits both the minority and the majority group, but the former benefit less than the latter. As a result of this gap, the extent of racial stratification increases even as the minority is benefited.” (p. 1114)</p>
-</blockquote>
-<p><label for="tufte-mn-9" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-9" class="margin-toggle"><span class="marginnote">Huq thinks circumstances in which racial equity and efficiency come apart are rare. If they do come apart, Huq would prioritize fairness over welfare—at least in the absence of catastrophic general welfare losses (p. 1115)</span></p>
-<blockquote>
-<p>“…net gains from a policy for a majority group may exceed the net cost imposed on a minority group. Imagine, for example, a national security policy that generates significant benefits by imposing crushing burdens on a very small ethnic or religious minority.” (p. 1114)</p>
-</blockquote>
-</div>
-</div>
-<div id="a-possible-objection" class="section level1">
-<h1>A possible objection</h1>
-<p>Huq’s proposal allows for seemingly objectionable trade-offs. <label for="tufte-mn-10" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-10" class="margin-toggle"><span class="marginnote">See on this point, footnote 307, citing Forman’s 2017 book Locking Up Our Own showing how black politicians in the 70’s and 80’s believed that police coertion should be exercised more stringently in black comunities to combat rampant drug crime whose reduction would benefit black communities the most. Some use this argument to justify racial profiling—that the net beneficiaries of racial profiling are residents of high crime black neighborhoods. See Risse and Zeckhauser (2004), Racial Profiling, Philosophy and Public Affairs, 32(2): 131-170.</span> For example, his consequentialist framework would mandate that a <em>less</em> stringent threshold apply for algorithm-based coercion that prevented serious crimes from occurring in black communities so long as the prevention of serious crime in black communities had greater overall net benefit. On this view, coercing blacks at higher rates than whites would be justified provided coercion had positive net benefits for both communities. Is this an intended result of the theory?</p>
 </div>
 
 
