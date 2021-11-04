@@ -2,8 +2,8 @@
 title: "[Algorithmic Fairness](https://www.marcellodibello.com/algorithmicfairness/) -- Equality"
 author: "Marcello Di Bello - ASU - Fall 2021 - Week #12"
 output:
-  tufte::tufte_html: default
   tufte::tufte_handout: default
+  tufte::tufte_html: default
 ---
 
 <!--
@@ -191,11 +191,10 @@ algorithmic fairness?
 According to luck egalitarianism, algorithmic decisions should equalize the benefits and burdens 
 they allocate to *equally deserving* people. Inequalities due to mere luck should be removed, and
 classification parity might be well suited to his end. `r tufte::margin_note("The problem is, however, 
-what it means to be equally deserving. Banks loans, for example, are not given 
-to equally deserving people.")` 
+what it means to be equally deserving.")` 
 
 On the other hand, Anderson's key idea is that egalitarianism should make hierarchies -- rankings of superior and inferior people -- morally irrelevant. Luck egalitarianism reinforces hierarchies because it makes 
-them the very foundation of distributive justice.  If this is right, one question to explore is whether or not algorithms -- as they are used to guide decisions in criminal justice, health care, welfare benefits, bank loans, etc. -- reinforce or create hierarchies, even when they allocate non-punitive goods.`r tufte::margin_note("On gthis point, see Accominotti and Tadmon (2020), How the Reification of Merit Breeds Inequality: Theory and Experimental Evidence. Working Paper (42). International Inequalities Institute, London School of Economics and Political Science.")`
+them the very foundation of distributive justice.  If this is right, one question to explore is whether or not algorithms -- as they are used to guide decisions in criminal justice, health care, welfare benefits, bank loans, etc. -- reinforce or create hierarchies, even when they allocate non-punitive goods.`r tufte::margin_note("On this point, see Accominotti and Tadmon (2020), How the Reification of Merit Breeds Inequality: Theory and Experimental Evidence. Working Paper (42). International Inequalities Institute, London School of Economics and Political Science.")`
 
 
 
