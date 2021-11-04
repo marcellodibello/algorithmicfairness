@@ -713,8 +713,17 @@ What would algorithmic fairness look like in light of these egaliatarian views?
 
 **Workshop**
 
-Students will workshop their research papers by giving short presentations, preferably accompanied by either a handout or slides and followed by Q&A. 
+Students will workshop their research papers by giving short presentations, preferably accompanied by either a handout or slides and followed by Q&A. The list of presentation is below:
 
+Filipp | *Fairness, Welfare, and Algorithms*
+
+Harits | *Two Constraints on Using Criminal Algorithms*
+
+Ben | *Amnesiac Supply Chains: Database Aggregation and Algorithmic Fairness*
+
+Emerson | *The Highest Degree of Fairness is Not Necessarily the Most Fair* 
+
+Matthew | *Algorithmic Gullibility*
 
 
 ## Wk 15 - 11/25
