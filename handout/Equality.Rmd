@@ -183,7 +183,7 @@ equality prefers altering social norms to redistributing material resources in r
 The aim need not be to give goods to the disabled or the ugly to compensate for their inferiority, but to ensure they can participate as equals to society. Egalitarianism may require reshaping social norms, not necessarily redistributing material goods. 
 
 
-## **Applications to algorithmic decision-making**
+# **Applications to algorithmic decision-making**
 
 Can we apply these theories---luck egalitarianism and democratic equality---to 
 algorithmic fairness? 

@@ -270,7 +270,7 @@ included in the course materials.
 [Week 9](https://www.marcellodibello.com/algorithmicfairness/handout/structural2.html) |
 [Week 10](https://www.marcellodibello.com/algorithmicfairness/handout/law.html) |
 [Weeek 11](https://www.marcellodibello.com/algorithmicfairness/handout/Econ.html) |
-[Weeek 11](https://www.marcellodibello.com/algorithmicfairness/handout/Equality.html) |
+[Weeek 12](https://www.marcellodibello.com/algorithmicfairness/handout/Equality.html) |
 Week 13 - No class |
 Week 14 - Workshop |
 Week 15 - No class |
