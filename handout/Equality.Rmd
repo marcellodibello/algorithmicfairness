@@ -118,7 +118,7 @@ of capitalism and socialism:
 combine the best of capitalism and socialism. Its free market aspects promote efficiency ... individual responsibility. Its socialist aspects give everyone a fair start in life
 and protect the innocent against bad brute luck." (p. 308)
 
-But luck egalitarianism seems to combines the worse of capitalism (=ruthless individualism) 
+But luck egalitarianism seems to combine the worst of capitalism (=ruthless individualism) 
 and socialism (=intrusive paternalism):
 
 > "equality of fortune appears to give us some of the worst aspects of capitalism and
@@ -147,7 +147,7 @@ The key for Anderson is to ensure that people have equal access
 to neutral good such as capabilities (=freedom to achieve valued functionings) 
 sufficient for them to be equal in different respects: as human beings; as participants in a system of cooperative production; `r tufte::margin_note("No one is higher up in the food chain. As Anderson puts it on p. 322: Michael Jordan could not make so many baskets if no one kept the basketball court swept clean.")` and as citizens. 
 
-Inequality in the distributions of goods are allowed:
+Inequality in the distribution of goods is allowed:
 
 > "Once all citizens enjoy a decent set of freedoms, sufficient
 for functioning as an equal in society, income inequalities beyond that

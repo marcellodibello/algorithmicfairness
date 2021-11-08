@@ -713,17 +713,25 @@ What would algorithmic fairness look like in light of these egaliatarian views?
 
 **Workshop**
 
-Students will workshop their research papers by giving short presentations, preferably accompanied by either a handout or slides and followed by Q&A. The list of presentation is below:
+Students will workshop their research papers by giving short presentations accompanied by either a handout or slides and followed by Q&A. Each presenter will have 20 minutes to be split between the presentation itself and Q&A at the discretion of the presenter. The list of presenters is below:   
 
-Filipp | *Fairness, Welfare, and Algorithms*
+3:00 |  Filipp | *Fairness, Welfare, and Algorithms*
 
-Harits | *Two Constraints on Using Criminal Algorithms*
+3:20 | Harits | *Two Constraints on Using Criminal Algorithms*
 
-Ben | *Amnesiac Supply Chains: Database Aggregation and Algorithmic Fairness*
+3:40 | Ben | *Amnesiac Supply Chains: Database Aggregation and Algorithmic Fairness*
 
-Emerson | *The Highest Degree of Fairness is Not Necessarily the Most Fair* 
+4:00 | Emerson | *The Highest Degree of Fairness is Not Necessarily the Most Fair* 
 
-Matthew | *Algorithmic Gullibility*
+4:20 | *10 minutes break*
+
+4:30 | Matthew | *Algorithmic Gullibility*
+
+4:50 | Shade | *Beyond Market Logic: Algorithmic Fairness in a Social World*
+
+5:20 | Keith | *Algorithmic Judicial Ethics*
+
+
 
 
 ## Wk 15 - 11/25
