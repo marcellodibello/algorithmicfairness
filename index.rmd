@@ -717,21 +717,21 @@ Students will workshop their research papers by giving short presentations accom
 
 3:00 |  Filipp | *Fairness, Welfare, and Algorithms*
 
-3:20 | Harits | *Two Constraints on Using Criminal Algorithms*
+3:20 | Shade | *Beyond Market Logic: Algorithmic Fairness in a Social World*
 
 3:40 | Ben | *Amnesiac Supply Chains: Database Aggregation and Algorithmic Fairness*
 
-4:00 | Emerson | *The Highest Degree of Fairness is Not Necessarily the Most Fair* 
+4:00 | Harits | *Two Constraints on Using Criminal Algorithms*
 
 4:20 | *10 minutes break*
 
-4:30 | Matthew | *Algorithmic Gullibility*
+4:30 | Emerson | *The Highest Degree of Fairness is Not Necessarily the Most Fair* 
 
-4:50 | Shade | *Beyond Market Logic: Algorithmic Fairness in a Social World*
+4:50 | Matthew | *Algorithmic Gullibility*
 
-5:20 | Keith | *Algorithmic Judicial Ethics*
+5:10 | Keith | *Algorithmic Judicial Ethics*
 
-
+5:30 | TBA | TBA
 
 
 ## Wk 15 - 11/25
