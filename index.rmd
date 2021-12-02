@@ -274,7 +274,7 @@ included in the course materials.
 Week 13 - No class |
 Week 14 - Workshop |
 Week 15 - No class |
-Week 16  |
+[Week 16](https://www.marcellodibello.com/algorithmicfairness/handout/individualized.html)  
 
 **Additional class notes** 
 
