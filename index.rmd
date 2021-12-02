@@ -753,6 +753,8 @@ What would that mean?
 
 *Key readings and materials*
 
+- [Class notes Wk 16](https://www.marcellodibello.com/algorithmicfairness/handout/individualized.html)
+
 - Lazar and Stone, On the Site of Predictive Justice [*check Canvas for the PDF*]
 
 - Renee Bolinger, [Algorithms and the Individual in Criminal Law](https://www.reneebolinger.com/uploads/1/0/2/6/102668958/bolinger_algorithms_and_individual_v6.pdf)
